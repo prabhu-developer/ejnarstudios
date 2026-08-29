@@ -49,30 +49,30 @@ export const metadata = constructMetadata({
 });
 
 export default function ServicesPage() {
-  const considerationCards = [
+  const requirementsWeConsider = [
     {
-      num: '01',
+      step: '01',
       title: 'Target Audience Profile',
       subtitle: 'Demographics & Intent',
       desc: 'Identifying psychographics, device preferences, and buyer behaviors to tailor user flows and visual tone.',
       icon: Users,
     },
     {
-      num: '02',
+      step: '02',
       title: 'Industry & Competitor Landscape',
       subtitle: 'Market Positioning',
       desc: 'Benchmarking top players to identify differentiation vectors and establish market leadership.',
       icon: Compass,
     },
     {
-      num: '03',
+      step: '03',
       title: 'Commercial Business Goals',
       subtitle: 'CAC, LTV & Conversions',
       desc: 'Aligning design deliverables directly to unit economics, lead capture, and revenue acceleration.',
       icon: Target,
     },
     {
-      num: '04',
+      step: '04',
       title: 'Scalable Tech Stack Alignment',
       subtitle: 'Technical Architecture',
       desc: 'Determining optimal tech stacks (Next.js SSG, custom APIs, native apps, or headless e-commerce) to guarantee speed and longevity.',

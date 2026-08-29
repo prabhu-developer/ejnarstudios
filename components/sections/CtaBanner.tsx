@@ -18,7 +18,6 @@ export default function CtaBanner() {
 
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Ready for the next level?</span>
           </div>
 

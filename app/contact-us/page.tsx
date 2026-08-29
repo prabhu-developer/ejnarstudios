@@ -24,9 +24,8 @@ const contactSchema = z.object({
   email: z.string().email('Please enter a valid email address'),
   phone: z.string().min(8, 'Please enter a valid phone number'),
   companyName: z.string().optional(),
-  budgetRange: z.string().min(1, 'Please select a project budget range'),
-  timeline: z.string().min(1, 'Please select a timeline preference'),
-  services: z.array(z.string()).min(1, 'Please select at least one service'),
+  service: z.string().min(1, 'Please select a service'),
+  budgetRange: z.string().optional(),
   message: z.string().min(10, 'Please describe your project requirements (min 10 chars)'),
 });
 
@@ -39,31 +38,20 @@ export default function ContactUsPage() {
   const {
     register,
     handleSubmit,
-    setValue,
-    watch,
     reset,
     formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
-      services: [],
+      fullName: '',
+      email: '',
+      phone: '',
+      companyName: '',
+      service: '',
       budgetRange: '',
-      timeline: '',
+      message: '',
     },
   });
-
-  const selectedServices = watch('services') || [];
-
-  const handleServiceToggle = (service: string) => {
-    const current = [...selectedServices];
-    const index = current.indexOf(service);
-    if (index > -1) {
-      current.splice(index, 1);
-    } else {
-      current.push(service);
-    }
-    setValue('services', current, { shouldValidate: true });
-  };
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
@@ -155,13 +143,13 @@ export default function ContactUsPage() {
                       Your Name *
                     </label>
                     <input
-                      {...register('name')}
+                      {...register('fullName')}
                       type="text"
                       placeholder="e.g. Rahul Sharma"
                       className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors"
                     />
-                    {errors.name && (
-                      <p className="text-[11px] text-rose-400 mt-1">{errors.name.message}</p>
+                    {errors.fullName && (
+                      <p className="text-[11px] text-rose-400 mt-1">{errors.fullName.message}</p>
                     )}
                   </div>
 
@@ -223,7 +211,7 @@ export default function ContactUsPage() {
                     Target Project Budget (Optional)
                   </label>
                   <select
-                    {...register('budget')}
+                    {...register('budgetRange')}
                     className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors"
                   >
                     <option value="">Select an investment range...</option>
