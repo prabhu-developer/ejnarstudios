@@ -1,26 +1,197 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #d6b488;
+  --color-primary-light: #e8d0a8;
+  --color-primary-dark: #b8945f;
+  --color-dark: #1a1a1a;
+  --color-dark-secondary: #222222;
+  --color-dark-tertiary: #2a2a2a;
+  --color-cream: #f5f0e8;
+  --color-muted: #9a9a9a;
+
+  --font-display: var(--font-display), "Space Grotesk", sans-serif;
+  --font-body: var(--font-body), "Inter", sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #d6b488;
+  --primary-light: #e8d0a8;
+  --primary-dark: #b8945f;
+  --dark: #1a1a1a;
+  --dark-secondary: #222222;
+  --dark-tertiary: #2a2a2a;
+  --cream: #f5f0e8;
+  --muted: #9a9a9a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  background-color: #1a1a1a;
+  color: #f5f0e8;
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1a1a1a;
+  color: #f5f0e8;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: #d6b488;
+  color: #1a1a1a;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d6b488;
+}
+
+/* Subtle Film Grain Noise Texture */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Gold Gradient Utilities */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f5f0e8 0%, #e8d0a8 40%, #d6b488 70%, #b8945f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-pure {
+  background: linear-gradient(135deg, #e8d0a8 0%, #d6b488 50%, #b8945f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #e8d0a8 0%, #d6b488 50%, #b8945f 100%);
+}
+
+.border-gold-hairline {
+  border-color: rgba(214, 180, 136, 0.2);
+}
+
+.border-gold-glow:hover {
+  border-color: rgba(214, 180, 136, 0.6);
+  box-shadow: 0 0 25px rgba(214, 180, 136, 0.15);
+}
+
+/* Hairline gold underline utility */
+.gold-hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(214, 180, 136, 0.4) 30%, rgba(214, 180, 136, 0.8) 50%, rgba(214, 180, 136, 0.4) 70%, transparent 100%);
+}
+
+/* Glow Radial Backdrop */
+.gold-radial-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(214, 180, 136, 0.08) 0%, rgba(26, 26, 26, 0) 70%);
+}
+
+/* Glassmorphism panel */
+.glass-panel {
+  background: rgba(34, 34, 34, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(214, 180, 136, 0.15);
+}
+
+/* Custom Badge Pill */
+.badge-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(214, 180, 136, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #d6b488;
+}
+
+/* Typography styles */
+.font-display {
+  font-family: var(--font-display), "Space Grotesk", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-body {
+  font-family: var(--font-body), "Inter", sans-serif;
+}
+
+/* Animated horizontal marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Pulse glow keyframe */
+@keyframes goldPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-gold-pulse {
+  animation: goldPulse 4s ease-in-out infinite;
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
