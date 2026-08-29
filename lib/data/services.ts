@@ -9,6 +9,10 @@ export interface ServiceItem {
   heroSubheadline: string;
   description: string;
   icon: string;
+  heroImage: string;
+  heroImageAlt: string;
+  showcaseImage?: string;
+  showcaseImageAlt?: string;
   features: string[];
   deliverables: string[];
   process: { step: string; title: string; desc: string; days?: string }[];
@@ -39,6 +43,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'We design timeless, distinctive logo systems that anchor your brand in the minds of your audience.',
     description: 'A great logo is more than just a graphic — it is the cornerstone of your business identity. Sourced from deep brand research, our logo systems cover wordmarks, pictorial marks, emblem logos, abstract marks, mascot logos, and combination marks designed for versatility across mobile, web, print, and physical signage.',
     icon: 'Feather',
+    heroImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Hand-sketched logo concepts and vector branding marks in creative design studio',
+    showcaseImage: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Precision vector logo design drafting in notebook and digital canvas',
     features: [
       '6 Architectural Logo Styles (Word Mark, Pictorial, Emblem, Abstract, Mascot, Combination)',
       'Vector Precision & Golden Ratio Construction',
@@ -76,6 +84,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'From corporate presentation decks and stationery to physical signage and design systems.',
     description: 'We construct cohesive, premium brand universes that command authority. Every touchpoint — from business visiting cards and corporate pitch decks to envelopes, letterheads, and brand books — is engineered to evoke trust and prestige.',
     icon: 'Sparkles',
+    heroImage: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Luxury corporate stationery flat lay with business cards, letterheads, and brand identity manual',
+    showcaseImage: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Corporate presentation deck and brand guidelines overview',
     features: [
       'Corporate Presentation Decks (Investor & Sales Pitches)',
       'Luxury Business Cards & Letterhead Stationery',
@@ -108,6 +120,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'Conversion-focused digital and print design tailored to amplify campaigns and boost engagement.',
     description: 'Stand out across noisy feeds and physical billboards. Our graphic design services span promotional campaign posters, high-converting social media carousels, event banners, product brochures, and out-of-home advertising assets built with meticulous visual hierarchy.',
     icon: 'Palette',
+    heroImage: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Graphic designer crafting high-impact marketing posters and social media creatives on widescreen monitor',
+    showcaseImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Abstract high-contrast digital art and typography layout for marketing campaigns',
     features: [
       'High-Resolution Promotional Posters & Billboard Designs',
       'Social Media Creatives & Carousel Kits (15–25 Monthly Assets)',
@@ -141,6 +157,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     description: 'We build digital flagship websites that elevate perception and drive conversions. From static marketing portfolios and dynamic corporate hubs to API-driven platforms, our web solutions prioritize lightning speed, WCAG accessibility, and immersive micro-interactions.',
     icon: 'Globe',
     badge: 'Popular',
+    heroImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Next.js modern website development UI on dark monitor with responsive layout and clean typography',
+    showcaseImage: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Responsive mobile and desktop web interface wireframe review',
     features: [
       'Next.js 14+ App Router & Static Site Generation (SSG)',
       'Lenis Inertia Scrolling & GSAP ScrollTrigger Animations',
@@ -179,6 +199,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'Frictionless checkout, lightning search, and robust inventory management for modern brands.',
     description: 'We develop high-converting online retail experiences like Jucoholic and DimahFashions. From custom Shopify Plus and WooCommerce setups to headless Next.js Commerce solutions, we craft shopping experiences that turn casual browsers into repeat buyers.',
     icon: 'ShoppingBag',
+    heroImage: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Conversion-optimized e-commerce storefront with cart drawer and payment gateway integration',
+    showcaseImage: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Modern retail storefront and automated logistics management dashboard',
     features: [
       'Custom Product Catalog Filtering & Instant Search',
       'Multi-currency & Global Payment Gateway Integrations (Stripe, Razorpay, UPI)',
@@ -211,6 +235,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'Fluid iOS and Android experiences built with React Native and Flutter with real-time sync.',
     description: 'Transform your digital service into an indispensable mobile app. From food ordering systems like byaddi to corporate field apps, we design vector-precise, gesture-driven mobile experiences with offline caching, push notifications, and seamless app store approval.',
     icon: 'Smartphone',
+    heroImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Mobile application UI design mockup for iOS and Android development on dark smartphone',
+    showcaseImage: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Cross-platform mobile application interface with real-time notifications',
     features: [
       'React Native & Flutter Cross-Platform Architecture',
       'Native iOS (Swift) & Android (Kotlin) Optimization',
@@ -243,6 +271,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'Scalable cloud web applications with complex role-based access, real-time analytics, and clean interfaces.',
     description: 'We construct powerful web applications engineered for heavy operational workloads. Whether you need a client portal, custom internal CRM, data visualization dashboard, or multi-tenant SaaS platform, we deliver scalable architecture with intuitive interfaces.',
     icon: 'LayoutDashboard',
+    heroImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Custom web application dashboard with real-time analytical charts and admin panel on dark screen',
+    showcaseImage: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Interactive data visualization telemetry charts and role-based permissions grid',
     features: [
       'Role-Based Access Control (RBAC) & Multi-Tenant Architecture',
       'Interactive Data Visualization Charts & Live Telemetry',
@@ -274,6 +306,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'Solving intricate operational challenges with custom business logic, RPA, and systems integration.',
     description: 'When off-the-shelf software falls short, EJNARSTUDIOS builds custom enterprise solutions. From robotic process automation (RPA) data scrapers to proprietary ERP modules, we engineer robust software that reduces human error and accelerates business throughput.',
     icon: 'Cpu',
+    heroImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Enterprise custom software development and automated RPA code on dark monitor with syntax highlighting',
+    showcaseImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Encrypted matrix terminal and secure enterprise systems architecture',
     features: [
       'Custom Business Process Automation & RPA Scripting',
       'Legacy Software Modernization & Cloud Migration',
@@ -307,6 +343,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'The 4-stage digital funnel: Data Analytics → Search Engine Optimization → Social Media Optimization → Targeted Campaigns.',
     description: 'Dominate organic search results and establish social authority. Our comprehensive SEO & SMO methodology systematically indexes your content, earns high-authority backlinks, and feeds positive social signals to search algorithms to secure top rankings.',
     icon: 'TrendingUp',
+    heroImage: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'SEO analytics dashboard showing keyword rankings, search volume, and traffic growth curve',
+    showcaseImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Search console technical crawl diagnostics and backlink authority matrix',
     features: [
       'Technical SEO Audit & Core Web Vitals Optimization',
       'High-Intent Keyword Research & Competitor Gap Analysis',
@@ -338,6 +378,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'Full-service management across Instagram, LinkedIn, YouTube, Facebook, and Twitter.',
     description: 'Transform silent profiles into bustling digital flagships. We handle strategy, monthly creative production (15–25 high-definition posters, 2–5 custom reels), copywriting, community engagement, and algorithmic optimization across 3–5 brand handles.',
     icon: 'Share2',
+    heroImage: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Social media management feed layout and viral video reel scheduling on dark smartphone',
+    showcaseImage: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Monthly social creative grid layout with synchronized brand aesthetic',
     features: [
       '15–25 Custom Designed Posters & 2–5 High-Impact Video Reels Monthly',
       'Management of 3 to 5 Major Social Handles',
@@ -368,6 +412,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'Strategic collaborations with vetted influencers to build organic credibility and drive sales.',
     description: 'Tap into ready-made, trusting audiences. We source, vet, negotiate, and direct targeted influencer partnerships — connecting your brand with niche micro and nano creators whose followers match your ideal customer profile.',
     icon: 'Users',
+    heroImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Content creator filming with studio ring light and camera for influencer campaign',
+    showcaseImage: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Micro-influencer product unboxing and social engagement analytics',
     features: [
       'Vetted Creator Network Across Lifestyle, Fashion, Tech, & Food',
       'End-to-End Contract Negotiation, Deliverable Tracking & Briefing',
@@ -399,6 +447,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'Maximizing Return On Ad Spend (ROAS) across Meta Ads, Google Search/Display, and YouTube.',
     description: 'Stop burning budget on low-intent clicks. Our performance marketing specialists engineer full-funnel ad architectures with relentless A/B testing across ad hooks, visual creatives, audience lookalikes, and retargeting pixels.',
     icon: 'Target',
+    heroImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Meta and Google ad campaign performance analytics dashboard showing high ROAS scaling',
+    showcaseImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Direct-response ad creative testing matrix and conversion rates telemetry',
     features: [
       'Meta Ads (Facebook & Instagram) Direct Response Architecture',
       'Google Search, Shopping & Performance Max Campaigns',
@@ -430,6 +482,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'Harness 98% WhatsApp open rates and revenue-generating email automation journeys.',
     description: 'Reach your customers right where they read their messages. Sourced from the deck’s modern marketing modes, we combine official WhatsApp Business API bulk messaging with rich HTML email nurture workflows to drive repeat purchases.',
     icon: 'MessageSquare',
+    heroImage: 'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Official WhatsApp Business API broadcast interface and automated email flow on smartphone',
+    showcaseImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Automated retention flows and customer segmentation telemetry',
     features: [
       'WhatsApp Official Business API Integration & Green Tick Verification',
       'High-Converting WhatsApp Broadcast Templates & Interactive Buttons',
@@ -461,6 +517,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'High-level guidance from experienced digital directors before investing in engineering and marketing.',
     description: 'Avoid costly technology mistakes and misaligned marketing spend. As your digital consultant, we audit your current tech stack, validate business models, formulate go-to-market roadmaps, and provide continuous executive oversight.',
     icon: 'Compass',
+    heroImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Senior technology consultant and executive leadership formulating digital roadmap in strategy session',
+    showcaseImage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'Architecture diagram review and tech stack due diligence meeting',
     features: [
       'Comprehensive Digital & Technology Stack Audits',
       'Go-To-Market (GTM) Strategy & Product Validation',
@@ -494,6 +554,10 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'From studio shoot to screen — corporate films, viral reels, 4K drone shoots, and full DI post-production.',
     description: 'We bring stories to life with cinematic fidelity. From high-energy social reels to corporate brand films, drone aerials, and television advertisements, our in-house production crew handles the complete pipeline: scriptwriting, talent direction, lighting, multi-cam 4K capture, DI color grading, sound design, and VFX editing.',
     icon: 'Video',
+    heroImage: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80',
+    heroImageAlt: 'Cinematic commercial video production setup with 4K camera rig, studio lighting, and director monitor',
+    showcaseImage: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80',
+    showcaseImageAlt: 'DaVinci Resolve DI color grading suite and high dynamic range video editing workstation',
     features: [
       'Full Commercial & Ad-Shoot Production (Multi-cam 4K & Drone Cinematography)',
       'Full DI (Digital Intermediate) Professional Color Grading',

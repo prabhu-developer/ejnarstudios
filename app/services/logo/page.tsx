@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import { LOGO_TYPES } from '@/lib/data/logo-types';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
@@ -135,21 +136,32 @@ export default function LogoDesignPage() {
             </div>
 
             {/* Visual Vector Specs Callout Box */}
-            <div className="p-8 rounded-2xl bg-dark-secondary/80 border border-primary/25 shadow-2xl space-y-6">
-              <h3 className="font-display font-bold text-xl text-cream">
-                Vector Precision & Scalability
-              </h3>
-              <p className="text-xs text-muted leading-relaxed">
-                Rendered with mathematical golden ratio curves. Whether scaled down to a 16px favicon or expanded to a 100-foot billboard, our marks preserve razor-sharp fidelity.
-              </p>
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/10 font-mono text-xs">
-                <div className="p-3 rounded bg-dark border border-white/5">
-                  <span className="text-primary font-bold block">AI, EPS, SVG</span>
-                  <span className="text-muted text-[10px]">Master Source Files</span>
-                </div>
-                <div className="p-3 rounded bg-dark border border-white/5">
-                  <span className="text-primary font-bold block">CMYK & RGB</span>
-                  <span className="text-muted text-[10px]">Print & Web Calibrated</span>
+            <div className="rounded-2xl bg-dark-secondary/80 border border-primary/25 shadow-2xl overflow-hidden">
+              <div className="relative h-48 w-full">
+                <Image
+                  src={service.showcaseImage || service.heroImage}
+                  alt={service.showcaseImageAlt || service.heroImageAlt}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-secondary via-dark-secondary/40 to-transparent" />
+              </div>
+              <div className="p-8 space-y-6">
+                <h3 className="font-display font-bold text-xl text-cream">
+                  Vector Precision & Scalability
+                </h3>
+                <p className="text-xs text-muted leading-relaxed">
+                  Rendered with mathematical golden ratio curves. Whether scaled down to a 16px favicon or expanded to a 100-foot billboard, our marks preserve razor-sharp fidelity.
+                </p>
+                <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/10 font-mono text-xs">
+                  <div className="p-3 rounded bg-dark border border-white/5">
+                    <span className="text-primary font-bold block">AI, EPS, SVG</span>
+                    <span className="text-muted text-[10px]">Master Source Files</span>
+                  </div>
+                  <div className="p-3 rounded bg-dark border border-white/5">
+                    <span className="text-primary font-bold block">CMYK & RGB</span>
+                    <span className="text-muted text-[10px]">Print & Web Calibrated</span>
+                  </div>
                 </div>
               </div>
             </div>

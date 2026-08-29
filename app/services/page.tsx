@@ -1,31 +1,28 @@
-import React from 'react';
-import Link from 'next/link';
+import CtaBanner from '@/components/sections/CtaBanner';
+import PricingTable from '@/components/sections/PricingTable';
+import { SERVICE_CATEGORIES } from '@/lib/data/services';
+import { constructMetadata } from '@/lib/seo';
 import {
+  ArrowRight,
+  Compass,
+  Cpu,
   Feather,
-  Sparkles,
-  Palette,
   Globe,
+  Layers,
+  LayoutDashboard,
+  MessageSquare,
+  Palette,
+  Share2,
   ShoppingBag,
   Smartphone,
-  LayoutDashboard,
-  Cpu,
-  TrendingUp,
-  Share2,
-  Users,
+  Sparkles,
   Target,
-  MessageSquare,
-  Compass,
-  Video,
-  ArrowRight,
-  CheckCircle2,
-  Layers,
-  Type,
-  Maximize2,
+  TrendingUp,
+  Users,
+  Video
 } from 'lucide-react';
-import { SERVICE_CATEGORIES, SERVICES_DATA } from '@/lib/data/services';
-import PricingTable from '@/components/sections/PricingTable';
-import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata } from '@/lib/seo';
+import Link from 'next/link';
+import React from 'react';
 
 const iconMap: Record<string, React.ElementType> = {
   Feather,
@@ -46,37 +43,37 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export const metadata = constructMetadata({
-  title: 'Services & Packages — Full-Stack Design, Development & Marketing',
-  description: 'Explore our 14 end-to-end services across Branding, Web & App Development, Digital Marketing, and Ad Production. Complete package comparison table.',
+  title: 'Services & Digital Capabilities — EJNARSTUDIOS Chennai',
+  description: 'Explore our 14 end-to-end services across Design & Branding, Website & Mobile Development, Marketing & Growth, and Cinema Video Production.',
   path: '/services',
 });
 
 export default function ServicesPage() {
-  const requirementsWeConsider = [
+  const considerationCards = [
     {
-      step: '01',
-      title: 'Nature of Business & Target Audience',
-      subtitle: 'Market Positioning',
-      desc: 'Understanding your commercial offering, ideal customer profiles, consumer behavior, and industry benchmark standards.',
+      num: '01',
+      title: 'Target Audience Profile',
+      subtitle: 'Demographics & Intent',
+      desc: 'Identifying psychographics, device preferences, and buyer behaviors to tailor user flows and visual tone.',
       icon: Users,
     },
     {
-      step: '02',
-      title: 'Colour Palette & Visual Psychology',
-      subtitle: 'Aesthetic Resonance',
-      desc: 'Calibrating color harmonies, contrast ratios, and luxury undertones tailored to evoke trust, authority, and emotional resonance.',
-      icon: Palette,
+      num: '02',
+      title: 'Industry & Competitor Landscape',
+      subtitle: 'Market Positioning',
+      desc: 'Benchmarking top players to identify differentiation vectors and establish market leadership.',
+      icon: Compass,
     },
     {
-      step: '03',
-      title: 'Font & Typography Usability',
-      subtitle: 'Legibility & Hierarchy',
-      desc: 'Selecting high-grade display and body typefaces that maintain geometric crispness across high-refresh screens, mobile, and print.',
-      icon: Type,
+      num: '03',
+      title: 'Commercial Business Goals',
+      subtitle: 'CAC, LTV & Conversions',
+      desc: 'Aligning design deliverables directly to unit economics, lead capture, and revenue acceleration.',
+      icon: Target,
     },
     {
-      step: '04',
-      title: 'Development Needs & Scale',
+      num: '04',
+      title: 'Scalable Tech Stack Alignment',
       subtitle: 'Technical Architecture',
       desc: 'Determining optimal tech stacks (Next.js SSG, custom APIs, native apps, or headless e-commerce) to guarantee speed and longevity.',
       icon: Layers,
@@ -91,11 +88,10 @@ export default function ServicesPage() {
 
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Deck p.3 • End-To-End Agency Capabilities</span>
           </div>
 
-          <h1 className="font-banner font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-6">
+          <h1 className="font-banner font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight mb-6">
             We Offer <span className="text-gold-gradient">End-to-End</span> Services.
           </h1>
 

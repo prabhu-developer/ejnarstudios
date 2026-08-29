@@ -1,25 +1,22 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import {
-  Sparkles,
-  ChevronDown,
-  ArrowRight,
-  Briefcase,
-  MapPin,
-  Clock,
-  CheckCircle2,
-  Send,
-  Zap,
-  HeartHandshake,
-  Compass,
-  GraduationCap,
-} from 'lucide-react';
-import { JOB_OPENINGS, JobOpening } from '@/lib/data/jobs';
 import CtaBanner from '@/components/sections/CtaBanner';
+import { JOB_OPENINGS } from '@/lib/data/jobs';
+import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  ArrowRight,
+  CheckCircle2,
+  ChevronDown,
+  Clock,
+  GraduationCap,
+  MapPin,
+  Send,
+  Sparkles,
+  Zap
+} from 'lucide-react';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
 
 const applicationSchema = z.object({
   fullName: z.string().min(2, 'Full name must be at least 2 characters'),
@@ -87,11 +84,10 @@ export default function CareersPage() {
 
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Join Our Creative Ranks</span>
           </div>
 
-          <h1 className="font-banner font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-6">
+          <h1 className="font-banner font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight mb-6">
             Build Unprecedented <br />
             <span className="text-gold-gradient">Digital Experiences.</span>
           </h1>

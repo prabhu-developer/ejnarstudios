@@ -1,34 +1,33 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
 import {
-  Phone,
-  Mail,
-  MapPin,
-  Send,
-  CheckCircle2,
-  Sparkles,
-  MessageSquare,
-  Clock,
-} from 'lucide-react';
-import {
-  InstagramIcon,
   FacebookIcon,
-  TwitterIcon,
+  InstagramIcon,
   LinkedinIcon,
+  TwitterIcon,
 } from '@/components/ui/SocialIcons';
 import { BRAND } from '@/lib/constants';
+import { zodResolver } from '@hookform/resolvers/zod';
+import {
+  CheckCircle2,
+  Mail,
+  MapPin,
+  Phone,
+  Send
+} from 'lucide-react';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
 
 const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid business email'),
-  phone: z.string().min(10, 'Please enter a valid phone number'),
-  service: z.string().min(1, 'Please select the service you are interested in'),
-  budget: z.string().optional(),
-  message: z.string().min(10, 'Please describe your project scope'),
+  fullName: z.string().min(2, 'Full name is required'),
+  email: z.string().email('Please enter a valid email address'),
+  phone: z.string().min(8, 'Please enter a valid phone number'),
+  companyName: z.string().optional(),
+  budgetRange: z.string().min(1, 'Please select a project budget range'),
+  timeline: z.string().min(1, 'Please select a timeline preference'),
+  services: z.array(z.string()).min(1, 'Please select at least one service'),
+  message: z.string().min(10, 'Please describe your project requirements (min 10 chars)'),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -40,14 +39,47 @@ export default function ContactUsPage() {
   const {
     register,
     handleSubmit,
+    setValue,
+    watch,
     reset,
     formState: { errors },
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
+    defaultValues: {
+      services: [],
+      budgetRange: '',
+      timeline: '',
+    },
   });
+
+  const selectedServices = watch('services') || [];
+
+  const handleServiceToggle = (service: string) => {
+    const current = [...selectedServices];
+    const index = current.indexOf(service);
+    if (index > -1) {
+      current.splice(index, 1);
+    } else {
+      current.push(service);
+    }
+    setValue('services', current, { shouldValidate: true });
+  };
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
+    if (typeof window !== 'undefined') {
+      try {
+        const confetti = (await import('canvas-confetti')).default;
+        confetti({
+          particleCount: 80,
+          spread: 60,
+          origin: { y: 0.6 },
+          colors: ['#d6b488', '#e8d0a8', '#ffffff'],
+        });
+      } catch (err) {
+        console.log('Form submission handled locally', err);
+      }
+    }
     // Submit directly via browser client to static-compatible endpoint or fallback
     const formEndpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
     if (formEndpoint) {
@@ -87,11 +119,10 @@ export default function ContactUsPage() {
 
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Deck p.27 • Connect With Our Studio</span>
           </div>
 
-          <h1 className="font-banner font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-6">
+          <h1 className="font-banner font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight mb-6">
             Let’s Build Something <br />
             <span className="text-gold-gradient">Unprecedented Together.</span>
           </h1>
@@ -234,96 +265,96 @@ export default function ContactUsPage() {
                     <span>Dispatching Inquiry...</span>
                   ) : (
                     <>
-                  <span>Send Project Inquiry</span>
-                  <Send className="w-4 h-4 text-dark" />
-                </>
-              )}
-            </button>
-          </form>
-        </div>
-      </div>
-
-      {/* Right Column: Address, Phone, Dark Map Embed (5 Cols) */}
-      <div className="lg:col-span-5 space-y-6">
-        {/* Contact Details Card */}
-        <div className="p-8 rounded-2xl bg-dark-secondary/80 border border-white/10 space-y-6">
-          <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary block">
-            Headquarters
-          </span>
-
-          <div className="space-y-4 text-xs text-muted">
-            <div className="flex items-start gap-3">
-              <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <strong className="text-cream block font-display text-sm mb-0.5">Physical Studio Address</strong>
-                <span>{BRAND.address.street}, {BRAND.address.area}, Chennai - {BRAND.address.postalCode}, {BRAND.address.country}</span>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <Phone className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <strong className="text-cream block font-display text-sm mb-0.5">Direct Telephony</strong>
-                <p>Mobile: <a href={`tel:${BRAND.contact.mobileRaw}`} className="text-primary hover:underline">{BRAND.contact.mobile}</a></p>
-                <p>Hotline: <a href={`tel:${BRAND.contact.hotlineRaw}`} className="text-primary hover:underline">{BRAND.contact.hotline}</a></p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <Mail className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
-              <div>
-                <strong className="text-cream block font-display text-sm mb-0.5">Electronic Inquiries</strong>
-                <a href={`mailto:${BRAND.contact.email}`} className="text-primary hover:underline">{BRAND.contact.email}</a>
-              </div>
+                      <span>Send Project Inquiry</span>
+                      <Send className="w-4 h-4 text-dark" />
+                    </>
+                  )}
+                </button>
+              </form>
             </div>
           </div>
 
-          {/* Social Channels */}
-          <div className="pt-4 border-t border-white/10">
-            <span className="text-[11px] font-semibold text-cream uppercase tracking-wider block mb-3">
-              Follow Studio Updates
-            </span>
-            <div className="flex items-center gap-3">
-              {[
-                { icon: InstagramIcon, href: BRAND.socials.instagram, label: 'Instagram' },
-                { icon: FacebookIcon, href: BRAND.socials.facebook, label: 'Facebook' },
-                { icon: TwitterIcon, href: BRAND.socials.twitter, label: 'Twitter' },
-                { icon: LinkedinIcon, href: BRAND.socials.linkedin, label: 'LinkedIn' },
-              ].map((s) => {
-                const Icon = s.icon;
-                return (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-dark hover:border-primary transition-all duration-300"
-                    aria-label={s.label}
-                  >
-                    <Icon className="w-4 h-4" />
-                  </a>
-                );
-              })}
+          {/* Right Column: Address, Phone, Dark Map Embed (5 Cols) */}
+          <div className="lg:col-span-5 space-y-6">
+            {/* Contact Details Card */}
+            <div className="p-8 rounded-2xl bg-dark-secondary/80 border border-white/10 space-y-6">
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary block">
+                Headquarters
+              </span>
+
+              <div className="space-y-4 text-xs text-muted">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <strong className="text-cream block font-display text-sm mb-0.5">Physical Studio Address</strong>
+                    <span>{BRAND.address.street}, {BRAND.address.area}, Chennai - {BRAND.address.postalCode}, {BRAND.address.country}</span>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Phone className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <strong className="text-cream block font-display text-sm mb-0.5">Direct Telephony</strong>
+                    <p>Mobile: <a href={`tel:${BRAND.contact.mobileRaw}`} className="text-primary hover:underline">{BRAND.contact.mobile}</a></p>
+                    <p>Hotline: <a href={`tel:${BRAND.contact.hotlineRaw}`} className="text-primary hover:underline">{BRAND.contact.hotline}</a></p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Mail className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <strong className="text-cream block font-display text-sm mb-0.5">Electronic Inquiries</strong>
+                    <a href={`mailto:${BRAND.contact.email}`} className="text-primary hover:underline">{BRAND.contact.email}</a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Channels */}
+              <div className="pt-4 border-t border-white/10">
+                <span className="text-[11px] font-semibold text-cream uppercase tracking-wider block mb-3">
+                  Follow Studio Updates
+                </span>
+                <div className="flex items-center gap-3">
+                  {[
+                    { icon: InstagramIcon, href: BRAND.socials.instagram, label: 'Instagram' },
+                    { icon: FacebookIcon, href: BRAND.socials.facebook, label: 'Facebook' },
+                    { icon: TwitterIcon, href: BRAND.socials.twitter, label: 'Twitter' },
+                    { icon: LinkedinIcon, href: BRAND.socials.linkedin, label: 'LinkedIn' },
+                  ].map((s) => {
+                    const Icon = s.icon;
+                    return (
+                      <a
+                        key={s.label}
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-dark hover:border-primary transition-all duration-300"
+                        aria-label={s.label}
+                      >
+                        <Icon className="w-4 h-4" />
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* Dark Styled Google Maps Embed (Greeta Towers, Perungudi, Chennai) */}
+            <div className="rounded-2xl overflow-hidden border border-primary/20 shadow-2xl relative h-64 bg-dark-secondary">
+              <iframe
+                title="EJNARSTUDIOS Location Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8967909388377!2d80.24430587572702!3d12.978436987337373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d629a8a3f81%3A0xbce5bf769502804b!2sGreeta%20Towers!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)' }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </div>
-
-        {/* Dark Styled Google Maps Embed (Greeta Towers, Perungudi, Chennai) */}
-        <div className="rounded-2xl overflow-hidden border border-primary/20 shadow-2xl relative h-64 bg-dark-secondary">
-          <iframe
-            title="EJNARSTUDIOS Location Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8967909388377!2d80.24430587572702!3d12.978436987337373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d629a8a3f81%3A0xbce5bf769502804b!2sGreeta%20Towers!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)' }}
-            allowFullScreen={false}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-      </div>
+      </section>
     </div>
-  </section>
-</div>
-);
+  );
 }

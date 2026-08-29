@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
@@ -8,8 +9,8 @@ import { Target, CheckCircle2 } from 'lucide-react';
 const service = SERVICES_DATA.find((s) => s.slug === 'paid-ads')!;
 
 export const metadata = constructMetadata({
-  title: 'Paid Ads Performance Marketing Chennai — Meta, Google & YouTube Ads',
-  description: 'High-ROAS paid media management across Meta Ads (Facebook/Instagram), Google Search, Shopping, and YouTube Ads. Full conversion tracking and creative A/B testing.',
+  title: 'Paid Ads Performance Marketing Agency Chennai — Meta & Google Ads',
+  description: 'High-ROAS Meta (Facebook/Instagram), Google Search, Shopping, and YouTube paid media campaigns with conversion API tracking and A/B creative testing.',
   path: '/services/paid-ads',
 });
 
@@ -36,8 +37,8 @@ export default function PaidAdsPage() {
                 ROAS Acceleration
               </span>
               <h2 className="font-display font-black text-3xl sm:text-4xl text-cream mb-6">
-                Direct-Response Performance <br />
-                <span className="text-gold-gradient">Paid Advertising.</span>
+                Data-Driven Media Buying That <br />
+                <span className="text-gold-gradient">Maximizes Conversion Value.</span>
               </h2>
               <div className="space-y-3">
                 {service.features.map((feat, fIdx) => (
@@ -49,16 +50,27 @@ export default function PaidAdsPage() {
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-dark-secondary/80 border border-primary/20 shadow-2xl space-y-4">
-              <h3 className="font-display font-bold text-xl text-cream">
-                Performance Ad Deliverables
-              </h3>
-              {service.deliverables.map((deliv, dIdx) => (
-                <div key={dIdx} className="p-3.5 rounded-lg bg-dark border border-white/5 flex items-center justify-between text-xs">
-                  <span className="text-cream font-medium">{deliv}</span>
-                  <span className="text-[10px] font-mono text-primary uppercase">Active</span>
-                </div>
-              ))}
+            <div className="rounded-2xl bg-dark-secondary/80 border border-primary/20 shadow-2xl overflow-hidden">
+              <div className="relative h-48 w-full">
+                <Image
+                  src={service.showcaseImage || service.heroImage}
+                  alt={service.showcaseImageAlt || service.heroImageAlt}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-secondary via-dark-secondary/40 to-transparent" />
+              </div>
+              <div className="p-8 space-y-4">
+                <h3 className="font-display font-bold text-xl text-cream">
+                  Paid Media Deliverables
+                </h3>
+                {service.deliverables.map((deliv, dIdx) => (
+                  <div key={dIdx} className="p-3 rounded-lg bg-dark border border-white/5 flex items-center justify-between text-xs">
+                    <span className="text-cream font-medium">{deliv}</span>
+                    <span className="text-[10px] font-mono text-primary uppercase">Performance</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

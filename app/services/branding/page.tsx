@@ -1,9 +1,10 @@
 import React from 'react';
+import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
 import { constructMetadata, generateServiceSchema } from '@/lib/seo';
-import { Sparkles, CheckCircle2, Layers } from 'lucide-react';
+import { Sparkles, CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'branding')!;
 
@@ -49,16 +50,27 @@ export default function BrandingPage() {
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-dark-secondary/80 border border-primary/20 shadow-2xl space-y-4">
-              <h3 className="font-display font-bold text-xl text-cream">
-                Branding Suite Deliverables
-              </h3>
-              {service.deliverables.map((deliv, dIdx) => (
-                <div key={dIdx} className="p-3.5 rounded-lg bg-dark border border-white/5 flex items-center justify-between text-xs">
-                  <span className="text-cream font-medium">{deliv}</span>
-                  <span className="text-[10px] font-mono text-primary uppercase">Standard</span>
-                </div>
-              ))}
+            <div className="rounded-2xl bg-dark-secondary/80 border border-primary/20 shadow-2xl overflow-hidden">
+              <div className="relative h-48 w-full">
+                <Image
+                  src={service.showcaseImage || service.heroImage}
+                  alt={service.showcaseImageAlt || service.heroImageAlt}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-secondary via-dark-secondary/40 to-transparent" />
+              </div>
+              <div className="p-8 space-y-4">
+                <h3 className="font-display font-bold text-xl text-cream">
+                  Branding Suite Deliverables
+                </h3>
+                {service.deliverables.map((deliv, dIdx) => (
+                  <div key={dIdx} className="p-3 rounded-lg bg-dark border border-white/5 flex items-center justify-between text-xs">
+                    <span className="text-cream font-medium">{deliv}</span>
+                    <span className="text-[10px] font-mono text-primary uppercase">Standard</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

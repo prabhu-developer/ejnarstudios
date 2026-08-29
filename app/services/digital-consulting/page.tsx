@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
@@ -8,8 +9,8 @@ import { Compass, CheckCircle2 } from 'lucide-react';
 const service = SERVICES_DATA.find((s) => s.slug === 'digital-consulting')!;
 
 export const metadata = constructMetadata({
-  title: 'Strategic Digital Consultant & Executive Technology Advisory Chennai',
-  description: 'High-level digital consulting, technology stack audits, GTM roadmap formulation, and executive growth retainers for modern enterprise brands.',
+  title: 'Digital Consulting & Technology Advisory Firm Chennai',
+  description: 'Executive digital transformation advisory, tech stack audits, GTM roadmap formulation, and omnichannel customer acquisition architecture.',
   path: '/services/digital-consulting',
 });
 
@@ -36,8 +37,8 @@ export default function DigitalConsultingPage() {
                 Executive Advisory
               </span>
               <h2 className="font-display font-black text-3xl sm:text-4xl text-cream mb-6">
-                Avoid Costly Tech Mistakes <br />
-                <span className="text-gold-gradient">Before Committing Capital.</span>
+                Strategic Guidance Before <br />
+                <span className="text-gold-gradient">Committing Capital.</span>
               </h2>
               <div className="space-y-3">
                 {service.features.map((feat, fIdx) => (
@@ -49,16 +50,27 @@ export default function DigitalConsultingPage() {
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-dark-secondary/80 border border-primary/20 shadow-2xl space-y-4">
-              <h3 className="font-display font-bold text-xl text-cream">
-                Consulting Engagement Deliverables
-              </h3>
-              {service.deliverables.map((deliv, dIdx) => (
-                <div key={dIdx} className="p-3.5 rounded-lg bg-dark border border-white/5 flex items-center justify-between text-xs">
-                  <span className="text-cream font-medium">{deliv}</span>
-                  <span className="text-[10px] font-mono text-primary uppercase">Retainer</span>
-                </div>
-              ))}
+            <div className="rounded-2xl bg-dark-secondary/80 border border-primary/20 shadow-2xl overflow-hidden">
+              <div className="relative h-48 w-full">
+                <Image
+                  src={service.showcaseImage || service.heroImage}
+                  alt={service.showcaseImageAlt || service.heroImageAlt}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-secondary via-dark-secondary/40 to-transparent" />
+              </div>
+              <div className="p-8 space-y-4">
+                <h3 className="font-display font-bold text-xl text-cream">
+                  Consulting Deliverables
+                </h3>
+                {service.deliverables.map((deliv, dIdx) => (
+                  <div key={dIdx} className="p-3 rounded-lg bg-dark border border-white/5 flex items-center justify-between text-xs">
+                    <span className="text-cream font-medium">{deliv}</span>
+                    <span className="text-[10px] font-mono text-primary uppercase">Executive</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>

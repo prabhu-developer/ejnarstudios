@@ -37,7 +37,7 @@ export default function Hero() {
       >
         <div className="relative w-full h-full">
           <Image
-            src="/logo-icon.png"
+            src="/bg-hero.png"
             alt="EJNARSTUDIOS Antler Mark"
             fill
             priority
@@ -55,7 +55,6 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/30 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6 shadow-sm"
         >
-          <Sparkles className="w-3.5 h-3.5 text-primary" />
           <span>Award-Winning Creative & Digital Agency • Chennai</span>
         </motion.div>
 
@@ -64,7 +63,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-banner font-black text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.05] text-cream mb-6"
+          className="font-banner font-black text-3xl sm:text-4xl md:text-5xl tracking-tight leading-[1.05] text-cream mb-6"
         >
           We help brands make{' '}
           <span className="text-gold-gradient inline-block">

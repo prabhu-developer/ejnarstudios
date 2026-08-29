@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
-import { Sparkles, Globe, Smartphone, Zap } from 'lucide-react';
+import { Globe, Smartphone, Sparkles, Zap } from 'lucide-react';
 
 const STATS = [
   {
@@ -67,7 +66,7 @@ export default function StatsCounter() {
                 </div>
 
                 <div>
-                  <span className="font-display font-black text-4xl sm:text-5xl text-gold-gradient tracking-tight">
+                  <span className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-gold-gradient tracking-tight">
                     {stat.value}
                   </span>
                   <h4 className="font-display font-bold text-sm text-cream mt-2 mb-1">

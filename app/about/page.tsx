@@ -1,21 +1,13 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import {
-  Sparkles,
-  ArrowRight,
-  ShieldCheck,
-  CheckCircle2,
-  Trophy,
-  Zap,
-  Users,
-  Compass,
-  HeartHandshake,
-} from 'lucide-react';
-import { constructMetadata } from '@/lib/seo';
 import { BRAND } from '@/lib/constants';
 import { AWARDS_DATA } from '@/lib/data/awards';
 import { STRENGTHS_DATA } from '@/lib/data/strengths';
+import { constructMetadata } from '@/lib/seo';
+import {
+  ArrowRight,
+  Compass,
+} from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata = constructMetadata({
   title: 'About Us — Creative Digital Agency in Chennai',
@@ -55,11 +47,10 @@ export default function AboutPage() {
 
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Creative Agency • Chennai, India</span>
           </div>
 
-          <h1 className="font-banner font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-8">
+          <h1 className="font-banner font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight mb-8">
             Crafting Attractive Experiences <br />
             <span className="text-gold-gradient">For The Modern Web.</span>
           </h1>
@@ -178,9 +169,8 @@ export default function AboutPage() {
               return (
                 <div
                   key={aIdx}
-                  className={`relative flex flex-col md:flex-row items-start ${
-                    isEven ? 'md:flex-row-reverse' : ''
-                  } gap-8 pl-10 md:pl-0`}
+                  className={`relative flex flex-col md:flex-row items-start ${isEven ? 'md:flex-row-reverse' : ''
+                    } gap-8 pl-10 md:pl-0`}
                 >
                   {/* Center Node */}
                   <div className="absolute left-2.5 md:left-1/2 -translate-x-1/2 top-4 w-3.5 h-3.5 rounded-full bg-primary border-4 border-dark z-10 shadow-[0_0_10px_rgba(214,180,136,0.8)]" />

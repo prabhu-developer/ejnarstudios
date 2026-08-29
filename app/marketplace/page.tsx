@@ -1,32 +1,34 @@
 'use client';
 
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import CtaBanner from '@/components/sections/CtaBanner';
+import { MARKETPLACE_PRODUCTS, MarketplaceProduct } from '@/lib/data/marketplace';
 import {
-  Sparkles,
-  ShoppingBag,
-  Star,
+  ArrowRight,
   Check,
   Eye,
-  ArrowRight,
-  Filter,
-  Layers,
-  X,
+  Star,
+  X
 } from 'lucide-react';
-import { MARKETPLACE_PRODUCTS, MarketplaceProduct } from '@/lib/data/marketplace';
-import CtaBanner from '@/components/sections/CtaBanner';
+import Image from 'next/image';
+import { useState } from 'react';
 
 export default function MarketplacePage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeModalProduct, setActiveModalProduct] = useState<MarketplaceProduct | null>(null);
   const [inquirySuccess, setInquirySuccess] = useState(false);
 
-  const categories = ['All', 'Website Templates', 'Logos', 'Social Media Kits', 'Video Templates'];
+  const categories = [
+    'All',
+    'Figma Templates',
+    'Logo Suites',
+    'Video Templates',
+    'Marketing Kits',
+  ];
 
-  const filteredProducts = selectedCategory === 'All'
-    ? MARKETPLACE_PRODUCTS
-    : MARKETPLACE_PRODUCTS.filter((p) => p.category === selectedCategory);
+  const filteredProducts =
+    selectedCategory === 'All'
+      ? MARKETPLACE_PRODUCTS
+      : MARKETPLACE_PRODUCTS.filter((p) => p.category === selectedCategory);
 
   const handleInquiry = (product: MarketplaceProduct) => {
     setInquirySuccess(true);
@@ -44,11 +46,10 @@ export default function MarketplacePage() {
 
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6">
-            <Sparkles className="w-3.5 h-3.5" />
             <span>Turnkey Assets • 100% Ready Delivery</span>
           </div>
 
-          <h1 className="font-banner font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-6">
+          <h1 className="font-banner font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight mb-6">
             Curated Digital <span className="text-gold-gradient">Marketplace.</span>
           </h1>
 
@@ -62,11 +63,10 @@ export default function MarketplacePage() {
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${
-                  selectedCategory === cat
-                    ? 'bg-primary text-dark font-bold shadow-md'
-                    : 'bg-dark-secondary text-cream/70 hover:text-cream hover:bg-dark-tertiary border border-white/5'
-                }`}
+                className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${selectedCategory === cat
+                  ? 'bg-primary text-dark font-bold shadow-md'
+                  : 'bg-dark-secondary text-cream/70 hover:text-cream hover:bg-dark-tertiary border border-white/5'
+                  }`}
               >
                 {cat}
               </button>
