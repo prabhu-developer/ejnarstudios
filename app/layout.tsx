@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Space_Grotesk, Inter } from 'next/font/google';
+import { androidFont } from './fonts';
 import './globals.css';
 import { BRAND } from '@/lib/constants';
 import { constructMetadata, generateOrganizationSchema } from '@/lib/seo';
@@ -35,7 +36,7 @@ export default function RootLayout({
   const organizationSchema = generateOrganizationSchema();
 
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable} dark`}>
+    <html lang="en" className={`${androidFont.variable} ${spaceGrotesk.variable} ${inter.variable} dark`}>
       <head>
         <script
           type="application/ld+json"

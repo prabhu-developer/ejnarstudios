@@ -59,7 +59,7 @@ export default function AboutPage() {
             <span>Creative Agency • Chennai, India</span>
           </div>
 
-          <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-8">
+          <h1 className="font-banner font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-8">
             Crafting Attractive Experiences <br />
             <span className="text-gold-gradient">For The Modern Web.</span>
           </h1>

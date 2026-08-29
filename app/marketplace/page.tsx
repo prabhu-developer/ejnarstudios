@@ -48,7 +48,7 @@ export default function MarketplacePage() {
             <span>Turnkey Assets • 100% Ready Delivery</span>
           </div>
 
-          <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-6">
+          <h1 className="font-banner font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-6">
             Curated Digital <span className="text-gold-gradient">Marketplace.</span>
           </h1>
 

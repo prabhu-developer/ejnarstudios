@@ -91,7 +91,7 @@ export default function CareersPage() {
             <span>Join Our Creative Ranks</span>
           </div>
 
-          <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-6">
+          <h1 className="font-banner font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-6">
             Build Unprecedented <br />
             <span className="text-gold-gradient">Digital Experiences.</span>
           </h1>

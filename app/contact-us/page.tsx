@@ -91,7 +91,7 @@ export default function ContactUsPage() {
             <span>Deck p.27 • Connect With Our Studio</span>
           </div>
 
-          <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-6">
+          <h1 className="font-banner font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-6">
             Let’s Build Something <br />
             <span className="text-gold-gradient">Unprecedented Together.</span>
           </h1>

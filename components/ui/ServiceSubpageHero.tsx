@@ -42,7 +42,7 @@ export default function ServiceSubpageHero({ service }: ServiceSubpageHeroProps)
         </div>
 
         {/* Headlines */}
-        <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-cream tracking-tight leading-[1.1] mb-6">
+        <h1 className="font-banner font-black text-4xl sm:text-5xl md:text-6xl text-cream tracking-tight leading-[1.1] mb-6">
           {service.heroHeadline}
         </h1>
 

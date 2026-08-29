@@ -12,6 +12,7 @@
 
   --font-display: var(--font-display), "Space Grotesk", sans-serif;
   --font-body: var(--font-body), "Inter", sans-serif;
+  --font-banner: var(--font-android), var(--font-display), "Space Grotesk", sans-serif;
 }
 
 :root {
@@ -145,6 +146,11 @@ body {
 .font-display {
   font-family: var(--font-display), "Space Grotesk", sans-serif;
   letter-spacing: -0.02em;
+}
+
+.font-banner {
+  font-family: var(--font-android), var(--font-display), "Space Grotesk", sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .font-body {
