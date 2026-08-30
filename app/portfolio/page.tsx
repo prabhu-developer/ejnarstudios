@@ -26,7 +26,9 @@ export default function PortfolioPage() {
             <span>Our Flagship Works & Case Studies</span>
           </div>
 
-          <h1 className="font-display font-black text-4xl sm:text-6xl md:text-7xl text-cream tracking-tight mb-6 max-w-5xl mx-auto leading-[1.1]">
+          <h1
+            className="font-banner font-black text-3xl sm:text-5xl md:text-6xl text-cream tracking-tight mb-6"
+          >
             Architecting Digital Flagships &{' '}
             <span className="text-gold-gradient">High-Growth Systems.</span>
           </h1>

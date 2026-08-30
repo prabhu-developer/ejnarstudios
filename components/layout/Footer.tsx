@@ -197,13 +197,24 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar: Copyright & Accreditations */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
+        {/* Bottom Bar: Copyright, Legal Policies & Accreditations */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted border-t border-white/5">
           <p>© {new Date().getFullYear()} {BRAND.name}. All rights reserved.</p>
-          <div className="flex items-center gap-6">
+          
+          <div className="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs">
+            <Link href="/privacy-policy" className="hover:text-primary transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="w-1 h-1 rounded-full bg-white/20" />
+            <Link href="/terms-and-conditions" className="hover:text-primary transition-colors">
+              Terms & Conditions
+            </Link>
+            <span className="w-1 h-1 rounded-full bg-white/20" />
             <span>Chennai, India</span>
-            <span className="w-1 h-1 rounded-full bg-primary" />
-            <span>Founded by {BRAND.founder}</span>
+          </div>
+
+          <div className="flex items-center gap-2 text-[11px] text-muted/80">
+            <span>Founded by <strong className="text-cream">{BRAND.founder}</strong></span>
           </div>
         </div>
       </div>

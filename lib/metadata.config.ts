@@ -19,6 +19,8 @@ export type PageKey =
   | 'marketplace'
   | 'careers'
   | 'contact'
+  | 'privacyPolicy'
+  | 'termsAndConditions'
   // Service Subpages
   | 'services.website'
   | 'services.app'
@@ -154,6 +156,30 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
       'request project proposal',
     ],
     path: '/contact-us',
+  },
+  privacyPolicy: {
+    title: 'Privacy Policy — Data Protection, Cookies & Security',
+    description:
+      'Learn how EJNARSTUDIOS collects, uses, protects, and handles your personal and business data across our website, contact discovery forms, and services.',
+    keywords: [
+      'ejnarstudios privacy policy',
+      'data protection chennai agency',
+      'cookie policy',
+      'user data security',
+    ],
+    path: '/privacy-policy',
+  },
+  termsAndConditions: {
+    title: 'Terms & Conditions — Client Agreements, Licenses & IP Ownership',
+    description:
+      'Review the terms of service, project engagements, intellectual property transfer terms, marketplace licenses, and warranties of EJNARSTUDIOS.',
+    keywords: [
+      'ejnarstudios terms and conditions',
+      'agency client agreement',
+      'intellectual property terms',
+      'marketplace licensing terms',
+    ],
+    path: '/terms-and-conditions',
   },
 
   // 1. Development Services
