@@ -1,10 +1,11 @@
 'use client';
 
+import { useContactModal } from '@/context/ContactModalContext';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDown, ArrowUpRight, ShieldCheck, Sparkles, Zap } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // Fluid animation variants with custom cubic-bezier easing
 const containerVariants = {
@@ -47,6 +48,7 @@ const badgeVariant = {
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
+  const { openContactModal } = useContactModal();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -75,7 +77,7 @@ export default function Hero() {
     >
       {/* Dynamic Ambient Background Glows */}
       <div className="absolute inset-0 gold-radial-glow pointer-events-none" />
-      
+
       {/* Animated Floating Light Orbs */}
       <motion.div
         animate={{
@@ -148,12 +150,7 @@ export default function Hero() {
         <motion.div variants={badgeVariant} className="relative group mb-6">
           <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/30 via-primary/60 to-primary/30 rounded-full blur-[2px] opacity-75 group-hover:opacity-100 transition duration-500 animate-pulse" />
           <div className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-secondary/90 backdrop-blur-md border border-primary/40 text-primary text-xs font-semibold uppercase tracking-[0.2em] shadow-lg">
-            <motion.span
-              animate={{ rotate: [0, 15, -15, 0] }}
-              transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-            >
-              <Sparkles className="w-3.5 h-3.5 text-primary" />
-            </motion.span>
+
             <span>Award-Winning Creative & Digital Agency • Chennai</span>
           </div>
         </motion.div>
@@ -197,13 +194,21 @@ export default function Hero() {
             whileTap={{ scale: 0.97 }}
             className="w-full sm:w-auto"
           >
-            <Link
-              href="/contact-us"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wider uppercase bg-gold-gradient text-dark shadow-[0_0_30px_rgba(214,180,136,0.4)] hover:shadow-[0_0_45px_rgba(214,180,136,0.65)] transition-all duration-300 group"
+            <button
+              onClick={() =>
+                openContactModal({
+                  title: 'Start Your Project',
+                  subtitle: 'Studio Consultation',
+                  contextTag: 'Studio Architecture & Strategy',
+                  defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with EJNARSTUDIOS.',
+                  submitButtonText: 'Send Project Inquiry',
+                })
+              }
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wider uppercase bg-gold-gradient text-dark shadow-[0_0_30px_rgba(214,180,136,0.4)] hover:shadow-[0_0_45px_rgba(214,180,136,0.65)] transition-all duration-300 group cursor-pointer"
             >
               <span>Start Your Project</span>
               <ArrowUpRight className="w-4 h-4 text-dark transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+            </button>
           </motion.div>
 
           <motion.div

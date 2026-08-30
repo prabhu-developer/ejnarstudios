@@ -1,10 +1,10 @@
 'use client';
 
-import React from 'react';
-import Link from 'next/link';
-import { ArrowUpRight, Sparkles, PhoneCall } from 'lucide-react';
+import { useContactModal } from '@/context/ContactModalContext';
 import { BRAND } from '@/lib/constants';
 import { motion } from 'framer-motion';
+import { ArrowUpRight, PhoneCall } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 const ctaVariants = {
   hidden: { opacity: 0, y: 35, scale: 0.97 },
@@ -34,6 +34,9 @@ const itemVariants = {
 };
 
 export default function CtaBanner() {
+  const pathname = usePathname();
+  const { openContactModal } = useContactModal();
+
   return (
     <section className="py-24 px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-dark to-[#161616]">
       {/* Background glow and gold ambient mesh */}
@@ -73,7 +76,6 @@ export default function CtaBanner() {
 
           {/* Badge */}
           <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6 shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-primary animate-spin-slow" />
             <span>Ready for the next level?</span>
           </motion.div>
 
@@ -106,13 +108,23 @@ export default function CtaBanner() {
               whileTap={{ scale: 0.97 }}
               className="w-full sm:w-auto"
             >
-              <Link
-                href="/contact-us"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wider uppercase bg-gold-gradient text-dark hover:brightness-110 shadow-[0_0_25px_rgba(214,180,136,0.4)] hover:shadow-[0_0_40px_rgba(214,180,136,0.65)] transition-all duration-300 group"
+              <button
+                onClick={() => {
+                  if (pathname !== '/contact-us') {
+                    openContactModal({
+                      title: 'Start Your Project',
+                      subtitle: 'Studio Consultation',
+                      contextTag: 'Digital Flagship Roadmap',
+                      defaultMessage: 'We are ready to build our digital flagship with EJNARSTUDIOS. Please schedule an exploratory discovery session.',
+                      submitButtonText: 'Send Project Inquiry',
+                    });
+                  }
+                }}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wider uppercase bg-gold-gradient text-dark hover:brightness-110 shadow-[0_0_25px_rgba(214,180,136,0.4)] hover:shadow-[0_0_40px_rgba(214,180,136,0.65)] transition-all duration-300 group cursor-pointer"
               >
                 <span>Start a Project</span>
                 <ArrowUpRight className="w-4 h-4 text-dark transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Link>
+              </button>
             </motion.div>
 
             <motion.div

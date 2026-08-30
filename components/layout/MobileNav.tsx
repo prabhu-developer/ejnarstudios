@@ -15,6 +15,7 @@ import {
 import { BRAND, NAV_LINKS } from '@/lib/constants';
 import { SERVICE_CATEGORIES } from '@/lib/data/services';
 import Logo from '@/components/ui/Logo';
+import { useContactModal } from '@/context/ContactModalContext';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -24,6 +25,7 @@ interface MobileNavProps {
 export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [isServicesExpanded, setIsServicesExpanded] = useState(false);
+  const { openContactModal } = useContactModal();
 
   const toggleCategory = (id: string) => {
     setExpandedCategory(expandedCategory === id ? null : id);
@@ -147,14 +149,21 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
 
           {/* Bottom Action and Contact */}
           <div className="pt-6 border-t border-primary/20 space-y-4">
-            <Link
-              href="/contact-us"
-              onClick={onClose}
-              className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-gold-gradient text-dark font-display font-bold text-sm tracking-wider uppercase shadow-lg hover:brightness-110 transition-all active:scale-95"
+            <button
+              onClick={() => {
+                onClose();
+                openContactModal({
+                  title: 'Start Your Project',
+                  subtitle: 'Fast-Track Studio Consultation',
+                  defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with EJNARSTUDIOS.',
+                  submitButtonText: 'Send Project Inquiry',
+                })
+              }}
+              className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-gold-gradient text-dark font-display font-bold text-sm tracking-wider uppercase shadow-lg hover:brightness-110 transition-all active:scale-95 cursor-pointer"
             >
               <span>Start Your Project</span>
               <ArrowRight className="w-4 h-4" />
-            </Link>
+            </button>
 
             <div className="grid grid-cols-1 gap-2 pt-2 text-xs text-muted">
               <a href={`tel:${BRAND.contact.mobileRaw}`} className="flex items-center gap-2 hover:text-primary transition-colors">

@@ -1,8 +1,7 @@
 'use client';
 
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles } from 'lucide-react';
+import React from 'react';
 
 interface AnimatedHeroBannerProps {
   badgeText: string;
@@ -71,7 +70,6 @@ export default function AnimatedHeroBanner({
       >
         {/* Animated Badge */}
         <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-secondary/90 backdrop-blur-md border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6 shadow-md">
-          <Sparkles className="w-3.5 h-3.5 text-primary animate-pulse" />
           <span>{badgeText}</span>
         </motion.div>
 

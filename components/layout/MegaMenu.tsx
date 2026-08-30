@@ -23,6 +23,7 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
+import { useContactModal } from '@/context/ContactModalContext';
 
 const iconMap: Record<string, React.ElementType> = {
   Feather,
@@ -49,6 +50,7 @@ interface MegaMenuProps {
 
 export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);
+  const { openContactModal } = useContactModal();
 
   // Keyboard navigation & escape key
   useEffect(() => {
@@ -189,14 +191,22 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                     <span>View All Services</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
-                  <Link
-                    href="/contact-us"
-                    onClick={onClose}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-gold-gradient text-dark hover:brightness-110 shadow-md transition-all duration-200 transform hover:scale-105 active:scale-95"
+                  <button
+                    onClick={() => {
+                      onClose();
+                      openContactModal({
+                        title: 'Talk to Our Studio',
+                        subtitle: 'Expert Consultation',
+                        contextTag: 'Multi-Disciplinary Studio Inquiry',
+                        defaultMessage: 'I would like to explore your multi-disciplinary branding, web, and app engineering capabilities.',
+                        submitButtonText: 'Send Inquiry',
+                      });
+                    }}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-gold-gradient text-dark hover:brightness-110 shadow-md transition-all duration-200 transform hover:scale-105 active:scale-95 cursor-pointer"
                   >
                     <span>Talk to Us</span>
                     <ArrowRight className="w-3 h-3 text-dark" />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>

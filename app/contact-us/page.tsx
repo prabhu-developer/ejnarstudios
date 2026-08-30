@@ -7,99 +7,11 @@ import {
   TwitterIcon,
 } from '@/components/ui/SocialIcons';
 import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
+import UnifiedContactForm from '@/components/forms/UnifiedContactForm';
 import { BRAND } from '@/lib/constants';
-import { zodResolver } from '@hookform/resolvers/zod';
-import {
-  CheckCircle2,
-  Mail,
-  MapPin,
-  Phone,
-  Send
-} from 'lucide-react';
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-
-const contactSchema = z.object({
-  fullName: z.string().min(2, 'Full name is required'),
-  email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(8, 'Please enter a valid phone number'),
-  companyName: z.string().optional(),
-  service: z.string().min(1, 'Please select a service'),
-  budgetRange: z.string().optional(),
-  message: z.string().min(10, 'Please describe your project requirements (min 10 chars)'),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 export default function ContactUsPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      fullName: '',
-      email: '',
-      phone: '',
-      companyName: '',
-      service: '',
-      budgetRange: '',
-      message: '',
-    },
-  });
-
-  const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
-    if (typeof window !== 'undefined') {
-      try {
-        const confetti = (await import('canvas-confetti')).default;
-        confetti({
-          particleCount: 80,
-          spread: 60,
-          origin: { y: 0.6 },
-          colors: ['#d6b488', '#e8d0a8', '#ffffff'],
-        });
-      } catch (err) {
-        console.log('Form submission handled locally', err);
-      }
-    }
-    // Submit directly via browser client to static-compatible endpoint or fallback
-    const formEndpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
-    if (formEndpoint) {
-      try {
-        await fetch(formEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-        });
-      } catch (err) {
-        console.log('Form submission handled locally', err);
-      }
-    } else {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-    }
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    reset();
-  };
-
-  const servicesOptions = [
-    'Logo Design & Visual Identity',
-    'Full Corporate Branding & Stationery',
-    'Website Development (Next.js / SSG)',
-    'E-Commerce Development',
-    'Mobile App (iOS & Android)',
-    'SEO, SMO & Digital Marketing Retainer',
-    'Video Shoot, DI Color Grading & Ad Production',
-    'Digital Consulting & Tech Advisory',
-  ];
-
   return (
     <div className="pt-28 pb-20 bg-dark text-cream min-h-screen">
       {/* Animated Contact Header */}
@@ -113,142 +25,14 @@ export default function ContactUsPage() {
       {/* Split-Screen Contact Block */}
       <section className="py-20 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Column: Form (7 Cols) */}
+          {/* Left Column: Reusable Unified Form (7 Cols) */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-2xl bg-dark-secondary/80 border border-primary/20 shadow-2xl">
-              <div className="mb-8">
-                <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary block mb-1">
-                  Discovery Form
-                </span>
-                <h3 className="font-display font-bold text-2xl text-cream">
-                  Tell Us About Your Project
-                </h3>
-              </div>
-
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
-                      Your Name *
-                    </label>
-                    <input
-                      {...register('fullName')}
-                      type="text"
-                      placeholder="e.g. Rahul Sharma"
-                      className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
-                    />
-                    {errors.fullName && (
-                      <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.fullName.message}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
-                      Corporate Email *
-                    </label>
-                    <input
-                      {...register('email')}
-                      type="email"
-                      placeholder="rahul@company.com"
-                      className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
-                    />
-                    {errors.email && (
-                      <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.email.message}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
-                      Phone Number *
-                    </label>
-                    <input
-                      {...register('phone')}
-                      type="tel"
-                      placeholder="+91 90032 06449"
-                      className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
-                    />
-                    {errors.phone && (
-                      <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.phone.message}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
-                      Service of Interest *
-                    </label>
-                    <select
-                      {...register('service')}
-                      className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner appearance-none cursor-pointer"
-                    >
-                      <option value="">Select a service...</option>
-                      {servicesOptions.map((opt) => (
-                        <option key={opt} value={opt}>
-                          {opt}
-                        </option>
-                      ))}
-                    </select>
-                    {errors.service && (
-                      <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.service.message}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
-                    Target Project Budget (Optional)
-                  </label>
-                  <select
-                    {...register('budgetRange')}
-                    className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner appearance-none cursor-pointer"
-                  >
-                    <option value="">Select an investment range...</option>
-                    <option value="₹50,000 – ₹1,50,000">₹50,000 – ₹1,50,000 (Starter / Design Plan)</option>
-                    <option value="₹1,50,000 – ₹4,00,000">₹1,50,000 – ₹4,00,000 (Development / Storefront)</option>
-                    <option value="₹4,00,000 – ₹10,00,000+">₹4,00,000 – ₹10,00,000+ (Full Suite / Enterprise)</option>
-                    <option value="Monthly Retainer">Monthly Growth Retainer</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
-                    Project Requirements & Timeline *
-                  </label>
-                  <textarea
-                    {...register('message')}
-                    rows={4}
-                    placeholder="Briefly describe your objectives, target launch date, and key deliverables..."
-                    className="w-full bg-dark border border-white/10 rounded-3xl p-5 text-xs text-cream focus:outline-none focus:border-primary transition-colors resize-none shadow-inner"
-                  />
-                  {errors.message && (
-                    <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.message.message}</p>
-                  )}
-                </div>
-
-                {isSuccess && (
-                  <div className="p-4 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-400 text-xs font-semibold flex items-center justify-center gap-2 text-center">
-                    <CheckCircle2 className="w-4 h-4 shrink-0" />
-                    <span>Thank you! Your project inquiry has been received. Our leads will respond within 24 hours.</span>
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-4 rounded-full bg-gold-gradient text-dark font-display font-bold text-xs uppercase tracking-wider hover:brightness-110 shadow-lg hover:shadow-[0_0_25px_rgba(214,180,136,0.5)] transition-all flex items-center justify-center gap-2 disabled:opacity-50 transform hover:scale-[1.01] active:scale-95"
-                >
-                  {isSubmitting ? (
-                    <span>Dispatching Inquiry...</span>
-                  ) : (
-                    <>
-                      <span>Send Project Inquiry</span>
-                      <Send className="w-4 h-4 text-dark" />
-                    </>
-                  )}
-                </button>
-              </form>
-            </div>
+            <UnifiedContactForm
+              title="Tell Us About Your Project"
+              subtitle="Discovery Form"
+              submitButtonText="Send Project Inquiry"
+              defaultMessage="I would like to discuss our project objectives, target launch date, and key deliverables with EJNARSTUDIOS."
+            />
           </div>
 
           {/* Right Column: Address, Phone, Dark Map Embed (5 Cols) */}

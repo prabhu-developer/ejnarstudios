@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
@@ -58,7 +58,7 @@ export default function LoadingScreen() {
               className="text-center"
             >
               <h2 className="font-display font-bold text-2xl tracking-widest text-cream">
-                EJNAR<span className="text-primary font-normal">STUDIOS</span>
+                EJNAR{" "}<span className="text-primary font-normal">STUDIOS</span>
               </h2>
               <p className="text-[10px] tracking-[0.4em] uppercase text-muted mt-1 font-mono">
                 Chennai • Creative Agency

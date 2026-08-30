@@ -5,6 +5,7 @@ import { ArrowRight, ChevronRight, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useContactModal } from '@/context/ContactModalContext';
 
 interface ServiceSubpageHeroProps {
   service: ServiceItem;
@@ -49,6 +50,8 @@ const cardVisualVariants = {
 };
 
 export default function ServiceSubpageHero({ service }: ServiceSubpageHeroProps) {
+  const { openContactModal } = useContactModal();
+
   return (
     <section className="relative pt-32 pb-20 px-6 lg:px-8 bg-dark overflow-hidden border-b border-white/5">
       {/* Background Animated Glow */}
@@ -154,13 +157,21 @@ export default function ServiceSubpageHero({ service }: ServiceSubpageHeroProps)
                 whileTap={{ scale: 0.97 }}
                 className="w-full sm:w-auto"
               >
-                <Link
-                  href="/contact-us"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wider uppercase bg-gold-gradient text-dark hover:brightness-110 shadow-[0_0_25px_rgba(214,180,136,0.35)] hover:shadow-[0_0_35px_rgba(214,180,136,0.55)] transition-all duration-300 group"
+                <button
+                  onClick={() =>
+                    openContactModal({
+                      title: `Book ${service.name} Consultation`,
+                      subtitle: `${service.category} • Strategy Session`,
+                      contextTag: `${service.name} Advisory`,
+                      defaultMessage: `I am interested in scheduling a consultation for ${service.name}. We would like to explore your capabilities and pricing roadmap.`,
+                      submitButtonText: 'Request Consultation',
+                    })
+                  }
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wider uppercase bg-gold-gradient text-dark hover:brightness-110 shadow-[0_0_25px_rgba(214,180,136,0.35)] hover:shadow-[0_0_35px_rgba(214,180,136,0.55)] transition-all duration-300 group cursor-pointer"
                 >
                   <span>Book {service.name} Consultation</span>
                   <ArrowRight className="w-4 h-4 text-dark transition-transform duration-300 group-hover:translate-x-1" />
-                </Link>
+                </button>
               </motion.div>
 
               <motion.div

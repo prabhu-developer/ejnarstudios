@@ -199,7 +199,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     heroSubheadline: 'Frictionless checkout, lightning search, and robust inventory management for modern brands.',
     description: 'We develop high-converting online retail experiences like Jucoholic and DimahFashions. From custom Shopify Plus and WooCommerce setups to headless Next.js Commerce solutions, we craft shopping experiences that turn casual browsers into repeat buyers.',
     icon: 'ShoppingBag',
-    heroImage: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80',
+    heroImage: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80',
     heroImageAlt: 'Conversion-optimized e-commerce storefront with cart drawer and payment gateway integration',
     showcaseImage: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=80',
     showcaseImageAlt: 'Modern retail storefront and automated logistics management dashboard',

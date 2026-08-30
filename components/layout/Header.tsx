@@ -8,6 +8,7 @@ import { NAV_LINKS } from '@/lib/constants';
 import Logo from '@/components/ui/Logo';
 import MegaMenu from './MegaMenu';
 import MobileNav from './MobileNav';
+import { useContactModal } from '@/context/ContactModalContext';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,6 +16,7 @@ export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const pathname = usePathname();
   const leaveTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const { openContactModal } = useContactModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -125,7 +127,18 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact-us"
-              className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-gold-gradient text-dark hover:brightness-110 shadow-[0_0_15px_rgba(214,180,136,0.3)] hover:shadow-[0_0_22px_rgba(214,180,136,0.5)] transition-all duration-300 transform active:scale-95 hover:scale-105"
+              onClick={(e) => {
+                if (pathname !== '/contact-us') {
+                  e.preventDefault();
+                  openContactModal({
+                    title: 'Start Your Project',
+                    subtitle: 'Fast-Track Studio Consultation',
+                    defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with EJNARSTUDIOS.',
+                    submitButtonText: 'Send Project Inquiry',
+                  });
+                }
+              }}
+              className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-gold-gradient text-dark hover:brightness-110 shadow-[0_0_15px_rgba(214,180,136,0.3)] hover:shadow-[0_0_22px_rgba(214,180,136,0.5)] transition-all duration-300 transform active:scale-95 hover:scale-105 cursor-pointer"
             >
               <span>Start a Project</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-dark" />
@@ -134,7 +147,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileNavOpen(true)}
-              className="lg:hidden p-2.5 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
+              className="lg:hidden p-2.5 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-colors cursor-pointer"
               aria-label="Open Mobile Menu"
             >
               <Menu className="w-5 h-5" />

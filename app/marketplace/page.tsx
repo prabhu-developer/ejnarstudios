@@ -3,6 +3,7 @@
 import CtaBanner from '@/components/sections/CtaBanner';
 import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import { MARKETPLACE_PRODUCTS, MarketplaceProduct } from '@/lib/data/marketplace';
+import { useContactModal } from '@/context/ContactModalContext';
 import {
   ArrowRight,
   Check,
@@ -16,7 +17,7 @@ import { useState } from 'react';
 export default function MarketplacePage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeModalProduct, setActiveModalProduct] = useState<MarketplaceProduct | null>(null);
-  const [inquirySuccess, setInquirySuccess] = useState(false);
+  const { openContactModal } = useContactModal();
 
   const categories = [
     'All',
@@ -31,12 +32,15 @@ export default function MarketplacePage() {
       ? MARKETPLACE_PRODUCTS
       : MARKETPLACE_PRODUCTS.filter((p) => p.category === selectedCategory);
 
-  const handleInquiry = (product: MarketplaceProduct) => {
-    setInquirySuccess(true);
-    setTimeout(() => {
-      setInquirySuccess(false);
-      setActiveModalProduct(null);
-    }, 2500);
+  const handleAcquire = (product: MarketplaceProduct) => {
+    setActiveModalProduct(null);
+    openContactModal({
+      title: `Acquire ${product.title}`,
+      subtitle: `${product.category} • Turnkey License`,
+      contextTag: `Turnkey Asset • ${product.category}`,
+      defaultMessage: `I am interested in acquiring the turnkey license for "${product.title}" (${product.price}). Please share the instant license details and invoice with me.`,
+      submitButtonText: 'Request License Access',
+    });
   };
 
   return (
@@ -149,8 +153,8 @@ export default function MarketplacePage() {
                       <span>Preview</span>
                     </button>
                     <button
-                      onClick={() => setActiveModalProduct(product)}
-                      className="py-2.5 rounded-full bg-gold-gradient text-dark text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1 hover:brightness-110 shadow-md transition-all transform active:scale-95 hover:scale-105"
+                      onClick={() => handleAcquire(product)}
+                      className="py-2.5 rounded-full bg-gold-gradient text-dark text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1 hover:brightness-110 shadow-md transition-all transform active:scale-95 hover:scale-105 cursor-pointer"
                     >
                       <span>Get This</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -219,19 +223,12 @@ export default function MarketplacePage() {
                 </span>
               </div>
 
-              {inquirySuccess ? (
-                <div className="px-6 py-3 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-400 text-xs font-bold flex items-center gap-2">
-                  <Check className="w-4 h-4" />
-                  <span>Inquiry Received! We'll contact you.</span>
-                </div>
-              ) : (
-                <button
-                  onClick={() => handleInquiry(activeModalProduct)}
-                  className="px-8 py-3.5 rounded-full bg-gold-gradient text-dark font-display font-bold text-xs uppercase tracking-wider hover:brightness-110 shadow-lg hover:shadow-[0_0_25px_rgba(214,180,136,0.5)] transition-all transform active:scale-95 hover:scale-105"
-                >
-                  Acquire Template License
-                </button>
-              )}
+              <button
+                onClick={() => handleAcquire(activeModalProduct)}
+                className="px-8 py-3.5 rounded-full bg-gold-gradient text-dark font-display font-bold text-xs uppercase tracking-wider hover:brightness-110 shadow-lg hover:shadow-[0_0_25px_rgba(214,180,136,0.5)] transition-all transform active:scale-95 hover:scale-105 cursor-pointer"
+              >
+                Acquire Template License
+              </button>
             </div>
           </div>
         </div>

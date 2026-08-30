@@ -6,8 +6,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ExternalLink,
-  Layers,
-  Sparkles
+  Layers
 } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react';
@@ -199,7 +198,6 @@ export default function PortfolioGrid() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-4">
-              <Sparkles className="w-3.5 h-3.5" />
               <span>Selected Client Case Studies</span>
             </div>
             <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight">

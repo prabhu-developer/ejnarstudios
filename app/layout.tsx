@@ -11,6 +11,8 @@ import ScrollProgress from '@/components/layout/ScrollProgress';
 import LoadingScreen from '@/components/layout/LoadingScreen';
 import SmoothScroll from '@/components/layout/SmoothScroll';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
+import { ContactModalProvider } from '@/context/ContactModalContext';
+import ContactModal from '@/components/modals/ContactModal';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -44,29 +46,34 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-dark text-cream font-body antialiased selection:bg-primary selection:text-dark">
-        {/* Subtle Film Grain Noise Texture */}
-        <div className="grain-overlay" aria-hidden="true" />
+        <ContactModalProvider>
+          {/* Subtle Film Grain Noise Texture */}
+          <div className="grain-overlay" aria-hidden="true" />
 
-        {/* Global Loading Screen Animation */}
-        <LoadingScreen />
+          {/* Global Loading Screen Animation */}
+          <LoadingScreen />
 
-        {/* Scroll Progress Bar */}
-        <ScrollProgress />
+          {/* Scroll Progress Bar */}
+          <ScrollProgress />
 
-        {/* Custom Desktop Magnetic Cursor */}
-        <CustomCursor />
+          {/* Custom Desktop Magnetic Cursor */}
+          <CustomCursor />
 
-        {/* Smooth Inertial Scrolling Engine */}
-        <SmoothScroll>
-          <div className="flex min-h-screen flex-col justify-between">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
-        </SmoothScroll>
+          {/* Smooth Inertial Scrolling Engine */}
+          <SmoothScroll>
+            <div className="flex min-h-screen flex-col justify-between">
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </div>
+          </SmoothScroll>
 
-        {/* Floating WhatsApp Action */}
-        <WhatsAppButton />
+          {/* Global Accessible Contact Modal */}
+          <ContactModal />
+
+          {/* Floating WhatsApp Action */}
+          <WhatsAppButton />
+        </ContactModalProvider>
       </body>
     </html>
   );

@@ -2,56 +2,29 @@
 
 import CtaBanner from '@/components/sections/CtaBanner';
 import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
-import { JOB_OPENINGS } from '@/lib/data/jobs';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { JOB_OPENINGS, JobOpening } from '@/lib/data/jobs';
 import {
   ArrowRight,
   CheckCircle2,
   ChevronDown,
   Clock,
   GraduationCap,
+  Mail,
   MapPin,
-  Send,
   Sparkles,
-  Zap
+  Zap,
 } from 'lucide-react';
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-
-const applicationSchema = z.object({
-  fullName: z.string().min(2, 'Full name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(10, 'Please enter a valid phone number'),
-  role: z.string().min(1, 'Please select a target role'),
-  portfolioUrl: z.string().url('Please enter a valid URL (e.g., https://behance.net/you or github.com/you)'),
-  message: z.string().min(10, 'Please tell us briefly about yourself'),
-});
-
-type ApplicationFormData = z.infer<typeof applicationSchema>;
 
 export default function CareersPage() {
   const [expandedJobId, setExpandedJobId] = useState<string | null>(JOB_OPENINGS[0].id);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    reset,
-    formState: { errors },
-  } = useForm<ApplicationFormData>({
-    resolver: zodResolver(applicationSchema),
-  });
-
-  const onSubmit = async (data: ApplicationFormData) => {
-    setIsSubmitting(true);
-    // Simulate static form submission to client endpoint or fallback
-    await new Promise((resolve) => setTimeout(resolve, 1200));
-    setIsSubmitting(false);
-    setIsSuccess(true);
-    reset();
+  const getJobMailtoUrl = (job: JobOpening) => {
+    const subject = encodeURIComponent(`Application for ${job.title} - [Your Name]`);
+    const body = encodeURIComponent(
+      `Dear EJNARSTUDIOS Talent Team,\n\nI am writing to express my strong interest in the ${job.title} position (${job.department} • ${job.location}).\n\nCandidate Details:\n- Full Name: \n- Phone Number: \n- Portfolio / GitHub / Showreel URL: \n- Current Location: \n- Years of Experience: \n\nBrief Introduction & Why EJNARSTUDIOS:\n[Please share a few sentences about your proudest projects and design / engineering background]\n\nBest regards,\n[Your Name]`
+    );
+    return `mailto:hr@ejnarstudios.com?subject=${subject}&body=${body}`;
   };
 
   const perks = [
@@ -61,57 +34,57 @@ export default function CareersPage() {
       icon: Sparkles,
     },
     {
-      title: 'Learning & Growth',
-      desc: 'Annual conference allowances, design book stipends, and continuous mentorship from leadership.',
+      title: 'High-Impact Ownership',
+      desc: 'No corporate middle management layers. You own client-facing deliverables from day one.',
+      icon: Zap,
+    },
+    {
+      title: 'Learning & Equipment Grant',
+      desc: 'Generous stipend for design books, courses, Figma plugins, and premium hardware rigs.',
       icon: GraduationCap,
     },
     {
-      title: 'Flexible Environment',
-      desc: 'Hybrid studio options, flexible daily hours, and focus on output over hours logged.',
+      title: 'Predictable Work Rhythm',
+      desc: 'Disciplined sprint pacing with strict boundaries against uncompensated agency crunch.',
       icon: Clock,
-    },
-    {
-      title: 'High-Impact Ownership',
-      desc: 'Work directly on flagship products for prominent enterprise clients with full attribution.',
-      icon: Zap,
     },
   ];
 
   return (
     <div className="pt-28 bg-dark text-cream min-h-screen">
-      {/* Careers Animated Hero */}
+      {/* Animated Careers Hero */}
       <AnimatedHeroBanner
-        badgeText="Join Our Creative Ranks"
-        headlinePrefix="Build Unprecedented"
-        highlightText="Digital Experiences."
-        description="As a small, impactful team, every contribution makes a visible difference. We value curiosity over convention and treat every project as a chance to build something extraordinary."
+        badgeText="Deck p.27 • Talent & Careers"
+        headlinePrefix="Join Our Creative"
+        highlightText="Studio Roster."
+        description="We are a small, elite squad of digital artisans in Chennai crafting extraordinary branding and software. We hire obsessives who care deeply about craft."
       />
 
-      {/* Culture Perks Grid */}
-      <section className="py-20 px-6 lg:px-8 bg-[#151515] border-b border-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14">
+      {/* Culture & Perks Grid */}
+      <section className="py-20 px-6 lg:px-8 border-b border-white/5 bg-dark-secondary/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
             <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-              Life at EJNARSTUDIOS
+              Studio Environment
             </span>
-            <h2 className="font-display font-black text-3xl sm:text-4xl text-cream">
-              Why You'll <span className="text-gold-gradient">Thrive Here.</span>
+            <h2 className="font-display font-black text-2xl sm:text-3xl text-cream">
+              Why Craft Your Career at <span className="text-gold-gradient">EJNARSTUDIOS.</span>
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {perks.map((perk, pIdx) => {
               const Icon = perk.icon;
               return (
                 <div
                   key={pIdx}
-                  className="p-6 rounded-xl bg-dark-secondary border border-white/5 hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
+                  className="p-6 rounded-2xl bg-dark-secondary/70 border border-white/5 hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary w-fit mb-4">
-                      <Icon className="w-6 h-6" />
+                    <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-4">
+                      <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="font-display font-bold text-lg text-cream mb-2">
+                    <h3 className="font-display font-bold text-base text-cream mb-2">
                       {perk.title}
                     </h3>
                     <p className="text-xs text-muted leading-relaxed">
@@ -125,19 +98,21 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* Open Roles Accordion */}
-      <section className="py-24 px-6 lg:px-8">
+      {/* Open Positions Accordion */}
+      <section id="openings" className="py-24 px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-              Current Openings
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+            <div>
+              <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
+                Immediate Openings
+              </span>
+              <h2 className="font-display font-black text-3xl sm:text-4xl text-cream">
+                Explore Available <span className="text-gold-gradient">Roles.</span>
+              </h2>
+            </div>
+            <span className="text-xs font-mono text-primary font-semibold">
+              {JOB_OPENINGS.length} Active Positions in Chennai
             </span>
-            <h2 className="font-display font-black text-3xl sm:text-4xl text-cream">
-              Explore Available <span className="text-gold-gradient">Positions.</span>
-            </h2>
-            <p className="text-xs sm:text-sm text-muted mt-2">
-              Select a position to view responsibilities, requirements, and apply directly.
-            </p>
           </div>
 
           <div className="space-y-4">
@@ -146,11 +121,15 @@ export default function CareersPage() {
               return (
                 <div
                   key={job.id}
-                  className="rounded-xl bg-dark-secondary border border-white/10 overflow-hidden transition-all duration-300"
+                  className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                    isExpanded
+                      ? 'bg-dark-secondary border-primary/40 shadow-xl'
+                      : 'bg-dark-secondary/50 border-white/5 hover:border-white/20'
+                  }`}
                 >
                   <button
                     onClick={() => setExpandedJobId(isExpanded ? null : job.id)}
-                    className="w-full p-6 text-left flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-white/[0.02]"
+                    className="w-full p-6 text-left flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-white/[0.02] cursor-pointer"
                   >
                     <div>
                       <div className="flex items-center gap-3 mb-1">
@@ -211,11 +190,15 @@ export default function CareersPage() {
                         </div>
                       </div>
 
-                      <div className="pt-4 flex items-center justify-between border-t border-white/5">
+                      <div className="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-white/5">
+                        <div className="flex items-center gap-2 text-xs text-muted">
+                          <Mail className="w-4 h-4 text-primary" />
+                          <span>Direct inquiries: <strong className="text-cream">hr@ejnarstudios.com</strong></span>
+                        </div>
+
                         <a
-                          href="#application-form"
-                          onClick={() => setValue('role', job.title)}
-                          className="px-6 py-2.5 rounded-full bg-gold-gradient text-dark text-xs font-bold uppercase tracking-wider hover:brightness-110 shadow-md inline-flex items-center gap-2 transform hover:scale-105 active:scale-95 transition-all"
+                          href={getJobMailtoUrl(job)}
+                          className="px-7 py-3 rounded-full bg-gold-gradient text-dark text-xs font-bold uppercase tracking-wider hover:brightness-110 shadow-md inline-flex items-center justify-center gap-2 transform hover:scale-105 active:scale-95 transition-all"
                         >
                           <span>Apply For This Position</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -227,144 +210,6 @@ export default function CareersPage() {
               );
             })}
           </div>
-        </div>
-      </section>
-
-      {/* Application Form Section */}
-      <section id="application-form" className="py-24 px-6 lg:px-8 bg-[#161616] border-t border-white/5">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-              Direct Application
-            </span>
-            <h2 className="font-display font-black text-3xl sm:text-4xl text-cream">
-              Submit Your <span className="text-gold-gradient">Candidate Profile.</span>
-            </h2>
-          </div>
-
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-dark-secondary/80 p-8 sm:p-10 rounded-3xl border border-primary/20 shadow-2xl">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
-                  Full Name *
-                </label>
-                <input
-                  {...register('fullName')}
-                  type="text"
-                  placeholder="e.g. Anand Kumar"
-                  className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
-                />
-                {errors.fullName && (
-                  <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.fullName.message}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
-                  Email Address *
-                </label>
-                <input
-                  {...register('email')}
-                  type="email"
-                  placeholder="anand@example.com"
-                  className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
-                />
-                {errors.email && (
-                  <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.email.message}</p>
-                )}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
-                  Phone Number *
-                </label>
-                <input
-                  {...register('phone')}
-                  type="tel"
-                  placeholder="+91 98765 43210"
-                  className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
-                />
-                {errors.phone && (
-                  <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.phone.message}</p>
-                )}
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
-                  Target Role *
-                </label>
-                <select
-                  {...register('role')}
-                  className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner appearance-none cursor-pointer"
-                >
-                  <option value="">Select a role...</option>
-                  {JOB_OPENINGS.map((j) => (
-                    <option key={j.id} value={j.title}>
-                      {j.title}
-                    </option>
-                  ))}
-                  <option value="General Application">Other / General Talent Pool</option>
-                </select>
-                {errors.role && (
-                  <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.role.message}</p>
-                )}
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
-                Portfolio / GitHub / Showreel Link *
-              </label>
-              <input
-                {...register('portfolioUrl')}
-                type="url"
-                placeholder="https://behance.net/profile or https://github.com/profile"
-                className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
-              />
-              {errors.portfolioUrl && (
-                <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.portfolioUrl.message}</p>
-              )}
-            </div>
-
-            <div>
-              <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
-                Brief Introduction & Past Impact *
-              </label>
-              <textarea
-                {...register('message')}
-                rows={4}
-                placeholder="Tell us about the proudest project you built and why you want to join EJNARSTUDIOS..."
-                className="w-full bg-dark border border-white/10 rounded-3xl p-5 text-xs text-cream focus:outline-none focus:border-primary transition-colors resize-none shadow-inner"
-              />
-              {errors.message && (
-                <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.message.message}</p>
-              )}
-            </div>
-
-            {isSuccess && (
-              <div className="p-4 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-400 text-xs font-semibold flex items-center justify-center gap-2 text-center">
-                <CheckCircle2 className="w-4 h-4 shrink-0" />
-                <span>Application submitted successfully! Our talent lead will review your portfolio.</span>
-              </div>
-            )}
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full py-4 rounded-full bg-gold-gradient text-dark font-display font-bold text-xs uppercase tracking-wider hover:brightness-110 shadow-lg hover:shadow-[0_0_25px_rgba(214,180,136,0.5)] transition-all flex items-center justify-center gap-2 disabled:opacity-50 transform hover:scale-[1.01] active:scale-95"
-            >
-              {isSubmitting ? (
-                <span>Submitting Profile...</span>
-              ) : (
-                <>
-                  <span>Submit Application</span>
-                  <Send className="w-4 h-4 text-dark" />
-                </>
-              )}
-            </button>
-          </form>
         </div>
       </section>
 

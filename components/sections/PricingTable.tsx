@@ -4,9 +4,11 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Check, Minus, ArrowRight, Sparkles, HelpCircle } from 'lucide-react';
 import { PACKAGE_PLANS, PACKAGE_FEATURES } from '@/lib/data/packages';
+import { useContactModal } from '@/context/ContactModalContext';
 
 export default function PricingTable() {
   const [selectedPlanMobile, setSelectedPlanMobile] = useState('marketing-plan-2');
+  const { openContactModal } = useContactModal();
 
   return (
     <section id="packages" className="py-24 px-6 lg:px-8 bg-dark relative overflow-hidden">
@@ -64,16 +66,24 @@ export default function PricingTable() {
                   </div>
                 </div>
 
-                <Link
-                  href="/contact-us"
-                  className={`w-full py-2.5 rounded-full text-center text-xs font-display font-bold uppercase tracking-wider transition-all duration-200 transform hover:scale-105 active:scale-95 ${
+                <button
+                  onClick={() =>
+                    openContactModal({
+                      title: `Discuss ${plan.name}`,
+                      subtitle: `${plan.tagline} • Modular Scope`,
+                      contextTag: `${plan.name} Tier`,
+                      defaultMessage: `I would like to discuss the ${plan.name} (${plan.tagline}) tier for our business. Please share full deliverables specifications and timeline.`,
+                      submitButtonText: 'Request Plan Discussion',
+                    })
+                  }
+                  className={`w-full py-2.5 rounded-full text-center text-xs font-display font-bold uppercase tracking-wider transition-all duration-200 transform hover:scale-105 active:scale-95 cursor-pointer ${
                     isPopular
                       ? 'bg-gold-gradient text-dark hover:brightness-110 shadow-md'
                       : 'bg-white/[0.05] text-cream hover:bg-primary hover:text-dark'
                   }`}
                 >
                   Discuss Plan
-                </Link>
+                </button>
               </div>
             );
           })}
