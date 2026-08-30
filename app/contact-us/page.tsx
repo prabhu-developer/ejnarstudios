@@ -1,5 +1,4 @@
-'use client';
-
+import React from 'react';
 import {
   FacebookIcon,
   InstagramIcon,
@@ -9,7 +8,10 @@ import {
 import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import UnifiedContactForm from '@/components/forms/UnifiedContactForm';
 import { BRAND } from '@/lib/constants';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { Mail, MapPin, Phone } from 'lucide-react';
+
+export const metadata = getPageMetadata('contact');
 
 export default function ContactUsPage() {
   return (

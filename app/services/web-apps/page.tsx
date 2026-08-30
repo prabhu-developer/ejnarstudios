@@ -3,16 +3,13 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'web-apps')!;
 
-export const metadata = constructMetadata({
-  title: 'Custom Web Applications & SaaS Development Chennai — React.js, Node.js, Laravel & Angular',
-  description: 'Bespoke web applications, custom admin panels, interactive dashboards, and SaaS portals engineered with React.js, Node.js, Express, MongoDB, Laravel, Angular, and cloud databases.',
-  path: '/services/web-apps',
-});
+export const metadata = getPageMetadata('services.webApps');
 
 export default function WebAppsPage() {
   const schema = generateServiceSchema({

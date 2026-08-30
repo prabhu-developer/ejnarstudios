@@ -3,16 +3,13 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'software-solutions')!;
 
-export const metadata = constructMetadata({
-  title: 'POS Billing Software, ERP & Electron JS Desktop Apps Chennai',
-  description: 'Custom retail POS billing software, enterprise ERP systems, and cross-platform Electron JS desktop applications with offline SQLite sync and thermal printing.',
-  path: '/services/software-solutions',
-});
+export const metadata = getPageMetadata('services.softwareSolutions');
 
 export default function SoftwareSolutionsPage() {
   const schema = generateServiceSchema({

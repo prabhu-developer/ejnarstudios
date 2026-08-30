@@ -4,7 +4,8 @@ import { SERVICES_DATA } from '@/lib/data/services';
 import { LOGO_TYPES } from '@/lib/data/logo-types';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import {
   Type,
   Image as ImageIcon,
@@ -27,11 +28,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 const service = SERVICES_DATA.find((s) => s.slug === 'logo')!;
 
-export const metadata = constructMetadata({
-  title: 'Logo Design & Visual Identity Systems in Chennai',
-  description: 'Bespoke corporate logo design covering 6 core typologies: Wordmark, Pictorial, Emblem, Abstract, Mascot, and Combination marks. 100% vector scalability.',
-  path: '/services/logo',
-});
+export const metadata = getPageMetadata('services.logo');
 
 export default function LogoDesignPage() {
   const schema = generateServiceSchema({

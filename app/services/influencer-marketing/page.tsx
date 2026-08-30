@@ -3,16 +3,13 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { Users, CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'influencer-marketing')!;
 
-export const metadata = constructMetadata({
-  title: 'Influencer Marketing Agency Chennai — Creator Campaigns & Collaborations',
-  description: 'Targeted micro and nano influencer campaigns, creator network sourcing, gifting, deliverable tracking, and trackable affiliate funnels.',
-  path: '/services/influencer-marketing',
-});
+export const metadata = getPageMetadata('services.influencerMarketing');
 
 export default function InfluencerMarketingPage() {
   const schema = generateServiceSchema({

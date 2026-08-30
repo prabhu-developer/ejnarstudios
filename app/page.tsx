@@ -8,12 +8,9 @@ import StatsCounter from '@/components/sections/StatsCounter';
 import AwardsTimeline from '@/components/sections/AwardsTimeline';
 import TestimonialSection from '@/components/sections/TestimonialSection';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 
-export const metadata = constructMetadata({
-  title: 'EJNARSTUDIOS — Creative Branding, Web/App Development & Marketing Agency Chennai',
-  description: 'Award-winning creative digital agency in Chennai crafting luxury brand identities, high-performance Next.js websites, mobile apps, and full-funnel digital marketing.',
-});
+export const metadata = getPageMetadata('home');
 
 export default function HomePage() {
   return (

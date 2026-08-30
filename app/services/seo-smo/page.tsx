@@ -3,16 +3,13 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { TrendingUp, BarChart2, Search, Share2, Target, CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'seo-smo')!;
 
-export const metadata = constructMetadata({
-  title: 'SEO & SMO Services Chennai — Organic Search Ranking & Social Optimization',
-  description: 'Data Analytics → SEO → SMO → Targeted Campaigns funnel. High-authority link building, long-form content cadence, and search engine ranking acceleration.',
-  path: '/services/seo-smo',
-});
+export const metadata = getPageMetadata('services.seoSmo');
 
 export default function SeoSmoPage() {
   const schema = generateServiceSchema({

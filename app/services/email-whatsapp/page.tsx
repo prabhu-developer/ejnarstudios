@@ -3,16 +3,13 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { MessageSquare, CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'email-whatsapp')!;
 
-export const metadata = constructMetadata({
-  title: 'WhatsApp Business API & Email Marketing Automation Agency Chennai',
-  description: 'Automated WhatsApp broadcasts with 98% open rates, green tick verification, custom HTML email flows, and retention revenue engineering.',
-  path: '/services/email-whatsapp',
-});
+export const metadata = getPageMetadata('services.emailWhatsapp');
 
 export default function EmailWhatsappPage() {
   const schema = generateServiceSchema({

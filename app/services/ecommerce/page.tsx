@@ -5,7 +5,8 @@ import { SERVICES_DATA } from '@/lib/data/services';
 import { PORTFOLIO_DATA } from '@/lib/data/portfolio';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { ShoppingBag, ArrowUpRight, CheckCircle2, ShieldCheck, Zap, ExternalLink } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'ecommerce')!;
@@ -13,11 +14,7 @@ const relatedProjects = PORTFOLIO_DATA.filter((p) =>
   ['applepoint', 'fefine'].includes(p.slug) || p.categoryTag === 'E-commerce'
 );
 
-export const metadata = constructMetadata({
-  title: 'E-commerce Development Company Chennai — Shopify, WooCommerce & Custom Stores',
-  description: 'Scalable e-commerce store engineering with frictionless checkout, payment gateway integrations, and inventory automation. Case studies: Apple Point & Fefine.',
-  path: '/services/ecommerce',
-});
+export const metadata = getPageMetadata('services.ecommerce');
 
 export default function EcommercePage() {
   const schema = generateServiceSchema({

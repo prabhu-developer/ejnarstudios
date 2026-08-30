@@ -3,16 +3,13 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { Video, Film, Camera, Sparkles, CheckCircle2, Clapperboard } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'video-design')!;
 
-export const metadata = constructMetadata({
-  title: 'Cinematic Video Production, Ad-Shoots & DI Color Grading Chennai',
-  description: 'Full commercial production, 4K multi-cam filming, drone aerial cinematography, DaVinci Resolve DI color grading, corporate films, and viral social reels.',
-  path: '/services/video-design',
-});
+export const metadata = getPageMetadata('services.videoDesign');
 
 export default function VideoDesignPage() {
   const schema = generateServiceSchema({

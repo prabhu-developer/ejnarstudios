@@ -43,11 +43,9 @@ const iconMap: Record<string, React.ElementType> = {
   Video,
 };
 
-export const metadata = constructMetadata({
-  title: 'Services & Digital Capabilities — EJNARSTUDIOS Chennai',
-  description: 'Explore our 14 end-to-end services across Design & Branding, Website & Mobile Development, Marketing & Growth, and Cinema Video Production.',
-  path: '/services',
-});
+import { getPageMetadata } from '@/lib/metadata.config';
+
+export const metadata = getPageMetadata('services');
 
 export default function ServicesPage() {
   const requirementsWeConsider = [

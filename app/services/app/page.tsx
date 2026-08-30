@@ -5,17 +5,14 @@ import { PORTFOLIO_DATA } from '@/lib/data/portfolio';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import AppCaseStudySlider from '@/components/ui/AppCaseStudySlider';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'app')!;
 const byaddiProject = PORTFOLIO_DATA.find((p) => p.slug === 'byaddi');
 
-export const metadata = constructMetadata({
-  title: 'Mobile App Development Company Chennai — React Native, Flutter, Expo, Firebase & AWS Apps',
-  description: 'Cross-platform iOS and Android mobile app development with React Native, Flutter, Expo SDK, Firebase realtime sync, and AWS cloud backend infrastructure. Case study: byaddi.',
-  path: '/services/app',
-});
+export const metadata = getPageMetadata('services.app');
 
 export default function AppDevelopmentPage() {
   const schema = generateServiceSchema({

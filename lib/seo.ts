@@ -1,10 +1,25 @@
 import { Metadata } from 'next';
 import { BRAND } from './constants';
+import {
+  getPageMetadata,
+  PAGE_METADATA,
+  DEFAULT_METADATA,
+  PageMetadataConfig,
+  PageKey,
+} from './metadata.config';
+
+export {
+  getPageMetadata,
+  PAGE_METADATA,
+  DEFAULT_METADATA,
+  type PageMetadataConfig,
+  type PageKey,
+};
 
 export function constructMetadata({
   title,
-  description = BRAND.description,
-  image = '/images/og-cover.jpg',
+  description,
+  image,
   path = '',
   noIndex = false,
 }: {
@@ -14,51 +29,13 @@ export function constructMetadata({
   path?: string;
   noIndex?: boolean;
 } = {}): Metadata {
-  const fullTitle = title ? `${title} | ${BRAND.name}` : `${BRAND.name} — Creative Branding, Web & App Development Agency Chennai`;
-  const url = `${BRAND.siteUrl}${path}`;
-
-  return {
-    title: fullTitle,
-    description,
-    metadataBase: new URL(BRAND.siteUrl),
-    alternates: {
-      canonical: url,
-    },
-    openGraph: {
-      title: fullTitle,
-      description,
-      url,
-      siteName: BRAND.name,
-      images: [
-        {
-          url: image,
-          width: 1200,
-          height: 630,
-          alt: fullTitle,
-        },
-      ],
-      locale: 'en_IN',
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: fullTitle,
-      description,
-      images: [image],
-      creator: '@ejnarstudios',
-    },
-    robots: {
-      index: !noIndex,
-      follow: !noIndex,
-      googleBot: {
-        index: !noIndex,
-        follow: !noIndex,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
-  };
+  return getPageMetadata(path, {
+    ...(title ? { title } : {}),
+    ...(description ? { description } : {}),
+    ...(image ? { image } : {}),
+    path,
+    noIndex,
+  });
 }
 
 export function generateOrganizationSchema() {

@@ -1,6 +1,6 @@
 import CtaBanner from '@/components/sections/CtaBanner';
 import PortfolioGrid from '@/components/sections/PortfolioGrid';
-import { constructMetadata } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import {
   CheckCircle2,
   Cpu,
@@ -10,11 +10,7 @@ import {
   Sparkles
 } from 'lucide-react';
 
-export const metadata = constructMetadata({
-  title: 'Portfolio & Client Case Studies — EJNARSTUDIOS Digital Agency',
-  description: 'Explore our portfolio of award-winning websites, mobile apps, e-commerce stores, POS/ERP systems, and brand identities crafted for ambitious enterprises.',
-  path: '/portfolio',
-});
+export const metadata = getPageMetadata('portfolio');
 
 export default function PortfolioPage() {
   return (

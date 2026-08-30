@@ -1,7 +1,7 @@
 import { BRAND } from '@/lib/constants';
 import { AWARDS_DATA } from '@/lib/data/awards';
 import { STRENGTHS_DATA } from '@/lib/data/strengths';
-import { constructMetadata } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import {
   ArrowRight,
@@ -10,11 +10,7 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 
-export const metadata = constructMetadata({
-  title: 'About Us — Creative Digital Agency in Chennai',
-  description: 'Learn about EJNARSTUDIOS, founded by Ranjeth Bhuvaneswaran. Our mission, values, and milestone timeline crafting high-impact digital experiences.',
-  path: '/about',
-});
+export const metadata = getPageMetadata('about');
 
 export default function AboutPage() {
   const cultureImages = [

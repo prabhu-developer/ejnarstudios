@@ -3,16 +3,13 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { Share2, CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'social-media')!;
 
-export const metadata = constructMetadata({
-  title: 'Social Media Marketing & Management Agency Chennai',
-  description: 'Full-service social media management across Instagram, LinkedIn, YouTube, Facebook, and Twitter. 15–25 custom posters and 2–5 reels monthly.',
-  path: '/services/social-media',
-});
+export const metadata = getPageMetadata('services.socialMedia');
 
 export default function SocialMediaPage() {
   const schema = generateServiceSchema({

@@ -3,7 +3,8 @@ import { Space_Grotesk, Inter } from 'next/font/google';
 import { androidFont } from './fonts';
 import './globals.css';
 import { BRAND } from '@/lib/constants';
-import { constructMetadata, generateOrganizationSchema } from '@/lib/seo';
+import { generateOrganizationSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import CustomCursor from '@/components/layout/CustomCursor';
@@ -13,6 +14,7 @@ import SmoothScroll from '@/components/layout/SmoothScroll';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
 import { ContactModalProvider } from '@/context/ContactModalContext';
 import ContactModal from '@/components/modals/ContactModal';
+import AutoLeadPopup from '@/components/modals/AutoLeadPopup';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -28,7 +30,7 @@ const inter = Inter({
   display: 'swap',
 });
 
-export const metadata: Metadata = constructMetadata();
+export const metadata: Metadata = getPageMetadata('home');
 
 export default function RootLayout({
   children,
@@ -70,6 +72,9 @@ export default function RootLayout({
 
           {/* Global Accessible Contact Modal */}
           <ContactModal />
+
+          {/* Smart Auto Lead Generation Popup (Timer, Exit Intent & Scroll Triggers) */}
+          <AutoLeadPopup />
 
           {/* Floating WhatsApp Action */}
           <WhatsAppButton />

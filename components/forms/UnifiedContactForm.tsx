@@ -79,6 +79,11 @@ export default function UnifiedContactForm({
 
     if (result.success) {
       setIsSuccess(true);
+      try {
+        localStorage.setItem('ejnar_form_submitted', 'true');
+      } catch {
+        // Ignore
+      }
       reset({
         name: '',
         email: '',

@@ -3,16 +3,13 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'website')!;
 
-export const metadata = constructMetadata({
-  title: 'Website Development Company in Chennai — Next.js & Modern Web',
-  description: 'Custom Next.js website engineering with sub-second page loads, Lenis inertia scrolling, GSAP micro-animations, and responsive mobile architecture.',
-  path: '/services/website',
-});
+export const metadata = getPageMetadata('services.website');
 
 export default function WebsiteDevelopmentPage() {
   const schema = generateServiceSchema({

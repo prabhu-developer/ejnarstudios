@@ -3,16 +3,13 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { Palette, CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'graphic-design')!;
 
-export const metadata = constructMetadata({
-  title: 'Graphic Design & Creative Marketing Collateral Chennai',
-  description: 'High-impact marketing posters, social media carousel kits, digital ad banners, print brochures, and event exhibition collateral.',
-  path: '/services/graphic-design',
-});
+export const metadata = getPageMetadata('services.graphicDesign');
 
 export default function GraphicDesignPage() {
   const schema = generateServiceSchema({

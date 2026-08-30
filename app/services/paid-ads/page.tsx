@@ -3,16 +3,13 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { Target, CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'paid-ads')!;
 
-export const metadata = constructMetadata({
-  title: 'Paid Ads Performance Marketing Agency Chennai — Meta & Google Ads',
-  description: 'High-ROAS Meta (Facebook/Instagram), Google Search, Shopping, and YouTube paid media campaigns with conversion API tracking and A/B creative testing.',
-  path: '/services/paid-ads',
-});
+export const metadata = getPageMetadata('services.paidAds');
 
 export default function PaidAdsPage() {
   const schema = generateServiceSchema({

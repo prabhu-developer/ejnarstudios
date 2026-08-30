@@ -3,16 +3,13 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { constructMetadata, generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema } from '@/lib/seo';
+import { getPageMetadata } from '@/lib/metadata.config';
 import { Sparkles, CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'branding')!;
 
-export const metadata = constructMetadata({
-  title: 'Corporate Branding & Identity Design Agency Chennai',
-  description: 'Master brand identity systems, luxury corporate stationery, presentation decks, packaging, and comprehensive brand guideline manuals.',
-  path: '/services/branding',
-});
+export const metadata = getPageMetadata('services.branding');
 
 export default function BrandingPage() {
   const schema = generateServiceSchema({
