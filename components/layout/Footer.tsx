@@ -177,11 +177,11 @@ export default function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your corporate email"
-                  className="w-full bg-dark-secondary border border-primary/25 rounded px-3.5 py-2.5 text-xs text-cream placeholder-muted/60 focus:outline-none focus:border-primary transition-colors pr-10"
+                  className="w-full bg-dark-secondary border border-primary/25 rounded-full px-4 py-2.5 text-xs text-cream placeholder-muted/60 focus:outline-none focus:border-primary transition-colors pr-12 shadow-inner"
                 />
                 <button
                   type="submit"
-                  className="absolute right-1.5 top-1/2 -translate-y-1/2 p-1.5 rounded bg-primary text-dark hover:brightness-110 transition-all"
+                  className="absolute right-1 top-1/2 -translate-y-1/2 p-2 rounded-full bg-primary text-dark hover:brightness-110 shadow-sm transition-all"
                   aria-label="Subscribe"
                 >
                   <ArrowRight className="w-3.5 h-3.5" />

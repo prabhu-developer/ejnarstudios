@@ -31,10 +31,10 @@ export default function AwardsTimeline() {
             >
               {/* Year & Category */}
               <div className="flex items-center justify-between mb-4">
-                <span className="font-mono font-bold text-lg text-primary px-3 py-1 rounded bg-primary/10 border border-primary/20">
+                <span className="font-mono font-bold text-lg text-primary px-3.5 py-1 rounded-full bg-primary/10 border border-primary/20">
                   {award.year}
                 </span>
-                <span className="text-[10px] uppercase font-mono tracking-wider text-muted px-2 py-0.5 rounded bg-white/[0.04]">
+                <span className="text-[10px] uppercase font-mono tracking-wider text-muted px-3 py-1 rounded-full bg-white/[0.04] border border-white/5">
                   {award.category}
                 </span>
               </div>

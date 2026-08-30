@@ -116,7 +116,7 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                               className="group flex flex-col p-2.5 rounded-md hover:bg-white/[0.04] transition-all duration-200 border-l-2 border-transparent hover:border-primary"
                             >
                               <div className="flex items-center gap-2.5">
-                                <div className="p-1.5 rounded bg-primary/10 text-primary group-hover:bg-primary group-hover:text-dark transition-all duration-200 group-hover:translate-x-1">
+                                <div className="p-1.5 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-dark transition-all duration-200 group-hover:translate-x-1">
                                   <Icon className="w-3.5 h-3.5" />
                                 </div>
                                 <span className="font-medium text-xs text-cream/90 group-hover:text-primary transition-colors">
@@ -134,8 +134,8 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                       {/* Column 4 Featured Promo Block */}
                       {category.id === 'content' && (
                         <div className="mt-6 pt-4 border-t border-white/5">
-                          <div className="relative group/promo overflow-hidden rounded-lg bg-dark-secondary border border-primary/20 p-3 hover:border-primary/50 transition-all duration-300">
-                            <div className="relative h-20 w-full overflow-hidden rounded mb-2">
+                          <div className="relative group/promo overflow-hidden rounded-2xl bg-dark-secondary border border-primary/20 p-3 hover:border-primary/50 transition-all duration-300">
+                            <div className="relative h-20 w-full overflow-hidden rounded-xl mb-2">
                               <Image
                                 src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80"
                                 alt="byaddi mobile app featured work"
@@ -143,7 +143,7 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                                 className="object-cover transition-transform duration-500 group-hover/promo:scale-105"
                               />
                               <div className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent" />
-                              <div className="absolute top-2 left-2 px-1.5 py-0.5 rounded text-[9px] font-semibold bg-primary text-dark uppercase tracking-wider">
+                              <div className="absolute top-2 left-2 px-2.5 py-0.5 rounded-full text-[9px] font-semibold bg-primary text-dark uppercase tracking-wider">
                                 Featured Work
                               </div>
                             </div>
@@ -192,7 +192,7 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                   <Link
                     href="/contact-us"
                     onClick={onClose}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded text-xs font-semibold bg-gold-gradient text-dark hover:brightness-110 shadow-md transition-all duration-200"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-gold-gradient text-dark hover:brightness-110 shadow-md transition-all duration-200 transform hover:scale-105 active:scale-95"
                   >
                     <span>Talk to Us</span>
                     <ArrowRight className="w-3 h-3 text-dark" />

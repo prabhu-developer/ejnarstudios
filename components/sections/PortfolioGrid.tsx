@@ -115,11 +115,6 @@ function ProjectCard({ project }: { project: ProjectItem }) {
           )}
         </div>
 
-        <div className="absolute top-4 right-4 z-10">
-          <span className="text-xs font-mono font-bold text-cream/80 bg-dark/85 px-2.5 py-1 rounded-full border border-white/10 backdrop-blur-md shadow-md">
-            {project.year}
-          </span>
-        </div>
       </div>
 
       {/* Project Card Body */}
@@ -158,7 +153,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
             {project.deliverables.slice(0, 2).map((deliv, dIdx) => (
               <span
                 key={dIdx}
-                className="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-medium text-cream/70"
+                className="px-2.5 py-0.5 rounded-full bg-white/[0.04] text-[10px] font-medium text-cream/70 border border-white/5"
               >
                 {deliv}
               </span>
@@ -222,8 +217,8 @@ export default function PortfolioGrid() {
                 key={cat}
                 onClick={() => setFilter(cat)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${filter === cat
-                    ? 'bg-primary text-dark font-bold shadow-md'
-                    : 'bg-dark-secondary text-cream/70 hover:text-cream hover:bg-dark-tertiary border border-white/5'
+                  ? 'bg-primary text-dark font-bold shadow-md'
+                  : 'bg-dark-secondary text-cream/70 hover:text-cream hover:bg-dark-tertiary border border-white/5'
                   }`}
               >
                 {cat}

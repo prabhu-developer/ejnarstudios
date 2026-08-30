@@ -125,7 +125,7 @@ export default function Header() {
           <div className="flex items-center gap-4">
             <Link
               href="/contact-us"
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded text-xs font-semibold uppercase tracking-wider bg-gold-gradient text-dark hover:brightness-110 shadow-[0_0_15px_rgba(214,180,136,0.3)] hover:shadow-[0_0_22px_rgba(214,180,136,0.5)] transition-all duration-300 transform active:scale-95"
+              className="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-gold-gradient text-dark hover:brightness-110 shadow-[0_0_15px_rgba(214,180,136,0.3)] hover:shadow-[0_0_22px_rgba(214,180,136,0.5)] transition-all duration-300 transform active:scale-95 hover:scale-105"
             >
               <span>Start a Project</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-dark" />
@@ -134,10 +134,10 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileNavOpen(true)}
-              className="lg:hidden p-2 rounded border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
+              className="lg:hidden p-2.5 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
               aria-label="Open Mobile Menu"
             >
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5" />
             </button>
           </div>
         </div>

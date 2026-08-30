@@ -154,7 +154,7 @@ export default function CareersPage() {
                   >
                     <div>
                       <div className="flex items-center gap-3 mb-1">
-                        <span className="text-xs font-mono font-bold text-primary px-2.5 py-0.5 rounded bg-primary/10">
+                        <span className="text-xs font-mono font-bold text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
                           {job.department}
                         </span>
                         <span className="text-xs text-muted flex items-center gap-1">
@@ -215,7 +215,7 @@ export default function CareersPage() {
                         <a
                           href="#application-form"
                           onClick={() => setValue('role', job.title)}
-                          className="px-6 py-2.5 rounded bg-gold-gradient text-dark text-xs font-bold uppercase tracking-wider hover:brightness-110 shadow-md inline-flex items-center gap-2"
+                          className="px-6 py-2.5 rounded-full bg-gold-gradient text-dark text-xs font-bold uppercase tracking-wider hover:brightness-110 shadow-md inline-flex items-center gap-2 transform hover:scale-105 active:scale-95 transition-all"
                         >
                           <span>Apply For This Position</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -242,62 +242,62 @@ export default function CareersPage() {
             </h2>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-dark-secondary/80 p-8 sm:p-10 rounded-2xl border border-primary/20 shadow-2xl">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-dark-secondary/80 p-8 sm:p-10 rounded-3xl border border-primary/20 shadow-2xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider">
+                <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
                   Full Name *
                 </label>
                 <input
                   {...register('fullName')}
                   type="text"
                   placeholder="e.g. Anand Kumar"
-                  className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors"
+                  className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
                 />
                 {errors.fullName && (
-                  <p className="text-[11px] text-rose-400 mt-1">{errors.fullName.message}</p>
+                  <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.fullName.message}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider">
+                <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
                   Email Address *
                 </label>
                 <input
                   {...register('email')}
                   type="email"
                   placeholder="anand@example.com"
-                  className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors"
+                  className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
                 />
                 {errors.email && (
-                  <p className="text-[11px] text-rose-400 mt-1">{errors.email.message}</p>
+                  <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.email.message}</p>
                 )}
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div>
-                <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider">
+                <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
                   Phone Number *
                 </label>
                 <input
                   {...register('phone')}
                   type="tel"
                   placeholder="+91 98765 43210"
-                  className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors"
+                  className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
                 />
                 {errors.phone && (
-                  <p className="text-[11px] text-rose-400 mt-1">{errors.phone.message}</p>
+                  <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.phone.message}</p>
                 )}
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider">
+                <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
                   Target Role *
                 </label>
                 <select
                   {...register('role')}
-                  className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors"
+                  className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner appearance-none cursor-pointer"
                 >
                   <option value="">Select a role...</option>
                   {JOB_OPENINGS.map((j) => (
@@ -308,44 +308,44 @@ export default function CareersPage() {
                   <option value="General Application">Other / General Talent Pool</option>
                 </select>
                 {errors.role && (
-                  <p className="text-[11px] text-rose-400 mt-1">{errors.role.message}</p>
+                  <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.role.message}</p>
                 )}
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider">
+              <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
                 Portfolio / GitHub / Showreel Link *
               </label>
               <input
                 {...register('portfolioUrl')}
                 type="url"
                 placeholder="https://behance.net/profile or https://github.com/profile"
-                className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors"
+                className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
               />
               {errors.portfolioUrl && (
-                <p className="text-[11px] text-rose-400 mt-1">{errors.portfolioUrl.message}</p>
+                <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.portfolioUrl.message}</p>
               )}
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider">
+              <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
                 Brief Introduction & Past Impact *
               </label>
               <textarea
                 {...register('message')}
                 rows={4}
                 placeholder="Tell us about the proudest project you built and why you want to join EJNARSTUDIOS..."
-                className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors resize-none"
+                className="w-full bg-dark border border-white/10 rounded-3xl p-5 text-xs text-cream focus:outline-none focus:border-primary transition-colors resize-none shadow-inner"
               />
               {errors.message && (
-                <p className="text-[11px] text-rose-400 mt-1">{errors.message.message}</p>
+                <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.message.message}</p>
               )}
             </div>
 
             {isSuccess && (
-              <div className="p-4 rounded-lg bg-emerald-500/20 border border-emerald-500 text-emerald-400 text-xs font-semibold flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4" />
+              <div className="p-4 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-400 text-xs font-semibold flex items-center justify-center gap-2 text-center">
+                <CheckCircle2 className="w-4 h-4 shrink-0" />
                 <span>Application submitted successfully! Our talent lead will review your portfolio.</span>
               </div>
             )}
@@ -353,7 +353,7 @@ export default function CareersPage() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 rounded bg-gold-gradient text-dark font-display font-bold text-xs uppercase tracking-wider hover:brightness-110 shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full py-4 rounded-full bg-gold-gradient text-dark font-display font-bold text-xs uppercase tracking-wider hover:brightness-110 shadow-lg hover:shadow-[0_0_25px_rgba(214,180,136,0.5)] transition-all flex items-center justify-center gap-2 disabled:opacity-50 transform hover:scale-[1.01] active:scale-95"
             >
               {isSubmitting ? (
                 <span>Submitting Profile...</span>

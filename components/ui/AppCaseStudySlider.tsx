@@ -166,7 +166,7 @@ export default function AppCaseStudySlider({ project }: AppCaseStudySliderProps)
           {project.deliverables.map((deliv, dIdx) => (
             <span
               key={dIdx}
-              className="px-2.5 py-1 rounded bg-white/[0.04] text-[11px] text-cream/80 border border-white/5"
+              className="px-3 py-1 rounded-full bg-white/[0.04] text-[11px] text-cream/80 border border-white/5"
             >
               {deliv}
             </span>

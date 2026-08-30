@@ -90,16 +90,16 @@ export default function MarketplacePage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-dark-secondary via-transparent to-transparent opacity-80" />
 
                   {product.badge && (
-                    <span className="absolute top-4 left-4 px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-gold-gradient text-dark shadow-md">
+                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-gold-gradient text-dark shadow-md">
                       {product.badge}
                     </span>
                   )}
 
                   <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between">
-                    <span className="text-xs font-mono font-bold text-cream/90 bg-dark/80 px-2 py-0.5 rounded backdrop-blur-md">
+                    <span className="text-xs font-mono font-bold text-cream/90 bg-dark/80 px-3 py-1 rounded-full backdrop-blur-md border border-white/10">
                       {product.category}
                     </span>
-                    <div className="flex items-center gap-1 text-primary text-xs bg-dark/80 px-2 py-0.5 rounded backdrop-blur-md">
+                    <div className="flex items-center gap-1 text-primary text-xs bg-dark/80 px-3 py-1 rounded-full backdrop-blur-md border border-white/10">
                       <Star className="w-3.5 h-3.5 fill-primary" />
                       <span>{product.rating}</span>
                       <span className="text-muted text-[10px]">({product.reviewsCount})</span>
@@ -143,14 +143,14 @@ export default function MarketplacePage() {
                   <div className="grid grid-cols-2 gap-3">
                     <button
                       onClick={() => setActiveModalProduct(product)}
-                      className="py-2.5 rounded bg-dark border border-white/10 hover:border-primary/40 text-cream text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                      className="py-2.5 rounded-full bg-dark border border-white/10 hover:border-primary/40 text-cream text-xs font-semibold flex items-center justify-center gap-1.5 transition-all transform active:scale-95 hover:bg-white/5"
                     >
                       <Eye className="w-3.5 h-3.5" />
                       <span>Preview</span>
                     </button>
                     <button
                       onClick={() => setActiveModalProduct(product)}
-                      className="py-2.5 rounded bg-gold-gradient text-dark text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1 hover:brightness-110 shadow-md transition-all"
+                      className="py-2.5 rounded-full bg-gold-gradient text-dark text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1 hover:brightness-110 shadow-md transition-all transform active:scale-95 hover:scale-105"
                     >
                       <span>Get This</span>
                       <ArrowRight className="w-3.5 h-3.5" />
@@ -220,14 +220,14 @@ export default function MarketplacePage() {
               </div>
 
               {inquirySuccess ? (
-                <div className="px-6 py-3 rounded bg-emerald-500/20 border border-emerald-500 text-emerald-400 text-xs font-bold flex items-center gap-2">
+                <div className="px-6 py-3 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-400 text-xs font-bold flex items-center gap-2">
                   <Check className="w-4 h-4" />
                   <span>Inquiry Received! We'll contact you.</span>
                 </div>
               ) : (
                 <button
                   onClick={() => handleInquiry(activeModalProduct)}
-                  className="px-8 py-3.5 rounded bg-gold-gradient text-dark font-display font-bold text-xs uppercase tracking-wider hover:brightness-110 shadow-lg transition-all"
+                  className="px-8 py-3.5 rounded-full bg-gold-gradient text-dark font-display font-bold text-xs uppercase tracking-wider hover:brightness-110 shadow-lg hover:shadow-[0_0_25px_rgba(214,180,136,0.5)] transition-all transform active:scale-95 hover:scale-105"
                 >
                   Acquire Template License
                 </button>

@@ -76,7 +76,7 @@ export default function LogoDesignPage() {
                   >
                     <div>
                       <div className="flex items-center justify-between mb-4">
-                        <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-dark transition-all duration-300">
+                        <div className="p-3 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-dark transition-all duration-300">
                           <Icon className="w-6 h-6" />
                         </div>
                         <span className="badge-circle text-xs">0{idx + 1}</span>
@@ -154,11 +154,11 @@ export default function LogoDesignPage() {
                   Rendered with mathematical golden ratio curves. Whether scaled down to a 16px favicon or expanded to a 100-foot billboard, our marks preserve razor-sharp fidelity.
                 </p>
                 <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/10 font-mono text-xs">
-                  <div className="p-3 rounded bg-dark border border-white/5">
+                  <div className="p-3.5 px-4 rounded-2xl bg-dark border border-white/5">
                     <span className="text-primary font-bold block">AI, EPS, SVG</span>
                     <span className="text-muted text-[10px]">Master Source Files</span>
                   </div>
-                  <div className="p-3 rounded bg-dark border border-white/5">
+                  <div className="p-3.5 px-4 rounded-2xl bg-dark border border-white/5">
                     <span className="text-primary font-bold block">CMYK & RGB</span>
                     <span className="text-muted text-[10px]">Print & Web Calibrated</span>
                   </div>

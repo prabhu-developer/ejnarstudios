@@ -150,7 +150,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
             <Link
               href="/contact-us"
               onClick={onClose}
-              className="w-full flex items-center justify-center gap-2 py-3.5 rounded bg-gold-gradient text-dark font-display font-bold text-sm tracking-wider uppercase shadow-lg hover:brightness-110 transition-all"
+              className="w-full flex items-center justify-center gap-2 py-4 rounded-full bg-gold-gradient text-dark font-display font-bold text-sm tracking-wider uppercase shadow-lg hover:brightness-110 transition-all active:scale-95"
             >
               <span>Start Your Project</span>
               <ArrowRight className="w-4 h-4" />

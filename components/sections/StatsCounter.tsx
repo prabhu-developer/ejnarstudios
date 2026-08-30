@@ -54,10 +54,10 @@ export default function StatsCounter() {
             return (
               <div
                 key={stat.id}
-                className="relative p-6 rounded-xl bg-dark-secondary/60 border border-white/5 hover:border-primary/30 transition-all duration-300 flex flex-col justify-between"
+                className="relative p-6 rounded-2xl bg-dark-secondary/60 border border-white/5 hover:border-primary/30 transition-all duration-300 flex flex-col justify-between"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-2 rounded bg-primary/10 text-primary">
+                  <div className="p-2.5 rounded-full bg-primary/10 text-primary">
                     <Icon className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-mono text-muted uppercase tracking-widest">

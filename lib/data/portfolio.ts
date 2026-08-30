@@ -5,7 +5,6 @@ export interface ProjectItem {
   client: string;
   category: string;
   categoryTag: 'E-commerce' | 'Web Development' | 'Mobile App' | 'Branding' | 'Custom Solutions';
-  year: string;
   description: string;
   deliverables: string[];
   metrics?: { value: string; label: string }[];
@@ -24,7 +23,6 @@ export const PORTFOLIO_DATA: ProjectItem[] = [
     client: 'Apple Point — Authorized Apple Reseller',
     category: 'Apple Devices & Electronics Retail Platform',
     categoryTag: 'E-commerce',
-    year: '2024',
     description: 'A sleek, high-conversion electronics e-commerce and retail experience for genuine Apple products, featuring streamlined product lineups (Mac, iPhone, iPad, Vision Pro, iWatch), EMI calculators, and instant chat checkout.',
     deliverables: ['E-Commerce Storefront', 'Interactive Product Lineup Catalog', 'EMI & Payment Integrations', 'WhatsApp Direct Checkout'],
     metrics: [
@@ -43,7 +41,6 @@ export const PORTFOLIO_DATA: ProjectItem[] = [
     client: 'Fefine Sanitary & Hygiene Care',
     category: 'Biodegradable Organic Hygiene E-Commerce',
     categoryTag: 'E-commerce',
-    year: '2024',
     description: 'A vibrant, modern wellness and e-commerce brand platform dedicated to natural health and hygiene with ISO-certified biodegradable cotton sanitary pads, worldwide shipping, and frictionless order flows.',
     deliverables: ['Direct-to-Consumer Storefront', 'Product Packaging Showcase', 'Global Shipping Funnel', 'ISO Certification & Specs'],
     metrics: [
@@ -62,7 +59,6 @@ export const PORTFOLIO_DATA: ProjectItem[] = [
     client: 'BINLEES MARITIME LLP (Kochi Port)',
     category: 'Global Shipping, Vessel Chartering & Maritime Logistics',
     categoryTag: 'Web Development',
-    year: '2024',
     description: 'An authoritative corporate maritime portal engineered for a premier shipping firm based at Kochi Port, facilitating global ship chartering, multimodal container logistics, marine bunkering, and international trade routes.',
     deliverables: ['Corporate Web Architecture', 'Chartering & Inquiry Engine', 'Multimodal Logistics Showcase', 'SEO & Speed Optimization'],
     metrics: [
@@ -81,7 +77,6 @@ export const PORTFOLIO_DATA: ProjectItem[] = [
     client: 'Marina Residences & Realty (TNRERA Registered)',
     category: 'Luxury Real Estate, Plots & Villas Portal',
     categoryTag: 'Web Development',
-    year: '2024',
     description: 'A luxury real estate web portal showcasing premium apartments, gated community plots, and architectural villas in Tamil Nadu with interactive project floorplans, TNRERA compliance, and high-converting lead capture.',
     deliverables: ['Luxury Real Estate UI/UX', 'Project Showcase & Floorplans', 'High-Converting Lead Funnel', 'TNRERA Compliance Architecture'],
     metrics: [
@@ -100,7 +95,6 @@ export const PORTFOLIO_DATA: ProjectItem[] = [
     client: 'Pinnacle Star Services FZCO (Dubai, UAE)',
     category: 'Investment Core, Architecture & Project Management',
     categoryTag: 'Custom Solutions',
-    year: '2024',
     description: 'A prestigious multi-disciplinary corporate platform for a Dubai Silicon Oasis IFZA firm integrating capital investment advisory, architectural consultation, and large-scale project execution discipline under one digital roof.',
     deliverables: ['Multi-Disciplinary Web Portal', 'Institutional Investor Engine', 'Bespoke Inquiries Funnel', 'Modern Corporate Identity'],
     metrics: [
@@ -119,7 +113,6 @@ export const PORTFOLIO_DATA: ProjectItem[] = [
     client: 'Relax Washrooms (A Unit of Relax Caravans)',
     category: 'Commercial Bus & Caravan Sanitation Tech',
     categoryTag: 'Web Development',
-    year: '2024',
     description: 'A dynamic industrial web presence showcasing revolutionary, sustainable, and water-efficient sanitary solutions for bus travel and luxury caravans, trusted by nationwide coach fabricators and fleet operators.',
     deliverables: ['Industrial Product Catalog', 'Interactive Technical Specs', 'Fabricator Inquiry Portal', 'Cross-Platform Responsive UX'],
     metrics: [
@@ -138,7 +131,6 @@ export const PORTFOLIO_DATA: ProjectItem[] = [
     client: 'SIFEL Life School (SLS Foundation)',
     category: 'Holistic Youth Education & Non-Profit Platform',
     categoryTag: 'Web Development',
-    year: '2024',
     description: 'A vibrant and purposeful digital platform for a youth holistic development movement, featuring student impact stories, WHO & NIMHANS-aligned methodology showcases, and seamless donor onboarding.',
     deliverables: ['Non-Profit Web Architecture', 'Donor Engagement Funnel', 'Interactive Curriculum Showcase', 'Fast Static CDN Delivery'],
     metrics: [
@@ -157,7 +149,6 @@ export const PORTFOLIO_DATA: ProjectItem[] = [
     client: 'byaddi Food & Refreshment Tech (Saudi Arabia)',
     category: 'Saudi Home Chef & Confectionery Mobile Marketplace',
     categoryTag: 'Mobile App',
-    year: '2024',
     description: 'An agile, localized iOS & Android marketplace connecting Saudi home culinary artisans, confectioners, and traditional chefs with consumers across Riyadh, Al Kharj, Buraidah, Majmaah, Shaqra, and Al-Ahsa with WhatsApp order synchronization.',
     deliverables: [
       'iOS & Android App (React Native)',

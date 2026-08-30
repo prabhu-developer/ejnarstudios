@@ -55,7 +55,7 @@ export default function HorizontalProcess() {
               <button
                 key={step.stepNumber}
                 onClick={() => setActiveStep(idx)}
-                className={`flex flex-col items-start p-3.5 rounded-lg border text-left transition-all duration-300 ${
+                className={`flex flex-col items-start p-4 rounded-2xl border text-left transition-all duration-300 ${
                   isSelected
                     ? 'bg-dark-secondary border-primary shadow-[0_0_15px_rgba(214,180,136,0.2)]'
                     : 'bg-dark-secondary/40 border-white/5 hover:border-white/20'
@@ -65,7 +65,7 @@ export default function HorizontalProcess() {
                   <span className={`font-mono text-xs font-bold ${isSelected ? 'text-primary' : 'text-muted'}`}>
                     STEP {step.stepNumber}
                   </span>
-                  <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/[0.05] text-cream/70 font-mono">
+                  <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-white/[0.05] text-cream/70 font-mono border border-white/5">
                     {step.days}
                   </span>
                 </div>
@@ -82,7 +82,7 @@ export default function HorizontalProcess() {
           const step = PROCESS_TIMELINE[activeStep];
           const Icon = iconMap[step.icon] || Users;
           return (
-            <div className="relative rounded-2xl bg-dark-secondary/80 border border-primary/20 p-8 sm:p-12 overflow-hidden shadow-2xl">
+            <div className="relative rounded-3xl bg-dark-secondary/80 border border-primary/20 p-8 sm:p-12 overflow-hidden shadow-2xl">
               {/* Subtle top gold accent line */}
               <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-primary/50 to-transparent absolute top-0 left-0 right-0" />
 
@@ -90,7 +90,7 @@ export default function HorizontalProcess() {
                 {/* Left Col: Step Info */}
                 <div className="lg:col-span-7 space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-xl bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
+                    <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center text-primary">
                       <Icon className="w-7 h-7" />
                     </div>
                     <div>

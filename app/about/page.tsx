@@ -247,7 +247,7 @@ export default function AboutPage() {
           </p>
           <Link
             href="/careers"
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded font-display font-bold text-xs uppercase tracking-wider bg-gold-gradient text-dark hover:brightness-110 shadow-md transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-display font-bold text-xs uppercase tracking-wider bg-gold-gradient text-dark hover:brightness-110 shadow-lg hover:shadow-[0_0_25px_rgba(214,180,136,0.4)] transition-all transform hover:scale-105 active:scale-95"
           >
             <span>View Open Positions</span>
             <ArrowRight className="w-4 h-4 text-dark" />

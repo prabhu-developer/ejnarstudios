@@ -91,8 +91,8 @@ export default function EcommercePage() {
                       )}
 
                       <div className="flex flex-wrap gap-2">
-                        {proj.deliverables.map((deliv, dIdx) => (
-                          <span key={deliv} className="px-2.5 py-1 rounded bg-white/[0.04] text-[11px] text-cream/80">
+                        {proj.deliverables.map((deliv) => (
+                          <span key={deliv} className="px-3 py-1 rounded-full bg-white/[0.04] text-[11px] text-cream/80 border border-white/5">
                             {deliv}
                           </span>
                         ))}
@@ -106,7 +106,7 @@ export default function EcommercePage() {
                         href={proj.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 hover:bg-primary text-primary hover:text-dark text-xs font-semibold font-mono uppercase tracking-wider transition-all duration-300 border border-primary/30"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 hover:bg-primary text-primary hover:text-dark text-xs font-semibold font-mono uppercase tracking-wider transition-all duration-300 border border-primary/30 transform hover:scale-105 active:scale-95"
                       >
                         <span>Visit Live Store</span>
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -140,14 +140,14 @@ export default function EcommercePage() {
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-dark-secondary/80 border border-primary/20 shadow-2xl space-y-4">
+            <div className="p-8 rounded-3xl bg-dark-secondary/80 border border-primary/20 shadow-2xl space-y-4">
               <h3 className="font-display font-bold text-xl text-cream">
                 E-Commerce Deliverables
               </h3>
               {service.deliverables.map((deliv, dIdx) => (
-                <div key={dIdx} className="p-3.5 rounded-lg bg-dark border border-white/5 flex items-center justify-between text-xs">
+                <div key={dIdx} className="p-3.5 px-5 rounded-full bg-dark border border-white/5 flex items-center justify-between text-xs">
                   <span className="text-cream font-medium">{deliv}</span>
-                  <span className="text-[10px] font-mono text-primary uppercase">Standard</span>
+                  <span className="text-[10px] font-mono text-primary uppercase font-bold">Standard</span>
                 </div>
               ))}
             </div>

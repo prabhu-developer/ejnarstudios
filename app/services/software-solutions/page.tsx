@@ -65,9 +65,9 @@ export default function SoftwareSolutionsPage() {
                   Software Deliverables
                 </h3>
                 {service.deliverables.map((deliv, dIdx) => (
-                  <div key={dIdx} className="p-3 rounded-lg bg-dark border border-white/5 flex items-center justify-between text-xs">
+                  <div key={dIdx} className="p-3.5 px-5 rounded-full bg-dark border border-white/5 flex items-center justify-between text-xs">
                     <span className="text-cream font-medium">{deliv}</span>
-                    <span className="text-[10px] font-mono text-primary uppercase">Enterprise</span>
+                    <span className="text-[10px] font-mono text-primary uppercase font-bold">Enterprise</span>
                   </div>
                 ))}
               </div>

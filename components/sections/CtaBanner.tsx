@@ -108,7 +108,7 @@ export default function CtaBanner() {
             >
               <Link
                 href="/contact-us"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-display font-bold text-sm tracking-wider uppercase bg-gold-gradient text-dark hover:brightness-110 shadow-[0_0_25px_rgba(214,180,136,0.4)] hover:shadow-[0_0_40px_rgba(214,180,136,0.65)] transition-all duration-300 group"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wider uppercase bg-gold-gradient text-dark hover:brightness-110 shadow-[0_0_25px_rgba(214,180,136,0.4)] hover:shadow-[0_0_40px_rgba(214,180,136,0.65)] transition-all duration-300 group"
               >
                 <span>Start a Project</span>
                 <ArrowUpRight className="w-4 h-4 text-dark transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -122,7 +122,7 @@ export default function CtaBanner() {
             >
               <a
                 href={`tel:${BRAND.contact.mobileRaw}`}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-display font-bold text-sm tracking-wider uppercase bg-dark-tertiary border border-primary/30 text-cream hover:text-primary hover:border-primary transition-all duration-300 shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wider uppercase bg-dark-tertiary border border-primary/30 text-cream hover:text-primary hover:border-primary transition-all duration-300 shadow-md"
               >
                 <PhoneCall className="w-4 h-4 text-primary" />
                 <span>Call +91-73581 00831</span>

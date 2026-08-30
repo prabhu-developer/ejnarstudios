@@ -117,19 +117,19 @@ export default function WebsiteDevelopmentPage() {
                   Next.js Modern Architecture
                 </h3>
                 <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div className="p-3 rounded bg-dark border border-white/5">
+                  <div className="p-3.5 px-4 rounded-2xl bg-dark border border-white/5">
                     <span className="text-primary font-bold block">SSG Architecture</span>
                     <span className="text-muted text-[10px]">Zero Server Latency</span>
                   </div>
-                  <div className="p-3 rounded bg-dark border border-white/5">
+                  <div className="p-3.5 px-4 rounded-2xl bg-dark border border-white/5">
                     <span className="text-primary font-bold block">Lenis + GSAP</span>
                     <span className="text-muted text-[10px]">Inertia Smooth Scroll</span>
                   </div>
-                  <div className="p-3 rounded bg-dark border border-white/5">
+                  <div className="p-3.5 px-4 rounded-2xl bg-dark border border-white/5">
                     <span className="text-primary font-bold block">100/100 Core Vitals</span>
                     <span className="text-muted text-[10px]">SEO & Speed Guarantee</span>
                   </div>
-                  <div className="p-3 rounded bg-dark border border-white/5">
+                  <div className="p-3.5 px-4 rounded-2xl bg-dark border border-white/5">
                     <span className="text-primary font-bold block">Global Edge CDN</span>
                     <span className="text-muted text-[10px]">Instant Global Delivery</span>
                   </div>

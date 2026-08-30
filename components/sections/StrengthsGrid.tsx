@@ -47,7 +47,7 @@ export default function StrengthsGrid() {
             return (
               <div
                 key={item.id}
-                className="group relative p-8 rounded-xl bg-dark-secondary/80 border border-white/5 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-[0_10px_30px_rgba(214,180,136,0.08)]"
+                className="group relative p-8 rounded-2xl bg-dark-secondary/80 border border-white/5 hover:border-primary/40 transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-[0_10px_30px_rgba(214,180,136,0.08)]"
               >
                 {/* Top Row: Circular Number Badge & Stat Pill */}
                 <div className="flex items-center justify-between mb-6">
@@ -55,7 +55,7 @@ export default function StrengthsGrid() {
                     {item.badge}
                   </div>
                   {item.stat && (
-                    <span className="text-xs font-mono font-bold px-2.5 py-1 rounded bg-white/[0.04] text-primary border border-white/5">
+                    <span className="text-xs font-mono font-bold px-3 py-1 rounded-full bg-white/[0.04] text-primary border border-white/5">
                       {item.stat}
                     </span>
                   )}
@@ -63,7 +63,7 @@ export default function StrengthsGrid() {
 
                 {/* Icon & Title */}
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="p-2 rounded bg-primary/10 text-primary">
+                  <div className="p-2.5 rounded-full bg-primary/10 text-primary">
                     <Icon className="w-5 h-5" />
                   </div>
                   <h3 className="font-display font-bold text-lg text-cream group-hover:text-primary transition-colors">

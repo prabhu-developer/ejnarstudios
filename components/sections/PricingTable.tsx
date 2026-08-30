@@ -66,7 +66,7 @@ export default function PricingTable() {
 
                 <Link
                   href="/contact-us"
-                  className={`w-full py-2.5 rounded text-center text-xs font-display font-bold uppercase tracking-wider transition-all duration-200 ${
+                  className={`w-full py-2.5 rounded-full text-center text-xs font-display font-bold uppercase tracking-wider transition-all duration-200 transform hover:scale-105 active:scale-95 ${
                     isPopular
                       ? 'bg-gold-gradient text-dark hover:brightness-110 shadow-md'
                       : 'bg-white/[0.05] text-cream hover:bg-primary hover:text-dark'

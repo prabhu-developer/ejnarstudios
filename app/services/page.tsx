@@ -133,7 +133,7 @@ export default function ServicesPage() {
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="p-2.5 rounded bg-primary/10 text-primary">
+                      <div className="p-2.5 rounded-full bg-primary/10 text-primary">
                         <Icon className="w-5 h-5" />
                       </div>
                       <span className="badge-circle text-xs">{req.step}</span>
@@ -193,11 +193,11 @@ export default function ServicesPage() {
                     >
                       <div>
                         <div className="flex items-center justify-between mb-4">
-                          <div className="p-2 rounded bg-primary/10 text-primary group-hover:bg-primary group-hover:text-dark transition-all">
+                          <div className="p-2.5 rounded-full bg-primary/10 text-primary group-hover:bg-primary group-hover:text-dark transition-all">
                             <Icon className="w-5 h-5" />
                           </div>
                           {service.badge && (
-                            <span className="px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider bg-primary/20 text-primary">
+                            <span className="px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider bg-primary/20 text-primary border border-primary/30">
                               {service.badge}
                             </span>
                           )}

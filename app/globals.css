@@ -201,3 +201,68 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Rounded Pill UI System Form Elements */
+input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(214, 180, 136, 0.4);
+  background-color: #1a1a1a;
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  vertical-align: middle;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 9999px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #d6b488;
+}
+
+input[type="radio"]:checked {
+  border-color: #d6b488;
+  box-shadow: 0 0 10px rgba(214, 180, 136, 0.4);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 0.4rem;
+  border: 1.5px solid rgba(214, 180, 136, 0.4);
+  background-color: #1a1a1a;
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #d6b488;
+  border-color: #d6b488;
+  box-shadow: 0 0 10px rgba(214, 180, 136, 0.4);
+}
+
+/* Pill UI focus rings */
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(214, 180, 136, 0.45);
+}
+

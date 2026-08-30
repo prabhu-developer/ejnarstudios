@@ -199,7 +199,7 @@ export default function Hero() {
           >
             <Link
               href="/contact-us"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl font-display font-bold text-sm tracking-wider uppercase bg-gold-gradient text-dark shadow-[0_0_30px_rgba(214,180,136,0.4)] hover:shadow-[0_0_45px_rgba(214,180,136,0.65)] transition-all duration-300 group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wider uppercase bg-gold-gradient text-dark shadow-[0_0_30px_rgba(214,180,136,0.4)] hover:shadow-[0_0_45px_rgba(214,180,136,0.65)] transition-all duration-300 group"
             >
               <span>Start Your Project</span>
               <ArrowUpRight className="w-4 h-4 text-dark transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -213,7 +213,7 @@ export default function Hero() {
           >
             <Link
               href="/#portfolio"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-display font-bold text-sm tracking-wider uppercase bg-dark-secondary/90 backdrop-blur-md border border-primary/30 text-cream hover:text-primary hover:border-primary transition-all duration-300 shadow-md"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wider uppercase bg-dark-secondary/90 backdrop-blur-md border border-primary/30 text-cream hover:text-primary hover:border-primary transition-all duration-300 shadow-md"
             >
               <span>See Our Work</span>
             </Link>

@@ -128,59 +128,59 @@ export default function ContactUsPage() {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider">
+                    <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
                       Your Name *
                     </label>
                     <input
                       {...register('fullName')}
                       type="text"
                       placeholder="e.g. Rahul Sharma"
-                      className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors"
+                      className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
                     />
                     {errors.fullName && (
-                      <p className="text-[11px] text-rose-400 mt-1">{errors.fullName.message}</p>
+                      <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.fullName.message}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider">
+                    <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
                       Corporate Email *
                     </label>
                     <input
                       {...register('email')}
                       type="email"
                       placeholder="rahul@company.com"
-                      className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors"
+                      className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
                     />
                     {errors.email && (
-                      <p className="text-[11px] text-rose-400 mt-1">{errors.email.message}</p>
+                      <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.email.message}</p>
                     )}
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider">
+                    <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
                       Phone Number *
                     </label>
                     <input
                       {...register('phone')}
                       type="tel"
                       placeholder="+91 90032 06449"
-                      className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors"
+                      className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner"
                     />
                     {errors.phone && (
-                      <p className="text-[11px] text-rose-400 mt-1">{errors.phone.message}</p>
+                      <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.phone.message}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider">
+                    <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
                       Service of Interest *
                     </label>
                     <select
                       {...register('service')}
-                      className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors"
+                      className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner appearance-none cursor-pointer"
                     >
                       <option value="">Select a service...</option>
                       {servicesOptions.map((opt) => (
@@ -190,18 +190,18 @@ export default function ContactUsPage() {
                       ))}
                     </select>
                     {errors.service && (
-                      <p className="text-[11px] text-rose-400 mt-1">{errors.service.message}</p>
+                      <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.service.message}</p>
                     )}
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider">
+                  <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
                     Target Project Budget (Optional)
                   </label>
                   <select
                     {...register('budgetRange')}
-                    className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors"
+                    className="w-full bg-dark border border-white/10 rounded-full px-5 py-3.5 text-xs text-cream focus:outline-none focus:border-primary transition-colors shadow-inner appearance-none cursor-pointer"
                   >
                     <option value="">Select an investment range...</option>
                     <option value="₹50,000 – ₹1,50,000">₹50,000 – ₹1,50,000 (Starter / Design Plan)</option>
@@ -212,23 +212,23 @@ export default function ContactUsPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider">
+                  <label className="block text-xs font-semibold text-cream mb-2 uppercase tracking-wider pl-2">
                     Project Requirements & Timeline *
                   </label>
                   <textarea
                     {...register('message')}
                     rows={4}
                     placeholder="Briefly describe your objectives, target launch date, and key deliverables..."
-                    className="w-full bg-dark border border-white/10 rounded px-4 py-3 text-xs text-cream focus:outline-none focus:border-primary transition-colors resize-none"
+                    className="w-full bg-dark border border-white/10 rounded-3xl p-5 text-xs text-cream focus:outline-none focus:border-primary transition-colors resize-none shadow-inner"
                   />
                   {errors.message && (
-                    <p className="text-[11px] text-rose-400 mt-1">{errors.message.message}</p>
+                    <p className="text-[11px] text-rose-400 mt-1.5 pl-3">{errors.message.message}</p>
                   )}
                 </div>
 
                 {isSuccess && (
-                  <div className="p-4 rounded-lg bg-emerald-500/20 border border-emerald-500 text-emerald-400 text-xs font-semibold flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4" />
+                  <div className="p-4 rounded-full bg-emerald-500/20 border border-emerald-500 text-emerald-400 text-xs font-semibold flex items-center justify-center gap-2 text-center">
+                    <CheckCircle2 className="w-4 h-4 shrink-0" />
                     <span>Thank you! Your project inquiry has been received. Our leads will respond within 24 hours.</span>
                   </div>
                 )}
@@ -236,7 +236,7 @@ export default function ContactUsPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 rounded bg-gold-gradient text-dark font-display font-bold text-xs uppercase tracking-wider hover:brightness-110 shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+                  className="w-full py-4 rounded-full bg-gold-gradient text-dark font-display font-bold text-xs uppercase tracking-wider hover:brightness-110 shadow-lg hover:shadow-[0_0_25px_rgba(214,180,136,0.5)] transition-all flex items-center justify-center gap-2 disabled:opacity-50 transform hover:scale-[1.01] active:scale-95"
                 >
                   {isSubmitting ? (
                     <span>Dispatching Inquiry...</span>

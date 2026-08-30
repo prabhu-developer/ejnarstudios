@@ -76,9 +76,9 @@ export default function ServiceTabs() {
               <button
                 key={category.id}
                 onClick={() => setActiveTab(category.id)}
-                className={`relative px-5 py-3 rounded-lg text-xs sm:text-sm font-display font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-300 flex items-center gap-2.5 ${
+                className={`relative px-6 py-3 rounded-full text-xs sm:text-sm font-display font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-300 flex items-center gap-2.5 transform active:scale-95 ${
                   isActive
-                    ? 'text-dark bg-gold-gradient shadow-[0_0_20px_rgba(214,180,136,0.3)]'
+                    ? 'text-dark bg-gold-gradient shadow-[0_0_20px_rgba(214,180,136,0.35)] scale-105'
                     : 'text-cream/70 bg-dark-secondary hover:text-cream hover:bg-dark-tertiary border border-white/5'
                 }`}
               >
@@ -92,7 +92,7 @@ export default function ServiceTabs() {
         </div>
 
         {/* Category Description Banner */}
-        <div className="mb-8 p-4 rounded-lg bg-dark-secondary/40 border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="mb-8 p-4 rounded-2xl bg-dark-secondary/40 border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <span className="text-xs font-semibold text-primary uppercase tracking-wider">
               {currentCategory.name}
@@ -126,16 +126,16 @@ export default function ServiceTabs() {
                 <Link
                   key={service.id}
                   href={`/services/${service.slug}`}
-                  className="group relative flex flex-col justify-between p-8 rounded-xl bg-dark-secondary/70 border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_12px_30px_rgba(0,0,0,0.5)]"
+                  className="group relative flex flex-col justify-between p-8 rounded-2xl bg-dark-secondary/70 border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_12px_30px_rgba(0,0,0,0.5)]"
                 >
                   {/* Top Row: Icon + Badge */}
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-lg bg-primary/10 border border-primary/25 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-dark transition-all duration-300 group-hover:rotate-6">
+                      <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/25 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-dark transition-all duration-300 group-hover:rotate-6">
                         <Icon className="w-6 h-6" />
                       </div>
                       {service.badge && (
-                        <span className="px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary border border-primary/30">
+                        <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary border border-primary/30">
                           {service.badge}
                         </span>
                       )}
