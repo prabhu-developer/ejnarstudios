@@ -4,13 +4,13 @@ import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
 import { constructMetadata, generateServiceSchema } from '@/lib/seo';
-import { Cpu, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'software-solutions')!;
 
 export const metadata = constructMetadata({
-  title: 'Custom Software Development & RPA Automation Chennai',
-  description: 'Tailored enterprise software, business process automation (RPA), legacy software modernization, and custom API middleware.',
+  title: 'POS Billing Software, ERP & Electron JS Desktop Apps Chennai',
+  description: 'Custom retail POS billing software, enterprise ERP systems, and cross-platform Electron JS desktop applications with offline SQLite sync and thermal printing.',
   path: '/services/software-solutions',
 });
 
@@ -30,15 +30,16 @@ export default function SoftwareSolutionsPage() {
       <div className="bg-dark text-cream">
         <ServiceSubpageHero service={service} />
 
+        {/* Features & Deliverables */}
         <section className="py-24 px-6 lg:px-8">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-                Process Automation
+                Process Automation & Reliability
               </span>
               <h2 className="font-display font-black text-3xl sm:text-4xl text-cream mb-6">
-                Custom Systems That <br />
-                <span className="text-gold-gradient">Eliminate Human Error.</span>
+                Offline-First Systems That <br />
+                <span className="text-gold-gradient">Never Stop Operating.</span>
               </h2>
               <div className="space-y-3">
                 {service.features.map((feat, fIdx) => (

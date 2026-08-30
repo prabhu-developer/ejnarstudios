@@ -6,7 +6,8 @@ import {
   ChevronLeft,
   ChevronRight,
   ExternalLink,
-  Layers
+  Layers,
+  Sparkles
 } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState } from 'react';
@@ -32,7 +33,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
   return (
     <div className="group relative flex flex-col justify-between rounded-2xl bg-dark-secondary overflow-hidden border border-white/5 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
       {/* Visual Header / Image Container */}
-      <div className={`relative ${project.categoryTag === 'Mobile App' ? 'h-80 sm:h-96' : 'h-64'} w-full overflow-hidden bg-[#111] flex items-center justify-center`}>
+      <div className={`relative ${project.categoryTag === 'Mobile App' ? 'h-80 sm:h-96' : 'h-52'} w-full overflow-hidden bg-[#111] flex items-center justify-center`}>
         {project.categoryTag === 'Mobile App' ? (
           // Mobile Mockup Frame for App Screen Slider
           <div className="relative w-full h-full flex items-center justify-center p-4 bg-gradient-to-b from-dark-tertiary to-dark-secondary">
@@ -198,6 +199,7 @@ export default function PortfolioGrid() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-4">
+              <Sparkles className="w-3.5 h-3.5" />
               <span>Selected Client Case Studies</span>
             </div>
             <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight">

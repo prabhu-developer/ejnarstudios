@@ -4,7 +4,7 @@ import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
 import { constructMetadata, generateServiceSchema } from '@/lib/seo';
-import { CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'website')!;
 
@@ -38,15 +38,15 @@ export default function WebsiteDevelopmentPage() {
       <div className="bg-dark text-cream">
         <ServiceSubpageHero service={service} />
 
-        {/* 5-Step Development Process Stepper (Deck p.8) */}
+        {/* 5-Step Process Timeline */}
         <section className="py-24 px-6 lg:px-8 bg-[#151515] border-b border-white/5">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-                Deck p.8 • Engineering Methodology
+                Development Lifecycle
               </span>
               <h2 className="font-display font-black text-3xl sm:text-5xl text-cream">
-                Our 5-Stage <span className="text-gold-gradient">Development Stepper.</span>
+                From Strategy to <span className="text-gold-gradient">Production Code.</span>
               </h2>
               <p className="text-sm text-muted mt-3">
                 From low-fidelity wireframe blueprints to high-refresh front-end engineering and CDN deployment.
@@ -57,7 +57,7 @@ export default function WebsiteDevelopmentPage() {
               {devProcess.map((st, idx) => (
                 <div
                   key={st.step}
-                  className="relative p-6 rounded-xl bg-dark-secondary border border-white/5 hover:border-primary/40 transition-all duration-300 flex flex-col justify-between"
+                  className="relative p-6 rounded-2xl bg-dark-secondary border border-white/5 hover:border-primary/40 transition-all duration-300 flex flex-col justify-between shadow-lg"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">

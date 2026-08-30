@@ -22,7 +22,7 @@ import {
   ArrowRight,
   CheckCircle2,
 } from 'lucide-react';
-import { SERVICE_CATEGORIES, ServiceCategory } from '@/lib/data/services';
+import { SERVICE_CATEGORIES } from '@/lib/data/services';
 
 const iconMap: Record<string, React.ElementType> = {
   Feather,
@@ -43,14 +43,17 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 export default function ServiceTabs() {
-  // Default tab open = 'dev' (Development) as specified in prompt section 4.1
+  // Default tab open = 'dev' (Development)
   const [activeTab, setActiveTab] = useState<'design' | 'dev' | 'marketing' | 'content'>('dev');
 
   const currentCategory = SERVICE_CATEGORIES.find((cat) => cat.id === activeTab) || SERVICE_CATEGORIES[1];
 
   return (
     <section id="services" className="py-24 px-6 lg:px-8 bg-dark relative overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      {/* Background ambient glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/5 rounded-full blur-[180px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
@@ -76,7 +79,7 @@ export default function ServiceTabs() {
               <button
                 key={category.id}
                 onClick={() => setActiveTab(category.id)}
-                className={`relative px-6 py-3 rounded-full text-xs sm:text-sm font-display font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-300 flex items-center gap-2.5 transform active:scale-95 ${
+                className={`relative px-6 py-3 rounded-full text-xs sm:text-sm font-display font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-300 flex items-center gap-2.5 transform active:scale-95 cursor-pointer ${
                   isActive
                     ? 'text-dark bg-gold-gradient shadow-[0_0_20px_rgba(214,180,136,0.35)] scale-105'
                     : 'text-cream/70 bg-dark-secondary hover:text-cream hover:bg-dark-tertiary border border-white/5'
@@ -92,7 +95,7 @@ export default function ServiceTabs() {
         </div>
 
         {/* Category Description Banner */}
-        <div className="mb-8 p-4 rounded-2xl bg-dark-secondary/40 border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="mb-10 p-4 rounded-2xl bg-dark-secondary/40 border border-white/5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <span className="text-xs font-semibold text-primary uppercase tracking-wider">
               {currentCategory.name}
@@ -126,7 +129,7 @@ export default function ServiceTabs() {
                 <Link
                   key={service.id}
                   href={`/services/${service.slug}`}
-                  className="group relative flex flex-col justify-between p-8 rounded-2xl bg-dark-secondary/70 border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_12px_30px_rgba(0,0,0,0.5)]"
+                  className="group relative flex flex-col justify-between p-8 rounded-3xl bg-dark-secondary/70 border border-white/10 hover:border-primary/50 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_12px_30px_rgba(0,0,0,0.5)]"
                 >
                   {/* Top Row: Icon + Badge */}
                   <div>
@@ -153,6 +156,25 @@ export default function ServiceTabs() {
                     <p className="text-xs sm:text-sm text-muted leading-relaxed mb-6">
                       {service.description}
                     </p>
+
+                    {/* Tech Stack Pills on Card */}
+                    {service.techStack && service.techStack.length > 0 && (
+                      <div className="mb-6 pt-4 border-t border-white/5">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-primary/80 block mb-2 font-semibold">
+                          Tech Stack Architecture:
+                        </span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {service.techStack.map((tech, tIdx) => (
+                            <span
+                              key={tIdx}
+                              className="text-[10px] font-medium px-2.5 py-1 rounded-full bg-dark border border-white/10 text-cream/90 group-hover:border-primary/40 group-hover:text-primary transition-colors"
+                            >
+                              {tech.name}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   {/* Features Mini List & Link */}

@@ -4,13 +4,13 @@ import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
 import { constructMetadata, generateServiceSchema } from '@/lib/seo';
-import { LayoutDashboard, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'web-apps')!;
 
 export const metadata = constructMetadata({
-  title: 'Custom Web Applications & SaaS Development Chennai',
-  description: 'Bespoke web applications, custom admin panels, interactive dashboards, and SaaS portals engineered with Next.js and robust cloud architectures.',
+  title: 'Custom Web Applications & SaaS Development Chennai — React.js, Node.js, Laravel & Angular',
+  description: 'Bespoke web applications, custom admin panels, interactive dashboards, and SaaS portals engineered with React.js, Node.js, Express, MongoDB, Laravel, Angular, and cloud databases.',
   path: '/services/web-apps',
 });
 

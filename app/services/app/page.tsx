@@ -6,14 +6,14 @@ import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import AppCaseStudySlider from '@/components/ui/AppCaseStudySlider';
 import CtaBanner from '@/components/sections/CtaBanner';
 import { constructMetadata, generateServiceSchema } from '@/lib/seo';
-import { Smartphone, CheckCircle2, Star, Download } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'app')!;
 const byaddiProject = PORTFOLIO_DATA.find((p) => p.slug === 'byaddi');
 
 export const metadata = constructMetadata({
-  title: 'Mobile App Development Company Chennai — iOS & Android Apps',
-  description: 'Native and cross-platform React Native & Flutter mobile app development with real-time push notifications and App Store deployment. Case study: byaddi.',
+  title: 'Mobile App Development Company Chennai — React Native, Flutter, Expo, Firebase & AWS Apps',
+  description: 'Cross-platform iOS and Android mobile app development with React Native, Flutter, Expo SDK, Firebase realtime sync, and AWS cloud backend infrastructure. Case study: byaddi.',
   path: '/services/app',
 });
 
@@ -78,9 +78,9 @@ export default function AppDevelopmentPage() {
                   Mobile App Deliverables
                 </h3>
                 {service.deliverables.map((deliv, dIdx) => (
-                  <div key={dIdx} className="p-3 rounded-lg bg-dark border border-white/5 flex items-center justify-between text-xs">
+                  <div key={dIdx} className="p-3.5 px-5 rounded-full bg-dark border border-white/5 flex items-center justify-between text-xs">
                     <span className="text-cream font-medium">{deliv}</span>
-                    <span className="text-[10px] font-mono text-primary uppercase">Standard</span>
+                    <span className="text-[10px] font-mono text-primary uppercase font-bold">Standard</span>
                   </div>
                 ))}
               </div>
