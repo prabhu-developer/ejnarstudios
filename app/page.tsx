@@ -4,7 +4,6 @@ import Marquee from '@/components/sections/Marquee';
 import ServiceTabs from '@/components/sections/ServiceTabs';
 import StrengthsGrid from '@/components/sections/StrengthsGrid';
 import HorizontalProcess from '@/components/sections/HorizontalProcess';
-import PortfolioGrid from '@/components/sections/PortfolioGrid';
 import StatsCounter from '@/components/sections/StatsCounter';
 import AwardsTimeline from '@/components/sections/AwardsTimeline';
 import TestimonialSection from '@/components/sections/TestimonialSection';
@@ -28,25 +27,22 @@ export default function HomePage() {
       {/* 3. What We Do (4 Categories & 14 Services Tabbed Grid) */}
       <ServiceTabs />
 
-      {/* 4. Why EJNARSTUDIOS (6 Core Strengths from Deck p.21) */}
+      {/* 4. Why EJNARSTUDIOS (Infographic Blueprint & Strengths) */}
       <StrengthsGrid />
 
       {/* 5. Process Timeline (Deck p.10–12 Step Walkthrough) */}
       <HorizontalProcess />
 
-      {/* 6. Featured Work / Portfolio Case Studies */}
-      <PortfolioGrid />
-
-      {/* 7. Digital Presence Stats & Metrics (Deck p.17) */}
+      {/* 6. Digital Presence Stats & Metrics (Deck p.17) */}
       <StatsCounter />
 
-      {/* 8. Awards & Industry Recognition (Deck p.25) */}
+      {/* 7. Awards & Industry Recognition (Deck p.25) */}
       <AwardsTimeline />
 
-      {/* 9. Pull-Quote Testimonial */}
+      {/* 8. Pull-Quote Testimonial */}
       <TestimonialSection />
 
-      {/* 10. High-Conversion CTA Banner */}
+      {/* 9. High-Conversion CTA Banner */}
       <CtaBanner />
     </>
   );

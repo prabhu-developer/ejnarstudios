@@ -35,6 +35,7 @@ export const NAV_LINKS = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Services', href: '/services', isMegaMenu: true },
+  { name: 'Portfolio', href: '/portfolio' },
   { name: 'Marketplace', href: '/marketplace' },
   { name: 'Careers', href: '/careers' },
   { name: 'Contact', href: '/contact-us' },
