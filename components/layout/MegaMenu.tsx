@@ -1,29 +1,28 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { SERVICE_CATEGORIES } from '@/lib/data/services';
+import { AnimatePresence, motion } from 'framer-motion';
 import {
+  ArrowRight,
+  Compass,
+  Cpu,
   Feather,
-  Sparkles,
-  Palette,
   Globe,
+  LayoutDashboard,
+  MessageSquare,
+  Palette,
+  Share2,
   ShoppingBag,
   Smartphone,
-  LayoutDashboard,
-  Cpu,
-  TrendingUp,
-  Share2,
-  Users,
+  Sparkles,
   Target,
-  MessageSquare,
-  Compass,
-  Video,
-  ArrowRight,
-  Sparkle,
+  TrendingUp,
+  Users,
+  Video
 } from 'lucide-react';
-import { SERVICE_CATEGORIES } from '@/lib/data/services';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useEffect, useRef } from 'react';
 
 const iconMap: Record<string, React.ElementType> = {
   Feather,
@@ -155,11 +154,11 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                               45K+ active orders and 4.9★ rating.
                             </p>
                             <Link
-                              href="/#portfolio"
+                              href="/https://byaddi.com"
                               onClick={onClose}
                               className="inline-flex items-center gap-1 text-[11px] text-primary font-medium mt-2 hover:underline"
                             >
-                              <span>View Case Studies</span>
+                              <span>View More</span>
                               <ArrowRight className="w-3 h-3" />
                             </Link>
                           </div>

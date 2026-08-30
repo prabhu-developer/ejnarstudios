@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import { PORTFOLIO_DATA } from '@/lib/data/portfolio';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
+import AppCaseStudySlider from '@/components/ui/AppCaseStudySlider';
 import CtaBanner from '@/components/sections/CtaBanner';
 import { constructMetadata, generateServiceSchema } from '@/lib/seo';
 import { Smartphone, CheckCircle2, Star, Download } from 'lucide-react';
@@ -32,52 +33,11 @@ export default function AppDevelopmentPage() {
       <div className="bg-dark text-cream">
         <ServiceSubpageHero service={service} />
 
-        {/* Featured App Showcase: byaddi */}
+        {/* Featured App Showcase: byaddi with Slide View */}
         {byaddiProject && (
           <section className="py-24 px-6 lg:px-8 bg-[#151515] border-b border-white/5">
-            <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-6 relative h-96 rounded-2xl overflow-hidden border border-primary/20 shadow-2xl">
-                <Image
-                  src={byaddiProject.image}
-                  alt="byaddi Mobile App Case Study"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="flex items-center gap-1 text-primary mb-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-primary" />
-                    ))}
-                    <span className="text-xs font-bold text-cream ml-1.5">4.9 App Store Rating</span>
-                  </div>
-                  <h3 className="font-display font-bold text-2xl text-cream">
-                    {byaddiProject.title} — Mobile App
-                  </h3>
-                </div>
-              </div>
-
-              <div className="lg:col-span-6 space-y-6">
-                <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary">
-                  Featured Case Study
-                </span>
-                <h2 className="font-display font-black text-3xl sm:text-4xl text-cream">
-                  Native Speed & <br />
-                  <span className="text-gold-gradient">Fluid Mobile UX.</span>
-                </h2>
-                <p className="text-sm text-muted leading-relaxed font-body">
-                  {byaddiProject.description}
-                </p>
-
-                <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-dark-secondary border border-white/5">
-                  {byaddiProject.metrics?.map((m, idx) => (
-                    <div key={idx} className="text-center">
-                      <span className="font-display font-black text-lg text-primary">{m.value}</span>
-                      <span className="block text-[10px] text-muted">{m.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            <div className="max-w-6xl mx-auto">
+              <AppCaseStudySlider project={byaddiProject} />
             </div>
           </section>
         )}

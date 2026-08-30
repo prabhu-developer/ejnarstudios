@@ -222,7 +222,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       { step: '03', title: 'Platform Development', desc: 'Developing custom themes, cart APIs, and checkout optimizations.' },
       { step: '04', title: 'Payment & Logistics QA', desc: 'End-to-end order testing, shipping calculation, and live launch.' },
     ],
-    caseStudySlugs: ['jucoholic', 'dimah-fashions'],
+    caseStudySlugs: ['applepoint', 'fefine'],
   },
   {
     id: 'app-development',

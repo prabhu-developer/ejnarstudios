@@ -6,16 +6,16 @@ import { PORTFOLIO_DATA } from '@/lib/data/portfolio';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
 import { constructMetadata, generateServiceSchema } from '@/lib/seo';
-import { ShoppingBag, ArrowUpRight, CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
+import { ShoppingBag, ArrowUpRight, CheckCircle2, ShieldCheck, Zap, ExternalLink } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'ecommerce')!;
 const relatedProjects = PORTFOLIO_DATA.filter((p) =>
-  ['jucoholic', 'dimah-fashions'].includes(p.slug)
+  ['applepoint', 'fefine'].includes(p.slug) || p.categoryTag === 'E-commerce'
 );
 
 export const metadata = constructMetadata({
   title: 'E-commerce Development Company Chennai — Shopify, WooCommerce & Custom Stores',
-  description: 'Scalable e-commerce store engineering with frictionless checkout, payment gateway integrations, and inventory automation. Case studies: Jucoholic & DimahFashions.',
+  description: 'Scalable e-commerce store engineering with frictionless checkout, payment gateway integrations, and inventory automation. Case studies: Apple Point & Fefine.',
   path: '/services/ecommerce',
 });
 
@@ -35,7 +35,7 @@ export default function EcommercePage() {
       <div className="bg-dark text-cream">
         <ServiceSubpageHero service={service} />
 
-        {/* Featured Case Studies (Jucoholic & DimahFashions from Deck) */}
+        {/* Featured Case Studies (Apple Point, etc.) */}
         <section className="py-24 px-6 lg:px-8 bg-[#151515] border-b border-white/5">
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
@@ -50,53 +50,69 @@ export default function EcommercePage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {relatedProjects.map((proj) => (
                 <div
                   key={proj.id}
-                  className="rounded-2xl bg-dark-secondary overflow-hidden border border-white/5 hover:border-primary/40 transition-all duration-300 shadow-xl"
+                  className="rounded-2xl bg-dark-secondary overflow-hidden border border-white/5 hover:border-primary/40 transition-all duration-300 shadow-xl flex flex-col justify-between"
                 >
-                  <div className="relative h-64 w-full">
-                    <Image
-                      src={proj.image}
-                      alt={proj.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-dark-secondary via-transparent to-transparent" />
-                    <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-mono bg-dark/80 text-primary border border-primary/30">
-                      {proj.category}
-                    </span>
-                  </div>
+                  <div>
+                    <div className="relative h-64 w-full">
+                      <Image
+                        src={proj.image}
+                        alt={proj.title}
+                        fill
+                        className="object-cover object-top"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-dark-secondary via-transparent to-transparent" />
+                      <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-mono bg-dark/80 text-primary border border-primary/30">
+                        {proj.category}
+                      </span>
+                    </div>
 
-                  <div className="p-8">
-                    <span className="text-xs font-mono text-muted uppercase">{proj.client}</span>
-                    <h3 className="font-display font-bold text-2xl text-cream mt-1 mb-3">
-                      {proj.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-muted leading-relaxed mb-6">
-                      {proj.description}
-                    </p>
+                    <div className="p-8">
+                      <span className="text-xs font-mono text-muted uppercase">{proj.client}</span>
+                      <h3 className="font-display font-bold text-2xl text-cream mt-1 mb-3">
+                        {proj.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-muted leading-relaxed mb-6">
+                        {proj.description}
+                      </p>
 
-                    {proj.metrics && (
-                      <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-dark border border-white/5 mb-6">
-                        {proj.metrics.map((m, idx) => (
-                          <div key={idx} className="text-center">
-                            <span className="font-display font-black text-lg text-primary">{m.value}</span>
-                            <span className="block text-[10px] text-muted truncate">{m.label}</span>
-                          </div>
+                      {proj.metrics && (
+                        <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-dark border border-white/5 mb-6">
+                          {proj.metrics.map((m, idx) => (
+                            <div key={idx} className="text-center">
+                              <span className="font-display font-black text-lg text-primary">{m.value}</span>
+                              <span className="block text-[10px] text-muted truncate">{m.label}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      <div className="flex flex-wrap gap-2">
+                        {proj.deliverables.map((deliv, dIdx) => (
+                          <span key={deliv} className="px-2.5 py-1 rounded bg-white/[0.04] text-[11px] text-cream/80">
+                            {deliv}
+                          </span>
                         ))}
                       </div>
-                    )}
-
-                    <div className="flex flex-wrap gap-2">
-                      {proj.deliverables.map((deliv, dIdx) => (
-                        <span key={dIdx} className="px-2.5 py-1 rounded bg-white/[0.04] text-[11px] text-cream/80">
-                          {deliv}
-                        </span>
-                      ))}
                     </div>
                   </div>
+
+                  {proj.link && (
+                    <div className="px-8 pb-8 pt-2">
+                      <a
+                        href={proj.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 hover:bg-primary text-primary hover:text-dark text-xs font-semibold font-mono uppercase tracking-wider transition-all duration-300 border border-primary/30"
+                      >
+                        <span>Visit Live Store</span>
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
