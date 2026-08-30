@@ -6,6 +6,7 @@ import {
   LinkedinIcon,
   TwitterIcon,
 } from '@/components/ui/SocialIcons';
+import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import { BRAND } from '@/lib/constants';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -101,25 +102,13 @@ export default function ContactUsPage() {
 
   return (
     <div className="pt-28 pb-20 bg-dark text-cream min-h-screen">
-      {/* Contact Header */}
-      <section className="py-16 px-6 lg:px-8 text-center relative overflow-hidden border-b border-white/5">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6">
-            <span>Deck p.27 • Connect With Our Studio</span>
-          </div>
-
-          <h1 className="font-banner font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight mb-6">
-            Let’s Build Something <br />
-            <span className="text-gold-gradient">Unprecedented Together.</span>
-          </h1>
-
-          <p className="text-base sm:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
-            Schedule an exploratory roadmap session or request a custom proposal for your branding, engineering, and digital growth needs.
-          </p>
-        </div>
-      </section>
+      {/* Animated Contact Header */}
+      <AnimatedHeroBanner
+        badgeText="Connect With Our Studio"
+        headlinePrefix="Let’s Build Something"
+        highlightText="Unprecedented Together."
+        description="Schedule an exploratory roadmap session or request a custom proposal for your branding, engineering, and digital growth needs."
+      />
 
       {/* Split-Screen Contact Block */}
       <section className="py-20 px-6 lg:px-8">

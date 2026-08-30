@@ -2,6 +2,7 @@ import { BRAND } from '@/lib/constants';
 import { AWARDS_DATA } from '@/lib/data/awards';
 import { STRENGTHS_DATA } from '@/lib/data/strengths';
 import { constructMetadata } from '@/lib/seo';
+import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import {
   ArrowRight,
   Compass,
@@ -41,25 +42,13 @@ export default function AboutPage() {
 
   return (
     <div className="pt-28 pb-20 bg-dark text-cream">
-      {/* Hero Section */}
-      <section className="py-16 px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6">
-            <span>Creative Agency • Chennai, India</span>
-          </div>
-
-          <h1 className="font-banner font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight mb-8">
-            Crafting Attractive Experiences <br />
-            <span className="text-gold-gradient">For The Modern Web.</span>
-          </h1>
-
-          <p className="text-base sm:text-xl text-muted max-w-3xl mx-auto leading-relaxed">
-            Digital agency based in Chennai, India that loves to craft attractive experiences for the web. We help brands make smarter decisions through design distinction and technical excellence.
-          </p>
-        </div>
-      </section>
+      {/* Animated Hero Section */}
+      <AnimatedHeroBanner
+        badgeText="Creative Agency • Chennai, India"
+        headlinePrefix="Crafting Attractive Experiences"
+        highlightText="For The Modern Web."
+        description="Digital agency based in Chennai, India that loves to craft attractive experiences for the web. We help brands make smarter decisions through design distinction and technical excellence."
+      />
 
       {/* Mission & Narrative Section (deck p.24) */}
       <section className="py-20 px-6 lg:px-8 bg-dark-secondary/40 border-y border-white/5">

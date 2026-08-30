@@ -1,5 +1,6 @@
 import CtaBanner from '@/components/sections/CtaBanner';
 import PricingTable from '@/components/sections/PricingTable';
+import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import { SERVICE_CATEGORIES } from '@/lib/data/services';
 import { constructMetadata } from '@/lib/seo';
 import {
@@ -82,39 +83,30 @@ export default function ServicesPage() {
 
   return (
     <div className="pt-28 bg-dark text-cream">
-      {/* Services Hub Hero */}
-      <section className="py-20 px-6 lg:px-8 relative overflow-hidden text-center border-b border-white/5">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
-
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6">
-            <span>Deck p.3 • End-To-End Agency Capabilities</span>
-          </div>
-
-          <h1 className="font-banner font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight mb-6">
-            We Offer <span className="text-gold-gradient">End-to-End</span> Services.
-          </h1>
-
-          <p className="text-base sm:text-lg text-muted max-w-3xl mx-auto leading-relaxed mb-8">
-            From iconic visual identities and high-performance Next.js architectures to algorithmic marketing funnels and full-scale commercial ad production.
-          </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-3">
+      {/* Services Hub Animated Hero */}
+      <AnimatedHeroBanner
+        badgeText="End-To-End Agency Capabilities"
+        headlinePrefix="We Offer"
+        highlightText="End-to-End"
+        headlineSuffix="Services."
+        description="From iconic visual identities and high-performance Next.js architectures to algorithmic marketing funnels and full-scale commercial ad production."
+        actions={
+          <>
             <a
               href="#packages"
-              className="px-6 py-3 rounded text-xs font-display font-bold uppercase tracking-wider bg-gold-gradient text-dark hover:brightness-110 shadow-md transition-all"
+              className="px-6 py-3.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-gold-gradient text-dark hover:brightness-110 shadow-md transition-all transform hover:scale-105 active:scale-95"
             >
               Jump to Packages Table
             </a>
             <a
               href="#categories"
-              className="px-6 py-3 rounded text-xs font-display font-bold uppercase tracking-wider bg-dark-secondary border border-white/10 text-cream hover:text-primary transition-all"
+              className="px-6 py-3.5 rounded-xl text-xs font-display font-bold uppercase tracking-wider bg-dark-secondary border border-white/10 text-cream hover:text-primary transition-all transform hover:scale-105 active:scale-95 shadow-sm"
             >
               Browse 14 Services
             </a>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+      />
 
       {/* Requirements We Consider Section (Deck p.5) */}
       <section className="py-24 px-6 lg:px-8 bg-[#151515] border-b border-white/5">

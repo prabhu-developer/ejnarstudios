@@ -1,6 +1,7 @@
 'use client';
 
 import CtaBanner from '@/components/sections/CtaBanner';
+import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import { MARKETPLACE_PRODUCTS, MarketplaceProduct } from '@/lib/data/marketplace';
 import {
   ArrowRight,
@@ -40,31 +41,20 @@ export default function MarketplacePage() {
 
   return (
     <div className="pt-28 bg-dark text-cream min-h-screen">
-      {/* Marketplace Hero */}
-      <section className="py-20 px-6 lg:px-8 relative overflow-hidden text-center border-b border-white/5">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
-
-        <div className="max-w-5xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6">
-            <span>Turnkey Assets • 100% Ready Delivery</span>
-          </div>
-
-          <h1 className="font-banner font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight mb-6">
-            Curated Digital <span className="text-gold-gradient">Marketplace.</span>
-          </h1>
-
-          <p className="text-base sm:text-lg text-muted max-w-3xl mx-auto leading-relaxed mb-8">
-            Pre-built agency templates, vector logo suites, social media packs, and cinema video templates built to accelerate your launch with zero delay.
-          </p>
-
-          {/* Filter Pills Bar */}
+      {/* Marketplace Animated Hero */}
+      <AnimatedHeroBanner
+        badgeText="Turnkey Assets • 100% Ready Delivery"
+        headlinePrefix="Curated Digital"
+        highlightText="Marketplace."
+        description="Pre-built agency templates, vector logo suites, social media packs, and cinema video templates built to accelerate your launch with zero delay."
+        actions={
           <div className="flex items-center justify-center gap-2 overflow-x-auto pb-2 no-scrollbar">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-200 ${selectedCategory === cat
-                  ? 'bg-primary text-dark font-bold shadow-md'
+                  ? 'bg-primary text-dark font-bold shadow-md ring-2 ring-primary/40'
                   : 'bg-dark-secondary text-cream/70 hover:text-cream hover:bg-dark-tertiary border border-white/5'
                   }`}
               >
@@ -72,8 +62,8 @@ export default function MarketplacePage() {
               </button>
             ))}
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* Product Catalog Grid */}
       <section className="py-20 px-6 lg:px-8">

@@ -153,14 +153,16 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                             <p className="text-[10px] text-muted line-clamp-1 mt-0.5">
                               45K+ active orders and 4.9★ rating.
                             </p>
-                            <Link
-                              href="/https://byaddi.com"
+                            <a
+                              href="https://byaddi.com"
+                              target="_blank"
+                              rel="noopener noreferrer"
                               onClick={onClose}
                               className="inline-flex items-center gap-1 text-[11px] text-primary font-medium mt-2 hover:underline"
                             >
                               <span>View More</span>
                               <ArrowRight className="w-3 h-3" />
-                            </Link>
+                            </a>
                           </div>
                         </div>
                       )}

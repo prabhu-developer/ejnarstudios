@@ -1,6 +1,7 @@
 'use client';
 
 import CtaBanner from '@/components/sections/CtaBanner';
+import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import { JOB_OPENINGS } from '@/lib/data/jobs';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
@@ -78,25 +79,13 @@ export default function CareersPage() {
 
   return (
     <div className="pt-28 bg-dark text-cream min-h-screen">
-      {/* Careers Hero */}
-      <section className="py-20 px-6 lg:px-8 relative overflow-hidden text-center border-b border-white/5">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-primary/10 rounded-full blur-[160px] pointer-events-none" />
-
-        <div className="max-w-4xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-6">
-            <span>Join Our Creative Ranks</span>
-          </div>
-
-          <h1 className="font-banner font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight mb-6">
-            Build Unprecedented <br />
-            <span className="text-gold-gradient">Digital Experiences.</span>
-          </h1>
-
-          <p className="text-base sm:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
-            As a small, impactful team, every contribution makes a visible difference. We value curiosity over convention and treat every project as a chance to build something extraordinary.
-          </p>
-        </div>
-      </section>
+      {/* Careers Animated Hero */}
+      <AnimatedHeroBanner
+        badgeText="Join Our Creative Ranks"
+        headlinePrefix="Build Unprecedented"
+        highlightText="Digital Experiences."
+        description="As a small, impactful team, every contribution makes a visible difference. We value curiosity over convention and treat every project as a chance to build something extraordinary."
+      />
 
       {/* Culture Perks Grid */}
       <section className="py-20 px-6 lg:px-8 bg-[#151515] border-b border-white/5">
