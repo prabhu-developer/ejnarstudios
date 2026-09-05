@@ -4,8 +4,7 @@ import Logo from '@/components/ui/Logo';
 import {
   FacebookIcon,
   InstagramIcon,
-  LinkedinIcon,
-  TwitterIcon,
+  LinkedinIcon
 } from '@/components/ui/SocialIcons';
 import { BRAND, NAV_LINKS } from '@/lib/constants';
 import { SERVICES_DATA } from '@/lib/data/services';
@@ -37,7 +36,7 @@ export default function Footer() {
       {/* Huge Ghost-Text Wordmark Backdrop */}
       <div className="absolute top-14 left-1/2 opacity-[0.05] -translate-x-1/2 select-none pointer-events-none  text-center w-full whitespace-nowrap overflow-hidden">
         <span className="font-banner font-extrabold text-[8vw] tracking-widest text-white uppercase stroke-text">
-          ejnarstudios
+          Ejnar Studios
         </span>
       </div>
 
@@ -58,7 +57,6 @@ export default function Footer() {
               {[
                 { icon: InstagramIcon, href: BRAND.socials.instagram, label: 'Instagram' },
                 { icon: FacebookIcon, href: BRAND.socials.facebook, label: 'Facebook' },
-                { icon: TwitterIcon, href: BRAND.socials.twitter, label: 'Twitter' },
                 { icon: LinkedinIcon, href: BRAND.socials.linkedin, label: 'LinkedIn' },
               ].map((item) => {
                 const Icon = item.icon;
@@ -138,7 +136,7 @@ export default function Footer() {
           {/* Column 4: Contact & Newsletter (3 Cols) */}
           <div className="lg:col-span-3 space-y-5">
             <h4 className="font-display text-xs font-bold uppercase tracking-[0.25em] text-primary">
-              ejnarstudios & Contact
+              Ejnar Studios  & Contact
             </h4>
             <div className="space-y-3 text-xs text-muted">
               <div className="flex items-start gap-2.5">
@@ -248,10 +246,6 @@ export default function Footer() {
                 USA
               </a>
             </span>
-          </div>
-
-          <div className="flex items-center gap-2 text-[11px] text-muted/80">
-            <span>Founded by <strong className="text-cream">{BRAND.founder}</strong></span>
           </div>
         </div>
       </div>

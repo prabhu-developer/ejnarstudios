@@ -37,10 +37,10 @@ export default function StrengthsGrid() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-4 shadow-sm">
             <ShieldCheck className="w-3.5 h-3.5" />
-            <span>ejnarstudios Trust Blueprint</span>
+            <span>Ejnar Studios  Trust Blueprint</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight mb-4">
-            Why Choose <span className="text-gold-gradient">ejnarstudios.</span>
+            Why Choose <span className="text-gold-gradient">Ejnar Studios .</span>
           </h2>
           <p className="text-muted text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
             We combine high-concept architectural design with strict commercial accountability, sub-second engineering, and zero vendor lock-in.

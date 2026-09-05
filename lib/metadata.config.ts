@@ -67,7 +67,7 @@ export const DEFAULT_METADATA: PageMetadataConfig = {
  */
 export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   home: {
-    title: 'ejnarstudios — Creative Branding, Web/App Development & Marketing Agency Chennai',
+    title: 'Ejnar Studios  — Creative Branding, Web/App Development & Marketing Agency Chennai',
     description:
       'Award-winning creative digital agency in Chennai crafting luxury brand identities, high-performance Next.js websites, mobile apps, and full-funnel digital marketing.',
     keywords: [
@@ -83,9 +83,9 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   about: {
     title: 'About Us — Creative Heritage, Principles & Leadership',
     description:
-      'Founded in 2018 in Chennai by Ranjeth Bhuvaneswaran. ejnarstudios bridges architectural design systems, sub-second engineering, and full-funnel digital growth.',
+      'Founded in 2018 in Chennai by Ranjeth Bhuvaneswaran. Ejnar Studios  bridges architectural design systems, sub-second engineering, and full-funnel digital growth.',
     keywords: [
-      'about ejnarstudios',
+      'about Ejnar Studios ',
       'chennai digital agency history',
       'ranjeth bhuvaneswaran',
       'agency leadership',
@@ -111,7 +111,7 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
     description:
       'Explore our portfolio of award-winning websites, mobile apps, e-commerce stores, POS/ERP systems, and brand identities crafted for ambitious enterprises.',
     keywords: [
-      'ejnarstudios portfolio',
+      'Ejnar Studios  portfolio',
       'web design case studies',
       'mobile app portfolio',
       'e-commerce client work',
@@ -122,7 +122,7 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   marketplace: {
     title: 'Digital Marketplace & Asset Kits — Templates, Design Systems & Logos',
     description:
-      'Premium production-ready digital assets, Figma design systems, corporate presentation pitch decks, and brand identity kits built by ejnarstudios.',
+      'Premium production-ready digital assets, Figma design systems, corporate presentation pitch decks, and brand identity kits built by Ejnar Studios .',
     keywords: [
       'digital marketplace',
       'figma templates',
@@ -137,7 +137,7 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
     description:
       'We are hiring visionary UI/UX designers, Next.js engineers, mobile developers, and performance marketers in Chennai. Explore open studio roles and apply.',
     keywords: [
-      'careers at ejnarstudios',
+      'careers at Ejnar Studios ',
       'chennai design jobs',
       'next.js developer jobs',
       'react native jobs chennai',
@@ -150,7 +150,7 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
     description:
       'Connect with our senior team at Greeta Towers, Perungudi, India | Buckinghamshire, UK | Texas, USA. Schedule an exploratory roadmap session or request a custom proposal for your project.',
     keywords: [
-      'contact ejnarstudios',
+      'contact Ejnar Studios ',
       'hire digital agency chennai',
       'perungudi agency contact',
       'request project proposal',
@@ -160,9 +160,9 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   privacyPolicy: {
     title: 'Privacy Policy — Data Protection, Cookies & Security',
     description:
-      'Learn how ejnarstudios collects, uses, protects, and handles your personal and business data across our website, contact discovery forms, and services.',
+      'Learn how Ejnar Studios  collects, uses, protects, and handles your personal and business data across our website, contact discovery forms, and services.',
     keywords: [
-      'ejnarstudios privacy policy',
+      'Ejnar Studios  privacy policy',
       'data protection chennai agency',
       'cookie policy',
       'user data security',
@@ -172,9 +172,9 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   termsAndConditions: {
     title: 'Terms & Conditions — Client Agreements, Licenses & IP Ownership',
     description:
-      'Review the terms of service, project engagements, intellectual property transfer terms, marketplace licenses, and warranties of ejnarstudios.',
+      'Review the terms of service, project engagements, intellectual property transfer terms, marketplace licenses, and warranties of Ejnar Studios .',
     keywords: [
-      'ejnarstudios terms and conditions',
+      'Ejnar Studios  terms and conditions',
       'agency client agreement',
       'intellectual property terms',
       'marketplace licensing terms',
@@ -449,7 +449,7 @@ export function getPageMetadata(
       title: fullTitle,
       description: merged.description,
       images: [ogImage],
-      creator: '@ejnarstudios',
+      creator: '@Ejnar Studios ',
     },
     robots: {
       index: !merged.noIndex,

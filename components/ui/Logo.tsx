@@ -1,8 +1,7 @@
 'use client';
 
-import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface LogoProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -28,12 +27,12 @@ export default function Logo({
     <Link
       href="/"
       className={`inline-flex items-center group cursor-pointer select-none ${className}`}
-      aria-label="ejnarstudios Home"
+      aria-label="Ejnar Studios  Home"
     >
       <div className="relative flex items-center transition-transform duration-300 group-hover:scale-105">
         <Image
           src="/logo.svg"
-          alt="ejnarstudios"
+          alt="Ejnar Studios "
           width={currentSize.width}
           height={currentSize.height}
           priority

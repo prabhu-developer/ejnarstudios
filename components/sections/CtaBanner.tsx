@@ -113,9 +113,9 @@ export default function CtaBanner() {
                   if (pathname !== '/contact-us') {
                     openContactModal({
                       title: 'Start Your Project',
-                      subtitle: 'ejnarstudios Consultation',
+                      subtitle: 'Ejnar Studios  Consultation',
                       contextTag: 'Digital Flagship Roadmap',
-                      defaultMessage: 'We are ready to build our digital flagship with ejnarstudios. Please schedule an exploratory discovery session.',
+                      defaultMessage: 'We are ready to build our digital flagship with Ejnar Studios . Please schedule an exploratory discovery session.',
                       submitButtonText: 'Send Project Inquiry',
                     });
                   }
@@ -137,7 +137,7 @@ export default function CtaBanner() {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wider uppercase bg-dark-tertiary border border-primary/30 text-cream hover:text-primary hover:border-primary transition-all duration-300 shadow-md"
               >
                 <PhoneCall className="w-4 h-4 text-primary" />
-                <span>Call +91-73581 00831</span>
+                <span>Call {BRAND.contact.mobile}</span>
               </a>
             </motion.div>
           </motion.div>

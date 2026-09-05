@@ -43,7 +43,7 @@ export default function LoadingScreen() {
             >
               <Image
                 src="/logo-icon.png"
-                alt="ejnarstudios Logo"
+                alt="Ejnar Studios  Logo"
                 fill
                 priority
                 className="object-contain filter drop-shadow-[0_0_25px_rgba(214,180,136,0.6)]"

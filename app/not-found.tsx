@@ -1,22 +1,20 @@
 'use client';
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { motion, useReducedMotion, Variants } from 'framer-motion';
 import {
-  Home,
   ArrowLeft,
   Compass,
-  Search,
-  Sparkles,
+  Home,
   Layers,
-  ShoppingBag,
   Mail,
-  Zap,
   RefreshCw,
+  ShoppingBag,
+  Sparkles,
+  Zap
 } from 'lucide-react';
-import { BRAND } from '@/lib/constants';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 export default function NotFound() {
   const router = useRouter();
@@ -25,7 +23,7 @@ export default function NotFound() {
 
   const funFacts = [
     'Fun Fact: Even our sub-second Next.js Turbopack engine cannot render a page that doesn’t exist.',
-    'ejnarstudios Theory: A developer probably refactored this route while enjoying Chennai filter coffee.',
+    'Ejnar Studios  Theory: A developer probably refactored this route while enjoying Chennai filter coffee.',
     'Design Verdict: This page scored a 100% in minimalism by having zero DOM elements.',
     'Dev Status: 404 Error • 0 Bytes transferred • 100% Mystery.',
   ];
@@ -56,12 +54,12 @@ export default function NotFound() {
 
   return (
     <div className="min-h-screen bg-dark text-cream relative flex flex-col items-center justify-center overflow-hidden px-6 py-28 select-none">
-      
+
       {/* 1. Atmospheric Ambient Glow Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Top-Center Gold Radial Spotlight */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] h-[500px] bg-primary/10 rounded-full blur-[160px]" />
-        
+
         {/* Subtle Cyber Grid */}
         <div
           className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#d6b488_1px,transparent_1px)] [background-size:32px_32px]"
@@ -160,7 +158,7 @@ export default function NotFound() {
           role="button"
           tabIndex={0}
           onKeyDown={(e) => e.key === 'Enter' && cycleFact()}
-          aria-label="Click to cycle humorous ejnarstudios facts"
+          aria-label="Click to cycle humorous Ejnar Studios  facts"
         >
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
@@ -203,7 +201,7 @@ export default function NotFound() {
           className="pt-8 border-t border-white/10 w-full"
         >
           <span className="text-[11px] font-mono font-semibold uppercase tracking-[0.2em] text-muted block mb-4">
-            Or Teleport to Popular ejnarstudios Coordinates:
+            Or Teleport to Popular Ejnar Studios  Coordinates:
           </span>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">

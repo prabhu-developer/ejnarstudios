@@ -206,7 +206,7 @@ export default function PortfolioGrid() {
               Featured <span className="text-gold-gradient">Work.</span>
             </h2>
             <p className="text-sm text-muted mt-2 max-w-xl">
-              Live websites and mobile applications engineered by ejnarstudios for high conversion, sub-second speed, and premium user experience.
+              Live websites and mobile applications engineered by Ejnar Studios  for high conversion, sub-second speed, and premium user experience.
             </p>
           </div>
 

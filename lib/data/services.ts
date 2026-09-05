@@ -713,7 +713,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     categoryId: 'dev',
     heroHeadline: 'POS Billing Software, Enterprise ERP & Electron JS Apps',
     heroSubheadline: 'Offline-first POS billing with thermal printing, multi-warehouse ERP systems, and cross-platform Electron JS desktop software.',
-    description: 'ejnarstudios engineers high-performance point-of-sale (POS) billing systems and enterprise resource planning (ERP) suites in Electron JS for Windows, macOS, and Linux. Featuring offline SQLite data engines, sub-second ESC/POS thermal receipt printing, barcode/weighing scale hardware integration, and multi-branch cloud sync.',
+    description: 'Ejnar Studios  engineers high-performance point-of-sale (POS) billing systems and enterprise resource planning (ERP) suites in Electron JS for Windows, macOS, and Linux. Featuring offline SQLite data engines, sub-second ESC/POS thermal receipt printing, barcode/weighing scale hardware integration, and multi-branch cloud sync.',
     icon: 'Cpu',
     heroImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
     heroImageAlt: 'Enterprise POS billing and custom Electron JS desktop ERP software dashboard on dual monitor workstation',

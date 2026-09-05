@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import { Quote, Star } from 'lucide-react';
 
 export default function TestimonialSection() {
@@ -21,7 +20,7 @@ export default function TestimonialSection() {
 
         {/* Large Italic Pull-Quote */}
         <blockquote className="font-display font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-snug italic mb-10">
-          “ejnarstudios completely reshaped our brand's presence. Their fusion of luxury visual design, architectural speed, and transparent delivery is unprecedented in the Indian agency landscape.”
+          “Ejnar Studios  completely reshaped our brand's presence. Their fusion of luxury visual design, architectural speed, and transparent delivery is unprecedented in the Indian agency landscape.”
         </blockquote>
 
         {/* Author & Brand */}
@@ -30,7 +29,7 @@ export default function TestimonialSection() {
             Ranjeth Bhuvaneswaran
           </span>
           <span className="text-xs text-muted font-mono uppercase tracking-widest mt-1">
-            Founder & Principal Architect • ejnarstudios
+            Founder & Principal Architect • Ejnar Studios
           </span>
         </div>
       </div>

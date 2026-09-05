@@ -1,13 +1,11 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { SERVICES_DATA } from '@/lib/data/services';
-import { PORTFOLIO_DATA } from '@/lib/data/portfolio';
-import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { generateServiceSchema } from '@/lib/seo';
+import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
+import { PORTFOLIO_DATA } from '@/lib/data/portfolio';
+import { SERVICES_DATA } from '@/lib/data/services';
 import { getPageMetadata } from '@/lib/metadata.config';
-import { ShoppingBag, ArrowUpRight, CheckCircle2, ShieldCheck, Zap, ExternalLink } from 'lucide-react';
+import { generateServiceSchema } from '@/lib/seo';
+import { CheckCircle2, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'ecommerce')!;
 const relatedProjects = PORTFOLIO_DATA.filter((p) =>
@@ -43,7 +41,7 @@ export default function EcommercePage() {
                 E-Commerce <span className="text-gold-gradient">Case Studies.</span>
               </h2>
               <p className="text-sm text-muted mt-3">
-                Real-world e-commerce platforms engineered by ejnarstudios to drive conversions and seamless logistics.
+                Real-world e-commerce platforms engineered by Ejnar Studios  to drive conversions and seamless logistics.
               </p>
             </div>
 

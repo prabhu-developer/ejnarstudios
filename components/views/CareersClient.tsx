@@ -1,6 +1,5 @@
 'use client';
 
-import React, { useState } from 'react';
 import CtaBanner from '@/components/sections/CtaBanner';
 import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import { JOB_OPENINGS, JobOpening } from '@/lib/data/jobs';
@@ -15,6 +14,7 @@ import {
   Sparkles,
   Zap,
 } from 'lucide-react';
+import { useState } from 'react';
 
 export default function CareersClient() {
   const [expandedJobId, setExpandedJobId] = useState<string | null>(JOB_OPENINGS[0].id);
@@ -22,7 +22,7 @@ export default function CareersClient() {
   const getJobMailtoUrl = (job: JobOpening) => {
     const subject = encodeURIComponent(`Application for ${job.title} - [Your Name]`);
     const body = encodeURIComponent(
-      `Dear ejnarstudios Talent Team,\n\nI am writing to express my strong interest in the ${job.title} position (${job.department} • ${job.location}).\n\nCandidate Details:\n- Full Name: \n- Phone Number: \n- Portfolio / GitHub / Showreel URL: \n- Current Location: \n- Years of Experience: \n\nBrief Introduction & Why ejnarstudios:\n[Please share a few sentences about your proudest projects and design / engineering background]\n\nBest regards,\n[Your Name]`
+      `Dear Ejnar Studios  Talent Team,\n\nI am writing to express my strong interest in the ${job.title} position (${job.department} • ${job.location}).\n\nCandidate Details:\n- Full Name: \n- Phone Number: \n- Portfolio / GitHub / Showreel URL: \n- Current Location: \n- Years of Experience: \n\nBrief Introduction & Why Ejnar Studios :\n[Please share a few sentences about your proudest projects and design / engineering background]\n\nBest regards,\n[Your Name]`
     );
     return `mailto:hr@ejnarstudios.com?subject=${subject}&body=${body}`;
   };
@@ -56,7 +56,7 @@ export default function CareersClient() {
       <AnimatedHeroBanner
         badgeText="Deck p.27 • Talent & Careers"
         headlinePrefix="Join Our Creative"
-        highlightText="ejnarstudios Roster."
+        highlightText="Ejnar Studios  Roster."
         description="We are a small, elite squad of digital artisans in Chennai crafting extraordinary branding and software. We hire obsessives who care deeply about craft."
       />
 
@@ -65,10 +65,10 @@ export default function CareersClient() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-              ejnarstudios Environment
+              Ejnar Studios  Environment
             </span>
             <h2 className="font-display font-black text-2xl sm:text-3xl text-cream">
-              Why Craft Your Career at <span className="text-gold-gradient">ejnarstudios.</span>
+              Why Craft Your Career at <span className="text-gold-gradient">Ejnar Studios .</span>
             </h2>
           </div>
 

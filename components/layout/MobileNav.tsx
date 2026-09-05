@@ -1,21 +1,20 @@
 'use client';
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  X,
-  ChevronDown,
-  ArrowRight,
-  Phone,
-  Mail,
-  MapPin,
-  Sparkles,
-} from 'lucide-react';
-import { BRAND, NAV_LINKS } from '@/lib/constants';
-import { SERVICE_CATEGORIES } from '@/lib/data/services';
 import Logo from '@/components/ui/Logo';
 import { useContactModal } from '@/context/ContactModalContext';
+import { BRAND, NAV_LINKS } from '@/lib/constants';
+import { SERVICE_CATEGORIES } from '@/lib/data/services';
+import { AnimatePresence, motion } from 'framer-motion';
+import {
+  ArrowRight,
+  ChevronDown,
+  Mail,
+  MapPin,
+  Phone,
+  X
+} from 'lucide-react';
+import Link from 'next/link';
+import { useState } from 'react';
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -70,9 +69,8 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                         </span>
                       </span>
                       <ChevronDown
-                        className={`w-5 h-5 text-primary transition-transform duration-300 ${
-                          isServicesExpanded ? 'rotate-180' : ''
-                        }`}
+                        className={`w-5 h-5 text-primary transition-transform duration-300 ${isServicesExpanded ? 'rotate-180' : ''
+                          }`}
                       />
                     </button>
 
@@ -103,9 +101,8 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                               >
                                 <span>{cat.name}</span>
                                 <ChevronDown
-                                  className={`w-4 h-4 text-muted transition-transform ${
-                                    expandedCategory === cat.id ? 'rotate-180' : ''
-                                  }`}
+                                  className={`w-4 h-4 text-muted transition-transform ${expandedCategory === cat.id ? 'rotate-180' : ''
+                                    }`}
                                 />
                               </button>
 
@@ -154,8 +151,8 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 onClose();
                 openContactModal({
                   title: 'Start Your Project',
-                  subtitle: 'Fast-Track ejnarstudios Consultation',
-                  defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with ejnarstudios.',
+                  subtitle: 'Fast-Track Ejnar Studios  Consultation',
+                  defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with Ejnar Studios .',
                   submitButtonText: 'Send Project Inquiry',
                 })
               }}

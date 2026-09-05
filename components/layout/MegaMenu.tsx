@@ -1,5 +1,6 @@
 'use client';
 
+import { useContactModal } from '@/context/ContactModalContext';
 import { SERVICE_CATEGORIES } from '@/lib/data/services';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
@@ -23,7 +24,6 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
-import { useContactModal } from '@/context/ContactModalContext';
 
 const iconMap: Record<string, React.ElementType> = {
   Feather,
@@ -195,9 +195,9 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                     onClick={() => {
                       onClose();
                       openContactModal({
-                        title: 'Talk to ejnarstudios',
+                        title: 'Talk to Ejnar Studios ',
                         subtitle: 'Expert Consultation',
-                        contextTag: 'Multi-Disciplinary ejnarstudios Inquiry',
+                        contextTag: 'Multi-Disciplinary Ejnar Studios  Inquiry',
                         defaultMessage: 'I would like to explore your multi-disciplinary branding, web, and app engineering capabilities.',
                         submitButtonText: 'Send Inquiry',
                       });

@@ -1,26 +1,25 @@
-import React from 'react';
-import Link from 'next/link';
-import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import CtaBanner from '@/components/sections/CtaBanner';
+import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import { BRAND } from '@/lib/constants';
 import { getPageMetadata } from '@/lib/metadata.config';
 import {
-  FileCheck,
-  Shield,
-  Scale,
-  CreditCard,
-  Layers,
-  Code,
-  Sparkles,
   AlertTriangle,
-  HelpCircle,
-  Mail,
-  Phone,
-  MapPin,
-  CheckCircle2,
-  Lock,
   Building,
+  CheckCircle2,
+  Code,
+  CreditCard,
+  FileCheck,
+  HelpCircle,
+  Layers,
+  Lock,
+  Mail,
+  MapPin,
+  Phone,
+  Scale,
+  Shield,
+  Sparkles,
 } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata = getPageMetadata('termsAndConditions');
 
@@ -30,7 +29,7 @@ export default function TermsAndConditionsPage() {
   const sections = [
     { id: 'acceptance', title: '1. Acceptance of Terms', icon: FileCheck },
     { id: 'eligibility', title: '2. Eligibility & Capacity', icon: Building },
-    { id: 'scope-services', title: '3. Scope of ejnarstudios Services', icon: Layers },
+    { id: 'scope-services', title: '3. Scope of Ejnar Studios  Services', icon: Layers },
     { id: 'proposals-sow', title: '4. Estimates & Statement of Work', icon: Scale },
     { id: 'ip-ownership', title: '5. Intellectual Property & Ownership', icon: Code },
     { id: 'client-obligations', title: '6. Client Responsibilities & Materials', icon: Shield },
@@ -43,7 +42,7 @@ export default function TermsAndConditionsPage() {
     { id: 'confidentiality', title: '13. Confidentiality & NDAs', icon: Lock },
     { id: 'termination', title: '14. Termination & Project Cancellation', icon: HelpCircle },
     { id: 'governing-law', title: '15. Governing Law & Jurisdiction', icon: Scale },
-    { id: 'contact-notices', title: '16. ejnarstudios Legal Inquiries', icon: Mail },
+    { id: 'contact-notices', title: '16. Ejnar Studios  Legal Inquiries', icon: Mail },
   ];
 
   return (
@@ -51,7 +50,7 @@ export default function TermsAndConditionsPage() {
       {/* Animated Hero Banner */}
       <AnimatedHeroBanner
         badgeText="Legal & Service Agreement • Terms of Business"
-        headlinePrefix="ejnarstudios Terms &"
+        headlinePrefix="Ejnar Studios  Terms &"
         highlightText="Conditions of Service."
         description={`These Terms govern all project contracts, software deployments, design deliverables, and marketplace assets provided by ${BRAND.name}. Last Updated: ${lastUpdated}.`}
       />
@@ -59,7 +58,7 @@ export default function TermsAndConditionsPage() {
       {/* Main Content Layout */}
       <section className="py-16 sm:py-24 px-6 lg:px-8 border-b border-white/5">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Column: Quick Navigation (Sticky on Desktop) */}
           <aside className="lg:col-span-4 lg:sticky lg:top-32 space-y-6">
             <div className="p-6 rounded-2xl bg-dark-secondary/80 border border-white/10 shadow-xl">
@@ -130,7 +129,7 @@ export default function TermsAndConditionsPage() {
             <div id="scope-services" className="scroll-mt-36 p-8 rounded-2xl bg-dark-secondary/40 border border-white/5 space-y-4">
               <h2 className="font-display font-bold text-xl sm:text-2xl text-cream flex items-center gap-3">
                 <Layers className="w-6 h-6 text-primary flex-shrink-0" />
-                <span>3. Scope of ejnarstudios Services</span>
+                <span>3. Scope of Ejnar Studios  Services</span>
               </h2>
               <p>
                 {BRAND.name} delivers professional creative, software engineering, and digital growth services across four dedicated agency divisions:
@@ -200,7 +199,7 @@ export default function TermsAndConditionsPage() {
                 <span>7. Digital Marketplace Asset Licensing</span>
               </h2>
               <p>
-                Digital products acquired through our Marketplace (<Link href="/marketplace" className="text-primary hover:underline font-semibold">ejnarstudios.com/marketplace</Link>) are subject to specific licensing guidelines:
+                Digital products acquired through our Marketplace (<Link href="/marketplace" className="text-primary hover:underline font-semibold">Ejnar Studios .com/marketplace</Link>) are subject to specific licensing guidelines:
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 text-xs">
                 <div className="p-4 rounded-xl bg-dark/60 border border-white/5">
@@ -327,7 +326,7 @@ export default function TermsAndConditionsPage() {
             <div id="contact-notices" className="scroll-mt-36 p-8 rounded-2xl bg-dark-secondary border border-primary/30 space-y-6">
               <h2 className="font-display font-bold text-xl sm:text-2xl text-cream flex items-center gap-3">
                 <Mail className="w-6 h-6 text-primary flex-shrink-0" />
-                <span>16. ejnarstudios Legal Inquiries & Official Notices</span>
+                <span>16. Ejnar Studios  Legal Inquiries & Official Notices</span>
               </h2>
               <p>
                 All legal notices and contractual communications should be served in writing to our registered corporate office:
@@ -362,7 +361,7 @@ export default function TermsAndConditionsPage() {
                 <div className="flex items-start gap-3">
                   <Building className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <strong className="text-cream block font-display text-sm mb-0.5">Managing ejnarstudios Founder</strong>
+                    <strong className="text-cream block font-display text-sm mb-0.5">Managing Ejnar Studios  Founder</strong>
                     <span>{BRAND.founder}</span>
                   </div>
                 </div>

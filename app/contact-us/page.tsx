@@ -1,12 +1,10 @@
-import React from 'react';
+import UnifiedContactForm from '@/components/forms/UnifiedContactForm';
+import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import {
   FacebookIcon,
   InstagramIcon,
-  LinkedinIcon,
-  TwitterIcon,
+  LinkedinIcon
 } from '@/components/ui/SocialIcons';
-import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
-import UnifiedContactForm from '@/components/forms/UnifiedContactForm';
 import { BRAND } from '@/lib/constants';
 import { getPageMetadata } from '@/lib/metadata.config';
 import { Mail, MapPin, Phone } from 'lucide-react';
@@ -18,7 +16,7 @@ export default function ContactUsPage() {
     <div className="pt-28 pb-20 bg-dark text-cream min-h-screen">
       {/* Animated Contact Header */}
       <AnimatedHeroBanner
-        badgeText="Connect With ejnarstudios"
+        badgeText="Connect With Ejnar Studios "
         headlinePrefix="Let’s Build Something"
         highlightText="Unprecedented Together."
         description="Schedule an exploratory roadmap session or request a custom proposal for your branding, engineering, and digital growth needs."
@@ -33,7 +31,7 @@ export default function ContactUsPage() {
               title="Tell Us About Your Project"
               subtitle="Discovery Form"
               submitButtonText="Send Project Inquiry"
-              defaultMessage="I would like to discuss our project objectives, target launch date, and key deliverables with ejnarstudios."
+              defaultMessage="I would like to discuss our project objectives, target launch date, and key deliverables with Ejnar Studios ."
             />
           </div>
 
@@ -75,13 +73,12 @@ export default function ContactUsPage() {
               {/* Social Channels */}
               <div className="pt-4 border-t border-white/10">
                 <span className="text-[11px] font-semibold text-cream uppercase tracking-wider block mb-3">
-                  Follow ejnarstudios Updates
+                  Follow Ejnar Studios  Updates
                 </span>
                 <div className="flex items-center gap-3">
                   {[
                     { icon: InstagramIcon, href: BRAND.socials.instagram, label: 'Instagram' },
                     { icon: FacebookIcon, href: BRAND.socials.facebook, label: 'Facebook' },
-                    { icon: TwitterIcon, href: BRAND.socials.twitter, label: 'Twitter' },
                     { icon: LinkedinIcon, href: BRAND.socials.linkedin, label: 'LinkedIn' },
                   ].map((s) => {
                     const Icon = s.icon;
@@ -105,7 +102,7 @@ export default function ContactUsPage() {
             {/* Dark Styled Google Maps Embed (Greeta Towers, Perungudi, India | Buckinghamshire, UK | Texas, USA) */}
             <div className="rounded-2xl overflow-hidden border border-primary/20 shadow-2xl relative h-64 bg-dark-secondary">
               <iframe
-                title="ejnarstudios Location Map"
+                title="Ejnar Studios  Location Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8967909388377!2d80.24430587572702!3d12.978436987337373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d629a8a3f81%3A0xbce5bf769502804b!2sGreeta%20Towers!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"

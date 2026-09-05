@@ -1,8 +1,8 @@
+import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import { BRAND } from '@/lib/constants';
 import { AWARDS_DATA } from '@/lib/data/awards';
 import { STRENGTHS_DATA } from '@/lib/data/strengths';
 import { getPageMetadata } from '@/lib/metadata.config';
-import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import {
   ArrowRight,
   Compass,
@@ -65,7 +65,7 @@ export default function AboutPage() {
                 "We set out to build an agency free from bureaucratic bloat — where every single client receives senior-level attention, uncompromised design standards, and turnkey commercial solutions."
               </p>
               <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-primary font-mono">
-                <span>ejnarstudios</span>
+                <span>Ejnar Studios </span>
                 <span>Est. {BRAND.foundedYear} • Chennai</span>
               </div>
             </div>
@@ -193,7 +193,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
             <div>
               <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-                Life At ejnarstudios
+                Life At Ejnar Studios
               </span>
               <h2 className="font-display font-black text-3xl sm:text-4xl text-cream">
                 Our Environment & <span className="text-gold-gradient">Culture.</span>

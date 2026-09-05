@@ -1,5 +1,5 @@
 export const BRAND = {
-  name: 'ejnarstudios',
+  name: 'Ejnar Studios',
   tagline: 'We help brands make smarter decisions.',
   description: 'A creative digital agency in Chennai crafting branding, websites, apps, and marketing that get noticed.',
   founder: 'Ranjeth Bhuvaneswaran',
@@ -19,13 +19,12 @@ export const BRAND = {
     hotline: '+91-90032 06449',
     hotlineRaw: '+919003206449',
     email: 'info@ejnarstudios.com',
-    whatsappMessage: 'Hi ejnarstudios, I would like to discuss a project with your team.',
+    whatsappMessage: 'Hi Ejnar Studios , I would like to discuss a project with your team.',
   },
   socials: {
     instagram: 'https://instagram.com/ejnarstudios',
     pinterest: 'https://pinterest.com/ejnarstudios',
     facebook: 'https://facebook.com/ejnarstudios',
-    twitter: 'https://twitter.com/ejnarstudios',
     linkedin: 'https://linkedin.com/company/ejnarstudios',
   },
   siteUrl: 'https://ejnarstudios.com',

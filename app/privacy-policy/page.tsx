@@ -1,23 +1,21 @@
-import React from 'react';
-import Link from 'next/link';
-import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import CtaBanner from '@/components/sections/CtaBanner';
+import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import { BRAND } from '@/lib/constants';
 import { getPageMetadata } from '@/lib/metadata.config';
 import {
-  ShieldCheck,
-  Lock,
-  Eye,
-  Database,
-  FileText,
-  UserCheck,
-  Globe2,
-  Mail,
-  Phone,
-  MapPin,
-  Clock,
-  CheckCircle2,
   AlertCircle,
+  CheckCircle2,
+  Clock,
+  Database,
+  Eye,
+  FileText,
+  Globe2,
+  Lock,
+  Mail,
+  MapPin,
+  Phone,
+  ShieldCheck,
+  UserCheck,
 } from 'lucide-react';
 
 export const metadata = getPageMetadata('privacyPolicy');
@@ -39,7 +37,7 @@ export default function PrivacyPolicyPage() {
     { id: 'children', title: '11. Children’s Privacy', icon: AlertCircle },
     { id: 'transfers', title: '12. International Data Transfers', icon: Globe2 },
     { id: 'updates', title: '13. Changes to this Privacy Policy', icon: FileText },
-    { id: 'contact', title: '14. Contact ejnarstudios Compliance Team', icon: Mail },
+    { id: 'contact', title: '14. Contact Ejnar Studios  Compliance Team', icon: Mail },
   ];
 
   return (
@@ -47,7 +45,7 @@ export default function PrivacyPolicyPage() {
       {/* Animated Hero Banner */}
       <AnimatedHeroBanner
         badgeText="Legal & Transparency • Data Protection"
-        headlinePrefix="ejnarstudios Privacy"
+        headlinePrefix="Ejnar Studios  Privacy"
         highlightText="Policy & Framework."
         description={`At ${BRAND.name}, we hold privacy, client confidentiality, and data integrity as foundational tenets of our creative and engineering practice. Last Updated: ${lastUpdated}.`}
       />
@@ -55,7 +53,7 @@ export default function PrivacyPolicyPage() {
       {/* Main Content Layout */}
       <section className="py-16 sm:py-24 px-6 lg:px-8 border-b border-white/5">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Column: Quick Navigation (Sticky on Desktop) */}
           <aside className="lg:col-span-4 lg:sticky lg:top-32 space-y-6">
             <div className="p-6 rounded-2xl bg-dark-secondary/80 border border-white/10 shadow-xl">
@@ -127,7 +125,7 @@ export default function PrivacyPolicyPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                  <span><strong className="text-cream">Career Applications:</strong> Full legal name, contact phone number, resume/curriculum vitae (CV), portfolio URLs (e.g. Behance, Dribbble, GitHub, Figma), employment history, and cover letter notes sent to <code>hr@ejnarstudios.com</code>.</span>
+                  <span><strong className="text-cream">Career Applications:</strong> Full legal name, contact phone number, resume/curriculum vitae (CV), portfolio URLs (e.g. Behance, Dribbble, GitHub, Figma), employment history, and cover letter notes sent to <code>hr@Ejnar Studios .com</code>.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
@@ -214,7 +212,7 @@ export default function PrivacyPolicyPage() {
               <div className="space-y-3 text-xs sm:text-sm">
                 <div className="p-3.5 rounded-xl bg-dark/80 border border-white/5">
                   <strong className="text-cream block mb-1">Transactional Mailer Dispatch API:</strong>
-                  <span>Our contact forms relay data over encrypted HTTPS POST to our internal mailer endpoint (<code>https://ejnarstudios.com/ej-mailer/api/send-mail</code>) for prompt notification to our account directors.</span>
+                  <span>Our contact forms relay data over encrypted HTTPS POST to our internal mailer endpoint (<code>https://Ejnar Studios .com/ej-mailer/api/send-mail</code>) for prompt notification to our account directors.</span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-dark/80 border border-white/5">
                   <strong className="text-cream block mb-1">Infrastructure & Cloud Hosting:</strong>
@@ -331,7 +329,7 @@ export default function PrivacyPolicyPage() {
             <div id="contact" className="scroll-mt-36 p-8 rounded-2xl bg-dark-secondary border border-primary/30 space-y-6">
               <h2 className="font-display font-bold text-xl sm:text-2xl text-cream flex items-center gap-3">
                 <Mail className="w-6 h-6 text-primary flex-shrink-0" />
-                <span>14. Contact ejnarstudios Compliance Team</span>
+                <span>14. Contact Ejnar Studios  Compliance Team</span>
               </h2>
               <p>
                 For questions, clarifications, or data rights requests, please contact our administrative headquarters:
@@ -366,7 +364,7 @@ export default function PrivacyPolicyPage() {
                 <div className="flex items-start gap-3">
                   <UserCheck className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <strong className="text-cream block font-display text-sm mb-0.5">ejnarstudios Founder</strong>
+                    <strong className="text-cream block font-display text-sm mb-0.5">Ejnar Studios  Founder</strong>
                     <span>{BRAND.founder}</span>
                   </div>
                 </div>

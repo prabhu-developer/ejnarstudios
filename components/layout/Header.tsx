@@ -1,14 +1,14 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import Logo from '@/components/ui/Logo';
+import { useContactModal } from '@/context/ContactModalContext';
+import { NAV_LINKS } from '@/lib/constants';
+import { ArrowUpRight, ChevronDown, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, ChevronDown, Sparkles, ArrowUpRight } from 'lucide-react';
-import { NAV_LINKS } from '@/lib/constants';
-import Logo from '@/components/ui/Logo';
+import { useEffect, useRef, useState } from 'react';
 import MegaMenu from './MegaMenu';
 import MobileNav from './MobileNav';
-import { useContactModal } from '@/context/ContactModalContext';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,11 +46,10 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-          isScrolled || isMegaMenuOpen
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${isScrolled || isMegaMenuOpen
             ? 'bg-dark/90 backdrop-blur-md border-b border-primary/15 py-3.5 shadow-2xl'
             : 'bg-transparent py-5'
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
@@ -73,25 +72,22 @@ export default function Header() {
                   >
                     <button
                       onClick={() => setIsMegaMenuOpen(!isMegaMenuOpen)}
-                      className={`group inline-flex items-center gap-1.5 text-sm font-medium transition-all duration-200 py-1 ${
-                        isMegaMenuOpen || isActive
+                      className={`group inline-flex items-center gap-1.5 text-sm font-medium transition-all duration-200 py-1 ${isMegaMenuOpen || isActive
                           ? 'text-primary'
                           : 'text-cream/80 hover:text-primary'
-                      }`}
+                        }`}
                       aria-expanded={isMegaMenuOpen}
                       aria-haspopup="true"
                     >
                       <span>{link.name}</span>
                       <ChevronDown
-                        className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                          isMegaMenuOpen ? 'rotate-180 text-primary' : 'text-muted group-hover:text-primary'
-                        }`}
+                        className={`w-3.5 h-3.5 transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180 text-primary' : 'text-muted group-hover:text-primary'
+                          }`}
                       />
                     </button>
                     <span
-                      className={`absolute bottom-0 left-0 w-full h-[1.5px] bg-primary transition-transform duration-300 origin-left ${
-                        isMegaMenuOpen || isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                      }`}
+                      className={`absolute bottom-0 left-0 w-full h-[1.5px] bg-primary transition-transform duration-300 origin-left ${isMegaMenuOpen || isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                        }`}
                     />
                   </div>
                 );
@@ -107,16 +103,14 @@ export default function Header() {
                 >
                   <Link
                     href={link.href}
-                    className={`text-sm font-medium transition-all duration-200 py-1 ${
-                      isActive ? 'text-primary' : 'text-cream/80 hover:text-primary'
-                    }`}
+                    className={`text-sm font-medium transition-all duration-200 py-1 ${isActive ? 'text-primary' : 'text-cream/80 hover:text-primary'
+                      }`}
                   >
                     {link.name}
                   </Link>
                   <span
-                    className={`absolute bottom-0 left-0 w-full h-[1.5px] bg-primary transition-transform duration-300 origin-left ${
-                      isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                    }`}
+                    className={`absolute bottom-0 left-0 w-full h-[1.5px] bg-primary transition-transform duration-300 origin-left ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                      }`}
                   />
                 </div>
               );
@@ -132,8 +126,8 @@ export default function Header() {
                   e.preventDefault();
                   openContactModal({
                     title: 'Start Your Project',
-                    subtitle: 'Fast-Track ejnarstudios Consultation',
-                    defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with ejnarstudios.',
+                    subtitle: 'Fast-Track Ejnar Studios  Consultation',
+                    defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with Ejnar Studios .',
                     submitButtonText: 'Send Project Inquiry',
                   });
                 }

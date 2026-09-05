@@ -39,9 +39,9 @@ export default function AutoLeadPopup() {
       openContactModal({
         title: 'Get a Free Project Strategy & Estimate',
         subtitle: 'Tell us about your brand',
-        contextTag: 'ejnarstudios Consultation',
+        contextTag: 'Ejnar Studios  Consultation',
         submitButtonText: 'Claim Free Strategy Proposal',
-        defaultMessage: 'Hi ejnarstudios, I would like to receive a custom project roadmap, timeline, and cost estimate.',
+        defaultMessage: 'Hi Ejnar Studios , I would like to receive a custom project roadmap, timeline, and cost estimate.',
       });
     };
 

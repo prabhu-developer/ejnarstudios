@@ -1,13 +1,12 @@
-import React from 'react';
+import AwardsTimeline from '@/components/sections/AwardsTimeline';
+import CtaBanner from '@/components/sections/CtaBanner';
 import Hero from '@/components/sections/Hero';
+import HorizontalProcess from '@/components/sections/HorizontalProcess';
 import Marquee from '@/components/sections/Marquee';
 import ServiceTabs from '@/components/sections/ServiceTabs';
-import StrengthsGrid from '@/components/sections/StrengthsGrid';
-import HorizontalProcess from '@/components/sections/HorizontalProcess';
 import StatsCounter from '@/components/sections/StatsCounter';
-import AwardsTimeline from '@/components/sections/AwardsTimeline';
+import StrengthsGrid from '@/components/sections/StrengthsGrid';
 import TestimonialSection from '@/components/sections/TestimonialSection';
-import CtaBanner from '@/components/sections/CtaBanner';
 import { getPageMetadata } from '@/lib/metadata.config';
 
 export const metadata = getPageMetadata('home');
@@ -24,7 +23,7 @@ export default function HomePage() {
       {/* 3. What We Do (4 Categories & 14 Services Tabbed Grid) */}
       <ServiceTabs />
 
-      {/* 4. Why ejnarstudios (Infographic Blueprint & Strengths) */}
+      {/* 4. Why Ejnar Studios  (Infographic Blueprint & Strengths) */}
       <StrengthsGrid />
 
       {/* 5. Process Timeline (Deck p.10–12 Step Walkthrough) */}

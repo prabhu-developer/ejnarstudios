@@ -130,7 +130,7 @@ export default function Hero() {
         <div className="relative w-full h-full">
           <Image
             src="/bg-hero.png"
-            alt="ejnarstudios Antler Mark"
+            alt="Ejnar Studios  Antler Mark"
             fill
             priority
             className="object-contain"
@@ -197,9 +197,9 @@ export default function Hero() {
               onClick={() =>
                 openContactModal({
                   title: 'Start Your Project',
-                  subtitle: 'ejnarstudios Consultation',
-                  contextTag: 'ejnarstudios Architecture & Strategy',
-                  defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with ejnarstudios.',
+                  subtitle: 'Ejnar Studios  Consultation',
+                  contextTag: 'Ejnar Studios  Architecture & Strategy',
+                  defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with Ejnar Studios .',
                   submitButtonText: 'Send Project Inquiry',
                 })
               }
