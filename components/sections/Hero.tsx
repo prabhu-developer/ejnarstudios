@@ -157,9 +157,9 @@ export default function Hero() {
         {/* Main Animated Headline */}
         <motion.h1
           variants={itemFadeUp}
-          className="font-banner font-black text-3xl sm:text-4xl md:text-6xl lg:text-7xl tracking-tight leading-[1.08] text-cream mb-6 select-none"
+          className="font-banner font-black text-2xl  md:text-6xl lg:text-7xl tracking-tight leading-[1.08] text-cream mb-6 select-none"
         >
-          <span className="inline-block mr-2">We help brands make</span>
+          <span className="block mr-2">We help brands make</span>
           <motion.span
             className="text-gold-gradient inline-block relative"
             animate={{

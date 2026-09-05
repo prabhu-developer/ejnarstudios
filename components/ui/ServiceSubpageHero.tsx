@@ -1,11 +1,11 @@
 'use client';
 
+import { useContactModal } from '@/context/ContactModalContext';
 import { ServiceItem } from '@/lib/data/services';
-import { ArrowRight, ChevronRight, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { useContactModal } from '@/context/ContactModalContext';
 
 interface ServiceSubpageHeroProps {
   service: ServiceItem;
@@ -112,7 +112,7 @@ export default function ServiceSubpageHero({ service }: ServiceSubpageHeroProps)
             {/* Headlines */}
             <motion.h1
               variants={itemVariants}
-              className="font-banner font-black text-3xl sm:text-4xl md:text-5xl md:text-6xl text-cream tracking-tight leading-[1.08]"
+              className="font-display font-black text-3xl sm:text-4xl md:text-5xl md:text-6xl text-cream tracking-tight leading-[1.08]"
             >
               {service.heroHeadline}
             </motion.h1>
