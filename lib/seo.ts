@@ -1,19 +1,16 @@
 import { Metadata } from 'next';
 import { BRAND } from './constants';
 import {
+  DEFAULT_METADATA,
   getPageMetadata,
   PAGE_METADATA,
-  DEFAULT_METADATA,
-  PageMetadataConfig,
   PageKey,
+  PageMetadataConfig,
 } from './metadata.config';
 
 export {
-  getPageMetadata,
-  PAGE_METADATA,
-  DEFAULT_METADATA,
-  type PageMetadataConfig,
-  type PageKey,
+  DEFAULT_METADATA, getPageMetadata,
+  PAGE_METADATA, type PageKey, type PageMetadataConfig
 };
 
 export function constructMetadata({
@@ -69,7 +66,6 @@ export function generateOrganizationSchema() {
       BRAND.socials.instagram,
       BRAND.socials.pinterest,
       BRAND.socials.facebook,
-      BRAND.socials.twitter,
       BRAND.socials.linkedin,
     ],
   };
