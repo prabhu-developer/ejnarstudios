@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Ensure all URLs have a trailing slash to match Next.js (trailingSlash: true)
+  # This prevents duplicate content and ensures the correct folder/index.html is served
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteRule ^(.*)$ /$1/ [L,R=301]
+
+</IfModule>
+
+# Serve the pre-rendered Next.js 404 page for missing routes
+ErrorDocument 404 /404.html
