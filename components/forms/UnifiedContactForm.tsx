@@ -118,17 +118,14 @@ export default function UnifiedContactForm({
         }
       }
 
-      // if (onSuccessCallback) {
-      //   // Modal: use callback (close modal)
-      //   setTimeout(() => {
-      //     onSuccessCallback();
-      //   }, 2200);
-      // } else {
-      //   // Standalone page form: redirect to /thank-you for conversion tracking
-      //   setTimeout(() => {
-      //     router.push('/thank-you');
-      //   }, 1500);
-      // }
+      if (onSuccessCallback) {
+        onSuccessCallback();
+      } else {
+        // Standalone page form: redirect to /thank-you for conversion tracking
+        setTimeout(() => {
+          router.push('/thank-you');
+        }, 1500);
+      }
       setTimeout(() => {
         router.push('/thank-you');
       }, 1500);
