@@ -113,9 +113,9 @@ export default function CtaBanner() {
                   if (pathname !== '/contact-us') {
                     openContactModal({
                       title: 'Start Your Project',
-                      subtitle: 'Studio Consultation',
+                      subtitle: 'ejnarstudios Consultation',
                       contextTag: 'Digital Flagship Roadmap',
-                      defaultMessage: 'We are ready to build our digital flagship with EJNARSTUDIOS. Please schedule an exploratory discovery session.',
+                      defaultMessage: 'We are ready to build our digital flagship with ejnarstudios. Please schedule an exploratory discovery session.',
                       submitButtonText: 'Send Project Inquiry',
                     });
                   }

@@ -28,12 +28,12 @@ export default function Logo({
     <Link
       href="/"
       className={`inline-flex items-center group cursor-pointer select-none ${className}`}
-      aria-label="EJNARSTUDIOS Home"
+      aria-label="ejnarstudios Home"
     >
       <div className="relative flex items-center transition-transform duration-300 group-hover:scale-105">
         <Image
           src="/logo.svg"
-          alt="EJNARSTUDIOS"
+          alt="ejnarstudios"
           width={currentSize.width}
           height={currentSize.height}
           priority

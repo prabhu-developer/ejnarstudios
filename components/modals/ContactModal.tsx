@@ -73,14 +73,14 @@ export default function ContactModal() {
 
             {/* Modal Header Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-mono font-semibold uppercase tracking-widest mb-4">
-              <span>{modalConfig.contextTag || 'Fast-Track Studio Inquiry'}</span>
+              <span>{modalConfig.contextTag || 'Fast-Track ejnarstudios Inquiry'}</span>
             </div>
 
             {/* Embedded Unified Form */}
             <UnifiedContactForm
               isInModal={true}
               title={modalConfig.title || 'Start Your Project'}
-              subtitle={modalConfig.subtitle || 'Direct Studio Contact'}
+              subtitle={modalConfig.subtitle || 'Direct ejnarstudios Contact'}
               defaultMessage={modalConfig.defaultMessage || ''}
               submitButtonText={modalConfig.submitButtonText || 'Send Inquiry'}
               onSuccessCallback={closeContactModal}

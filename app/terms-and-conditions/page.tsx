@@ -30,7 +30,7 @@ export default function TermsAndConditionsPage() {
   const sections = [
     { id: 'acceptance', title: '1. Acceptance of Terms', icon: FileCheck },
     { id: 'eligibility', title: '2. Eligibility & Capacity', icon: Building },
-    { id: 'scope-services', title: '3. Scope of Studio Services', icon: Layers },
+    { id: 'scope-services', title: '3. Scope of ejnarstudios Services', icon: Layers },
     { id: 'proposals-sow', title: '4. Estimates & Statement of Work', icon: Scale },
     { id: 'ip-ownership', title: '5. Intellectual Property & Ownership', icon: Code },
     { id: 'client-obligations', title: '6. Client Responsibilities & Materials', icon: Shield },
@@ -43,7 +43,7 @@ export default function TermsAndConditionsPage() {
     { id: 'confidentiality', title: '13. Confidentiality & NDAs', icon: Lock },
     { id: 'termination', title: '14. Termination & Project Cancellation', icon: HelpCircle },
     { id: 'governing-law', title: '15. Governing Law & Jurisdiction', icon: Scale },
-    { id: 'contact-notices', title: '16. Studio Legal Inquiries', icon: Mail },
+    { id: 'contact-notices', title: '16. ejnarstudios Legal Inquiries', icon: Mail },
   ];
 
   return (
@@ -51,7 +51,7 @@ export default function TermsAndConditionsPage() {
       {/* Animated Hero Banner */}
       <AnimatedHeroBanner
         badgeText="Legal & Service Agreement • Terms of Business"
-        headlinePrefix="Studio Terms &"
+        headlinePrefix="ejnarstudios Terms &"
         highlightText="Conditions of Service."
         description={`These Terms govern all project contracts, software deployments, design deliverables, and marketplace assets provided by ${BRAND.name}. Last Updated: ${lastUpdated}.`}
       />
@@ -130,7 +130,7 @@ export default function TermsAndConditionsPage() {
             <div id="scope-services" className="scroll-mt-36 p-8 rounded-2xl bg-dark-secondary/40 border border-white/5 space-y-4">
               <h2 className="font-display font-bold text-xl sm:text-2xl text-cream flex items-center gap-3">
                 <Layers className="w-6 h-6 text-primary flex-shrink-0" />
-                <span>3. Scope of Studio Services</span>
+                <span>3. Scope of ejnarstudios Services</span>
               </h2>
               <p>
                 {BRAND.name} delivers professional creative, software engineering, and digital growth services across four dedicated agency divisions:
@@ -327,7 +327,7 @@ export default function TermsAndConditionsPage() {
             <div id="contact-notices" className="scroll-mt-36 p-8 rounded-2xl bg-dark-secondary border border-primary/30 space-y-6">
               <h2 className="font-display font-bold text-xl sm:text-2xl text-cream flex items-center gap-3">
                 <Mail className="w-6 h-6 text-primary flex-shrink-0" />
-                <span>16. Studio Legal Inquiries & Official Notices</span>
+                <span>16. ejnarstudios Legal Inquiries & Official Notices</span>
               </h2>
               <p>
                 All legal notices and contractual communications should be served in writing to our registered corporate office:
@@ -338,7 +338,7 @@ export default function TermsAndConditionsPage() {
                   <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <strong className="text-cream block font-display text-sm mb-0.5">Corporate Headquarters</strong>
-                    <span>{BRAND.name}<br />{BRAND.address.street}, {BRAND.address.area}, Chennai - {BRAND.address.postalCode}, {BRAND.address.country}</span>
+                    <span>{BRAND.name}<br />{BRAND.address.street}, Perungudi, India | Buckinghamshire, UK | Texas, USA - {BRAND.address.postalCode}</span>
                   </div>
                 </div>
 
@@ -362,7 +362,7 @@ export default function TermsAndConditionsPage() {
                 <div className="flex items-start gap-3">
                   <Building className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <strong className="text-cream block font-display text-sm mb-0.5">Managing Studio Founder</strong>
+                    <strong className="text-cream block font-display text-sm mb-0.5">Managing ejnarstudios Founder</strong>
                     <span>{BRAND.founder}</span>
                   </div>
                 </div>

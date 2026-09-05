@@ -14,7 +14,7 @@ export interface ContactApiResponse {
 const API_ENDPOINT = 'https://ejnarstudios.com/ej-mailer/api/send-mail';
 
 /**
- * Sends a contact / inquiry message payload to the EJNARSTUDIOS mailer endpoint.
+ * Sends a contact / inquiry message payload to the ejnarstudios mailer endpoint.
  */
 export async function sendContactMessage(payload: ContactPayload): Promise<ContactApiResponse> {
   try {

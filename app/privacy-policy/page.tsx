@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
     { id: 'children', title: '11. Children’s Privacy', icon: AlertCircle },
     { id: 'transfers', title: '12. International Data Transfers', icon: Globe2 },
     { id: 'updates', title: '13. Changes to this Privacy Policy', icon: FileText },
-    { id: 'contact', title: '14. Contact Studio Compliance Team', icon: Mail },
+    { id: 'contact', title: '14. Contact ejnarstudios Compliance Team', icon: Mail },
   ];
 
   return (
@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
       {/* Animated Hero Banner */}
       <AnimatedHeroBanner
         badgeText="Legal & Transparency • Data Protection"
-        headlinePrefix="Studio Privacy"
+        headlinePrefix="ejnarstudios Privacy"
         highlightText="Policy & Framework."
         description={`At ${BRAND.name}, we hold privacy, client confidentiality, and data integrity as foundational tenets of our creative and engineering practice. Last Updated: ${lastUpdated}.`}
       />
@@ -331,7 +331,7 @@ export default function PrivacyPolicyPage() {
             <div id="contact" className="scroll-mt-36 p-8 rounded-2xl bg-dark-secondary border border-primary/30 space-y-6">
               <h2 className="font-display font-bold text-xl sm:text-2xl text-cream flex items-center gap-3">
                 <Mail className="w-6 h-6 text-primary flex-shrink-0" />
-                <span>14. Contact Studio Compliance Team</span>
+                <span>14. Contact ejnarstudios Compliance Team</span>
               </h2>
               <p>
                 For questions, clarifications, or data rights requests, please contact our administrative headquarters:
@@ -342,7 +342,7 @@ export default function PrivacyPolicyPage() {
                   <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <strong className="text-cream block font-display text-sm mb-0.5">Corporate Headquarters</strong>
-                    <span>{BRAND.name}<br />{BRAND.address.street}, {BRAND.address.area}, Chennai - {BRAND.address.postalCode}, {BRAND.address.country}</span>
+                    <span>{BRAND.name}<br />{BRAND.address.street}, Perungudi, India | Buckinghamshire, UK | Texas, USA - {BRAND.address.postalCode}</span>
                   </div>
                 </div>
 
@@ -366,7 +366,7 @@ export default function PrivacyPolicyPage() {
                 <div className="flex items-start gap-3">
                   <UserCheck className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <strong className="text-cream block font-display text-sm mb-0.5">Studio Founder</strong>
+                    <strong className="text-cream block font-display text-sm mb-0.5">ejnarstudios Founder</strong>
                     <span>{BRAND.founder}</span>
                   </div>
                 </div>

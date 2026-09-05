@@ -18,7 +18,7 @@ export default function ContactUsPage() {
     <div className="pt-28 pb-20 bg-dark text-cream min-h-screen">
       {/* Animated Contact Header */}
       <AnimatedHeroBanner
-        badgeText="Connect With Our Studio"
+        badgeText="Connect With ejnarstudios"
         headlinePrefix="Let’s Build Something"
         highlightText="Unprecedented Together."
         description="Schedule an exploratory roadmap session or request a custom proposal for your branding, engineering, and digital growth needs."
@@ -33,7 +33,7 @@ export default function ContactUsPage() {
               title="Tell Us About Your Project"
               subtitle="Discovery Form"
               submitButtonText="Send Project Inquiry"
-              defaultMessage="I would like to discuss our project objectives, target launch date, and key deliverables with EJNARSTUDIOS."
+              defaultMessage="I would like to discuss our project objectives, target launch date, and key deliverables with ejnarstudios."
             />
           </div>
 
@@ -50,7 +50,7 @@ export default function ContactUsPage() {
                   <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-1" />
                   <div>
                     <strong className="text-cream block font-display text-sm mb-0.5">Physical Studio Address</strong>
-                    <span>{BRAND.address.street}, {BRAND.address.area}, Chennai - {BRAND.address.postalCode}, {BRAND.address.country}</span>
+                    <span>{BRAND.address.street}, Perungudi, India | Buckinghamshire, UK | Texas, USA - {BRAND.address.postalCode}</span>
                   </div>
                 </div>
 
@@ -75,7 +75,7 @@ export default function ContactUsPage() {
               {/* Social Channels */}
               <div className="pt-4 border-t border-white/10">
                 <span className="text-[11px] font-semibold text-cream uppercase tracking-wider block mb-3">
-                  Follow Studio Updates
+                  Follow ejnarstudios Updates
                 </span>
                 <div className="flex items-center gap-3">
                   {[
@@ -102,10 +102,10 @@ export default function ContactUsPage() {
               </div>
             </div>
 
-            {/* Dark Styled Google Maps Embed (Greeta Towers, Perungudi, Chennai) */}
+            {/* Dark Styled Google Maps Embed (Greeta Towers, Perungudi, India | Buckinghamshire, UK | Texas, USA) */}
             <div className="rounded-2xl overflow-hidden border border-primary/20 shadow-2xl relative h-64 bg-dark-secondary">
               <iframe
-                title="EJNARSTUDIOS Location Map"
+                title="ejnarstudios Location Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.8967909388377!2d80.24430587572702!3d12.978436987337373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d629a8a3f81%3A0xbce5bf769502804b!2sGreeta%20Towers!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"

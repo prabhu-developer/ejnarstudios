@@ -1,5 +1,5 @@
 export const BRAND = {
-  name: 'EJNARSTUDIOS',
+  name: 'ejnarstudios',
   tagline: 'We help brands make smarter decisions.',
   description: 'A creative digital agency in Chennai crafting branding, websites, apps, and marketing that get noticed.',
   founder: 'Ranjeth Bhuvaneswaran',
@@ -11,7 +11,7 @@ export const BRAND = {
     state: 'Tamil Nadu',
     postalCode: '600096',
     country: 'India',
-    shortAddress: 'GREETA TOWERS, Industrial Estate, Perungudi, Chennai - 600096',
+    shortAddress: 'Perungudi, India | Buckinghamshire, UK | Texas, USA',
   },
   contact: {
     mobile: '+91-73581 00831',
@@ -19,7 +19,7 @@ export const BRAND = {
     hotline: '+91-90032 06449',
     hotlineRaw: '+919003206449',
     email: 'info@ejnarstudios.com',
-    whatsappMessage: 'Hi EJNARSTUDIOS, I would like to discuss a project with your team.',
+    whatsappMessage: 'Hi ejnarstudios, I would like to discuss a project with your team.',
   },
   socials: {
     instagram: 'https://instagram.com/ejnarstudios',

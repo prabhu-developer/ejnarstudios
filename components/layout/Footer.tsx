@@ -1,24 +1,23 @@
 'use client';
 
-import React, { useState } from 'react';
-import Link from 'next/link';
+import Logo from '@/components/ui/Logo';
 import {
-  Phone,
-  Mail,
-  MapPin,
-  ArrowRight,
-  Sparkles,
-  Check,
-} from 'lucide-react';
-import {
-  InstagramIcon,
   FacebookIcon,
-  TwitterIcon,
+  InstagramIcon,
   LinkedinIcon,
+  TwitterIcon,
 } from '@/components/ui/SocialIcons';
 import { BRAND, NAV_LINKS } from '@/lib/constants';
 import { SERVICES_DATA } from '@/lib/data/services';
-import Logo from '@/components/ui/Logo';
+import {
+  ArrowRight,
+  Check,
+  Mail,
+  MapPin,
+  Phone
+} from 'lucide-react';
+import Link from 'next/link';
+import React, { useState } from 'react';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -36,9 +35,9 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#141414] text-cream border-t border-primary/15 overflow-hidden pt-20 pb-12">
       {/* Huge Ghost-Text Wordmark Backdrop */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 select-none pointer-events-none opacity-[0.03] text-center w-full whitespace-nowrap overflow-hidden">
-        <span className="font-display font-extrabold text-[12vw] tracking-widest text-white uppercase stroke-text">
-          EJNARSTUDIOS
+      <div className="absolute top-14 left-1/2 opacity-[0.05] -translate-x-1/2 select-none pointer-events-none  text-center w-full whitespace-nowrap overflow-hidden">
+        <span className="font-banner font-extrabold text-[8vw] tracking-widest text-white uppercase stroke-text">
+          ejnarstudios
         </span>
       </div>
 
@@ -139,12 +138,31 @@ export default function Footer() {
           {/* Column 4: Contact & Newsletter (3 Cols) */}
           <div className="lg:col-span-3 space-y-5">
             <h4 className="font-display text-xs font-bold uppercase tracking-[0.25em] text-primary">
-              Studio & Contact
+              ejnarstudios & Contact
             </h4>
             <div className="space-y-3 text-xs text-muted">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                <span>{BRAND.address.shortAddress}</span>
+                <span className="leading-relaxed">
+                  Perungudi, India | Buckinghamshire,{' '}
+                  <a
+                    href="https://zephyr-solutions.co.uk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cream hover:text-primary underline decoration-primary/40 underline-offset-2 transition-colors font-medium"
+                  >
+                    UK
+                  </a>{' '}
+                  | Texas,{' '}
+                  <a
+                    href="https://qshae.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cream hover:text-primary underline decoration-primary/40 underline-offset-2 transition-colors font-medium"
+                  >
+                    USA
+                  </a>
+                </span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
@@ -200,7 +218,7 @@ export default function Footer() {
         {/* Bottom Bar: Copyright, Legal Policies & Accreditations */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted border-t border-white/5">
           <p>© {new Date().getFullYear()} {BRAND.name}. All rights reserved.</p>
-          
+
           <div className="flex items-center gap-4 sm:gap-6 text-[11px] sm:text-xs">
             <Link href="/privacy-policy" className="hover:text-primary transition-colors">
               Privacy Policy
@@ -210,7 +228,26 @@ export default function Footer() {
               Terms & Conditions
             </Link>
             <span className="w-1 h-1 rounded-full bg-white/20" />
-            <span>Chennai, India</span>
+            <span>
+              Perungudi, India | Buckinghamshire,{' '}
+              <a
+                href="https://zephyr-solutions.co.uk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary underline decoration-primary/40 underline-offset-2 transition-colors font-medium"
+              >
+                UK
+              </a>{' '}
+              | Texas,{' '}
+              <a
+                href="https://qshae.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary underline decoration-primary/40 underline-offset-2 transition-colors font-medium"
+              >
+                USA
+              </a>
+            </span>
           </div>
 
           <div className="flex items-center gap-2 text-[11px] text-muted/80">

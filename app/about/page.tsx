@@ -65,7 +65,7 @@ export default function AboutPage() {
                 "We set out to build an agency free from bureaucratic bloat — where every single client receives senior-level attention, uncompromised design standards, and turnkey commercial solutions."
               </p>
               <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-primary font-mono">
-                <span>EJNARSTUDIOS</span>
+                <span>ejnarstudios</span>
                 <span>Est. {BRAND.foundedYear} • Chennai</span>
               </div>
             </div>
@@ -193,7 +193,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
             <div>
               <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-                Life At Studio
+                Life At ejnarstudios
               </span>
               <h2 className="font-display font-black text-3xl sm:text-4xl text-cream">
                 Our Environment & <span className="text-gold-gradient">Culture.</span>

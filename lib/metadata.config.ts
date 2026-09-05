@@ -67,7 +67,7 @@ export const DEFAULT_METADATA: PageMetadataConfig = {
  */
 export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   home: {
-    title: 'EJNARSTUDIOS — Creative Branding, Web/App Development & Marketing Agency Chennai',
+    title: 'ejnarstudios — Creative Branding, Web/App Development & Marketing Agency Chennai',
     description:
       'Award-winning creative digital agency in Chennai crafting luxury brand identities, high-performance Next.js websites, mobile apps, and full-funnel digital marketing.',
     keywords: [
@@ -83,7 +83,7 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   about: {
     title: 'About Us — Creative Heritage, Principles & Leadership',
     description:
-      'Founded in 2018 in Chennai by Ranjeth Bhuvaneswaran. EJNARSTUDIOS bridges architectural design systems, sub-second engineering, and full-funnel digital growth.',
+      'Founded in 2018 in Chennai by Ranjeth Bhuvaneswaran. ejnarstudios bridges architectural design systems, sub-second engineering, and full-funnel digital growth.',
     keywords: [
       'about ejnarstudios',
       'chennai digital agency history',
@@ -122,7 +122,7 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   marketplace: {
     title: 'Digital Marketplace & Asset Kits — Templates, Design Systems & Logos',
     description:
-      'Premium production-ready digital assets, Figma design systems, corporate presentation pitch decks, and brand identity kits built by EJNARSTUDIOS.',
+      'Premium production-ready digital assets, Figma design systems, corporate presentation pitch decks, and brand identity kits built by ejnarstudios.',
     keywords: [
       'digital marketplace',
       'figma templates',
@@ -148,7 +148,7 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   contact: {
     title: 'Contact Us & Start a Project — Exploratory Roadmap Session',
     description:
-      'Connect with our senior team at Greeta Towers, Perungudi, Chennai. Schedule an exploratory roadmap session or request a custom proposal for your project.',
+      'Connect with our senior team at Greeta Towers, Perungudi, India | Buckinghamshire, UK | Texas, USA. Schedule an exploratory roadmap session or request a custom proposal for your project.',
     keywords: [
       'contact ejnarstudios',
       'hire digital agency chennai',
@@ -160,7 +160,7 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   privacyPolicy: {
     title: 'Privacy Policy — Data Protection, Cookies & Security',
     description:
-      'Learn how EJNARSTUDIOS collects, uses, protects, and handles your personal and business data across our website, contact discovery forms, and services.',
+      'Learn how ejnarstudios collects, uses, protects, and handles your personal and business data across our website, contact discovery forms, and services.',
     keywords: [
       'ejnarstudios privacy policy',
       'data protection chennai agency',
@@ -172,7 +172,7 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   termsAndConditions: {
     title: 'Terms & Conditions — Client Agreements, Licenses & IP Ownership',
     description:
-      'Review the terms of service, project engagements, intellectual property transfer terms, marketplace licenses, and warranties of EJNARSTUDIOS.',
+      'Review the terms of service, project engagements, intellectual property transfer terms, marketplace licenses, and warranties of ejnarstudios.',
     keywords: [
       'ejnarstudios terms and conditions',
       'agency client agreement',

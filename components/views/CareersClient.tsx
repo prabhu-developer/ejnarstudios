@@ -22,7 +22,7 @@ export default function CareersClient() {
   const getJobMailtoUrl = (job: JobOpening) => {
     const subject = encodeURIComponent(`Application for ${job.title} - [Your Name]`);
     const body = encodeURIComponent(
-      `Dear EJNARSTUDIOS Talent Team,\n\nI am writing to express my strong interest in the ${job.title} position (${job.department} • ${job.location}).\n\nCandidate Details:\n- Full Name: \n- Phone Number: \n- Portfolio / GitHub / Showreel URL: \n- Current Location: \n- Years of Experience: \n\nBrief Introduction & Why EJNARSTUDIOS:\n[Please share a few sentences about your proudest projects and design / engineering background]\n\nBest regards,\n[Your Name]`
+      `Dear ejnarstudios Talent Team,\n\nI am writing to express my strong interest in the ${job.title} position (${job.department} • ${job.location}).\n\nCandidate Details:\n- Full Name: \n- Phone Number: \n- Portfolio / GitHub / Showreel URL: \n- Current Location: \n- Years of Experience: \n\nBrief Introduction & Why ejnarstudios:\n[Please share a few sentences about your proudest projects and design / engineering background]\n\nBest regards,\n[Your Name]`
     );
     return `mailto:hr@ejnarstudios.com?subject=${subject}&body=${body}`;
   };
@@ -56,7 +56,7 @@ export default function CareersClient() {
       <AnimatedHeroBanner
         badgeText="Deck p.27 • Talent & Careers"
         headlinePrefix="Join Our Creative"
-        highlightText="Studio Roster."
+        highlightText="ejnarstudios Roster."
         description="We are a small, elite squad of digital artisans in Chennai crafting extraordinary branding and software. We hire obsessives who care deeply about craft."
       />
 
@@ -65,10 +65,10 @@ export default function CareersClient() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-              Studio Environment
+              ejnarstudios Environment
             </span>
             <h2 className="font-display font-black text-2xl sm:text-3xl text-cream">
-              Why Craft Your Career at <span className="text-gold-gradient">EJNARSTUDIOS.</span>
+              Why Craft Your Career at <span className="text-gold-gradient">ejnarstudios.</span>
             </h2>
           </div>
 
@@ -111,7 +111,7 @@ export default function CareersClient() {
               </h2>
             </div>
             <span className="text-xs font-mono text-primary font-semibold">
-              {JOB_OPENINGS.length} Active Positions in Chennai
+              {JOB_OPENINGS.length} Active Positions (Perungudi, India | Buckinghamshire, UK | Texas, USA)
             </span>
           </div>
 

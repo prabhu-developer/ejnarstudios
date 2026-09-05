@@ -24,7 +24,7 @@ export default function HomePage() {
       {/* 3. What We Do (4 Categories & 14 Services Tabbed Grid) */}
       <ServiceTabs />
 
-      {/* 4. Why EJNARSTUDIOS (Infographic Blueprint & Strengths) */}
+      {/* 4. Why ejnarstudios (Infographic Blueprint & Strengths) */}
       <StrengthsGrid />
 
       {/* 5. Process Timeline (Deck p.10–12 Step Walkthrough) */}

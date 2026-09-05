@@ -169,7 +169,7 @@ export const PORTFOLIO_DATA: ProjectItem[] = [
     ],
     featured: true,
     testimonial: {
-      quote: 'EJNARSTUDIOS created an intuitive, authentic Arabic mobile app experience that empowered hundreds of our home chefs to receive and manage direct orders smoothly.',
+      quote: 'ejnarstudios created an intuitive, authentic Arabic mobile app experience that empowered hundreds of our home chefs to receive and manage direct orders smoothly.',
       author: 'Byaddi Operations Team',
       role: 'Product Lead, Byaddi',
     },

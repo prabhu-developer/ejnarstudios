@@ -21,7 +21,7 @@ export default function TestimonialSection() {
 
         {/* Large Italic Pull-Quote */}
         <blockquote className="font-display font-medium text-2xl sm:text-3xl md:text-4xl text-cream leading-snug italic mb-10">
-          “EJNARSTUDIOS completely reshaped our brand's presence. Their fusion of luxury visual design, architectural speed, and transparent delivery is unprecedented in the Indian agency landscape.”
+          “ejnarstudios completely reshaped our brand's presence. Their fusion of luxury visual design, architectural speed, and transparent delivery is unprecedented in the Indian agency landscape.”
         </blockquote>
 
         {/* Author & Brand */}
@@ -30,7 +30,7 @@ export default function TestimonialSection() {
             Ranjeth Bhuvaneswaran
           </span>
           <span className="text-xs text-muted font-mono uppercase tracking-widest mt-1">
-            Founder & Principal Architect • EJNARSTUDIOS
+            Founder & Principal Architect • ejnarstudios
           </span>
         </div>
       </div>

@@ -130,10 +130,10 @@ export default function Hero() {
         <div className="relative w-full h-full">
           <Image
             src="/bg-hero.png"
-            alt="EJNARSTUDIOS Antler Mark"
+            alt="ejnarstudios Antler Mark"
             fill
             priority
-            className="object-contain filter drop-shadow-[0_0_60px_rgba(214,180,136,0.35)]"
+            className="object-contain"
           />
         </div>
       </motion.div>
@@ -150,7 +150,6 @@ export default function Hero() {
         <motion.div variants={badgeVariant} className="relative group mb-6">
           <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/30 via-primary/60 to-primary/30 rounded-full blur-[2px] opacity-75 group-hover:opacity-100 transition duration-500 animate-pulse" />
           <div className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-secondary/90 backdrop-blur-md border border-primary/40 text-primary text-xs font-semibold uppercase tracking-[0.2em] shadow-lg">
-
             <span>Award-Winning Creative & Digital Agency • Chennai</span>
           </div>
         </motion.div>
@@ -198,9 +197,9 @@ export default function Hero() {
               onClick={() =>
                 openContactModal({
                   title: 'Start Your Project',
-                  subtitle: 'Studio Consultation',
-                  contextTag: 'Studio Architecture & Strategy',
-                  defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with EJNARSTUDIOS.',
+                  subtitle: 'ejnarstudios Consultation',
+                  contextTag: 'ejnarstudios Architecture & Strategy',
+                  defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with ejnarstudios.',
                   submitButtonText: 'Send Project Inquiry',
                 })
               }

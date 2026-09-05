@@ -38,10 +38,10 @@ export default function AutoLeadPopup() {
 
       openContactModal({
         title: 'Get a Free Project Strategy & Estimate',
-        subtitle: 'Tell us about your brand goals and receive a custom roadmap, tech blueprint & cost breakdown within 24 hours.',
-        contextTag: 'Complimentary Studio Consultation',
+        subtitle: 'Tell us about your brand',
+        contextTag: 'ejnarstudios Consultation',
         submitButtonText: 'Claim Free Strategy Proposal',
-        defaultMessage: 'Hi EJNARSTUDIOS, I would like to receive a custom project roadmap, timeline, and cost estimate.',
+        defaultMessage: 'Hi ejnarstudios, I would like to receive a custom project roadmap, timeline, and cost estimate.',
       });
     };
 

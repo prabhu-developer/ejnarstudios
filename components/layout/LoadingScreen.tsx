@@ -43,7 +43,7 @@ export default function LoadingScreen() {
             >
               <Image
                 src="/logo-icon.png"
-                alt="EJNARSTUDIOS Logo"
+                alt="ejnarstudios Logo"
                 fill
                 priority
                 className="object-contain filter drop-shadow-[0_0_25px_rgba(214,180,136,0.6)]"
@@ -58,7 +58,7 @@ export default function LoadingScreen() {
               className="text-center"
             >
               <h2 className="font-display font-bold text-2xl tracking-widest text-cream">
-                EJNAR{" "}<span className="text-primary font-normal">STUDIOS</span>
+                Ejnar<span className="text-primary font-normal">studios</span>
               </h2>
               <p className="text-[10px] tracking-[0.4em] uppercase text-muted mt-1 font-mono">
                 Chennai • Creative Agency

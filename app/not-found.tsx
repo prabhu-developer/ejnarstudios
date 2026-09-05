@@ -25,7 +25,7 @@ export default function NotFound() {
 
   const funFacts = [
     'Fun Fact: Even our sub-second Next.js Turbopack engine cannot render a page that doesn’t exist.',
-    'Studio Theory: A developer probably refactored this route while enjoying Chennai filter coffee.',
+    'ejnarstudios Theory: A developer probably refactored this route while enjoying Chennai filter coffee.',
     'Design Verdict: This page scored a 100% in minimalism by having zero DOM elements.',
     'Dev Status: 404 Error • 0 Bytes transferred • 100% Mystery.',
   ];
@@ -160,7 +160,7 @@ export default function NotFound() {
           role="button"
           tabIndex={0}
           onKeyDown={(e) => e.key === 'Enter' && cycleFact()}
-          aria-label="Click to cycle humorous studio facts"
+          aria-label="Click to cycle humorous ejnarstudios facts"
         >
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
@@ -203,7 +203,7 @@ export default function NotFound() {
           className="pt-8 border-t border-white/10 w-full"
         >
           <span className="text-[11px] font-mono font-semibold uppercase tracking-[0.2em] text-muted block mb-4">
-            Or Teleport to Popular Studio Coordinates:
+            Or Teleport to Popular ejnarstudios Coordinates:
           </span>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">

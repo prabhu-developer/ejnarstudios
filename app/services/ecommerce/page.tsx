@@ -43,7 +43,7 @@ export default function EcommercePage() {
                 E-Commerce <span className="text-gold-gradient">Case Studies.</span>
               </h2>
               <p className="text-sm text-muted mt-3">
-                Real-world e-commerce platforms engineered by EJNARSTUDIOS to drive conversions and seamless logistics.
+                Real-world e-commerce platforms engineered by ejnarstudios to drive conversions and seamless logistics.
               </p>
             </div>
 

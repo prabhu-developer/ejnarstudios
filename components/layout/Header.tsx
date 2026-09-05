@@ -132,8 +132,8 @@ export default function Header() {
                   e.preventDefault();
                   openContactModal({
                     title: 'Start Your Project',
-                    subtitle: 'Fast-Track Studio Consultation',
-                    defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with EJNARSTUDIOS.',
+                    subtitle: 'Fast-Track ejnarstudios Consultation',
+                    defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with ejnarstudios.',
                     submitButtonText: 'Send Project Inquiry',
                   });
                 }

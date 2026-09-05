@@ -154,8 +154,8 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 onClose();
                 openContactModal({
                   title: 'Start Your Project',
-                  subtitle: 'Fast-Track Studio Consultation',
-                  defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with EJNARSTUDIOS.',
+                  subtitle: 'Fast-Track ejnarstudios Consultation',
+                  defaultMessage: 'I would like to discuss our project objectives, target launch date, and key deliverables with ejnarstudios.',
                   submitButtonText: 'Send Project Inquiry',
                 })
               }}
@@ -176,7 +176,26 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
               </a>
               <div className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
-                <span>{BRAND.address.shortAddress}</span>
+                <span className="leading-relaxed">
+                  Perungudi, India | Buckinghamshire,{' '}
+                  <a
+                    href="https://zephyr-solutions.co.uk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cream hover:text-primary underline decoration-primary/40 underline-offset-2 transition-colors font-medium"
+                  >
+                    UK
+                  </a>{' '}
+                  | Texas,{' '}
+                  <a
+                    href="https://qshae.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cream hover:text-primary underline decoration-primary/40 underline-offset-2 transition-colors font-medium"
+                  >
+                    USA
+                  </a>
+                </span>
               </div>
             </div>
           </div>

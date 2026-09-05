@@ -195,9 +195,9 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                     onClick={() => {
                       onClose();
                       openContactModal({
-                        title: 'Talk to Our Studio',
+                        title: 'Talk to ejnarstudios',
                         subtitle: 'Expert Consultation',
-                        contextTag: 'Multi-Disciplinary Studio Inquiry',
+                        contextTag: 'Multi-Disciplinary ejnarstudios Inquiry',
                         defaultMessage: 'I would like to explore your multi-disciplinary branding, web, and app engineering capabilities.',
                         submitButtonText: 'Send Inquiry',
                       });
