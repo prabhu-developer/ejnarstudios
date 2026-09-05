@@ -1,18 +1,13 @@
 'use client';
 
-import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
-const CLIENTS = [
-  { name: 'Apple Point', tag: 'Apple Reseller & Tech' },
-  { name: 'Fefine', tag: 'Health & Hygiene E-Commerce' },
-  { name: 'Binlees Maritime', tag: 'Global Shipping & Logistics' },
-  { name: 'Marina Residences', tag: 'Luxury Realty & Villas' },
-  { name: 'Pinnacle Star Services', tag: 'Dubai IFZA Investment Core' },
-  { name: 'Relax Washrooms', tag: 'Commercial Bus Tech' },
-  { name: 'SIFEL Life School', tag: 'Youth Holistic Education' },
-  { name: 'byaddi (بيّدي)', tag: 'Saudi Culinary App' },
-];
+const CLIENT_LOGOS = Array.from({ length: 21 }, (_, i) => ({
+  id: i + 1,
+  src: `/images/clients/client- (${i + 1}).png`,
+  alt: `Client Partner ${i + 1}`,
+}));
 
 export default function Marquee() {
   return (
@@ -36,22 +31,20 @@ export default function Marquee() {
       {/* Marquee Track */}
       <div className="flex overflow-hidden select-none">
         <div className="animate-marquee flex items-center gap-6 sm:gap-8 py-2">
-          {/* Triple list to ensure continuous infinite loop */}
-          {[...CLIENTS, ...CLIENTS, ...CLIENTS].map((client, idx) => (
+          {/* Double list to ensure seamless 50% infinite loop */}
+          {[...CLIENT_LOGOS, ...CLIENT_LOGOS].map((client, idx) => (
             <div
-              key={`${client.name}-${idx}`}
-              className="flex items-center gap-4 group cursor-default"
+              key={`${client.id}-${idx}`}
+              className="flex-shrink-0 flex items-center justify-center px-6 py-3.5 rounded-xl bg-dark-secondary/60 backdrop-blur-sm border border-white/5 hover:border-primary/40 hover:bg-dark-secondary transition-all duration-300 shadow-md group cursor-default min-w-[150px] sm:min-w-[180px] h-[72px] sm:h-[80px]"
             >
-              <div className="flex items-center gap-3.5 px-6 py-3.5 rounded-xl bg-dark-secondary/70 backdrop-blur-sm border border-white/5 group-hover:border-primary/50 group-hover:bg-dark-secondary transition-all duration-300 shadow-md">
-                <div className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:scale-125 transition-all" />
-                <div className="flex flex-col">
-                  <span className="font-display font-bold text-sm sm:text-base text-cream/90 group-hover:text-primary transition-colors whitespace-nowrap">
-                    {client.name}
-                  </span>
-                  <span className="text-[10px] text-muted tracking-wider uppercase">
-                    {client.tag}
-                  </span>
-                </div>
+              <div className="relative w-full h-full flex items-center justify-center">
+                <Image
+                  src={client.src}
+                  alt={client.alt}
+                  width={140}
+                  height={50}
+                  className="w-[200px] object-contain opacity-65 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+                />
               </div>
             </div>
           ))}
