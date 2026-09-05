@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import { Send, CheckCircle2, AlertCircle, Loader2, Sparkles } from 'lucide-react';
 import { sendContactMessage } from '@/lib/api/contact';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { AlertCircle, CheckCircle2, Loader2, Send } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Please enter your full name (at least 2 characters)'),
@@ -118,17 +118,20 @@ export default function UnifiedContactForm({
         }
       }
 
-      if (onSuccessCallback) {
-        // Modal: use callback (close modal)
-        setTimeout(() => {
-          onSuccessCallback();
-        }, 2200);
-      } else {
-        // Standalone page form: redirect to /thank-you for conversion tracking
-        setTimeout(() => {
-          router.push('/thank-you');
-        }, 1500);
-      }
+      // if (onSuccessCallback) {
+      //   // Modal: use callback (close modal)
+      //   setTimeout(() => {
+      //     onSuccessCallback();
+      //   }, 2200);
+      // } else {
+      //   // Standalone page form: redirect to /thank-you for conversion tracking
+      //   setTimeout(() => {
+      //     router.push('/thank-you');
+      //   }, 1500);
+      // }
+      setTimeout(() => {
+        router.push('/thank-you');
+      }, 1500);
     } else {
       setErrorMessage(result.message || 'Unable to deliver your message. Please try again.');
     }
