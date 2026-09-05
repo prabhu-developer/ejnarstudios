@@ -12,10 +12,12 @@ export default function CustomCursor() {
   // Smooth springs for the outer trailing ring
   const springX = useSpring(mousePosition.x, { damping: 25, stiffness: 250 });
   const springY = useSpring(mousePosition.y, { damping: 25, stiffness: 250 });
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
-    // Disable on touch / mobile devices
-    if (window.matchMedia('(pointer: coarse)').matches) {
+    // Disable on touch / mobile devices strictly
+    if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
+      setIsTouchDevice(true);
       return;
     }
 
@@ -60,7 +62,7 @@ export default function CustomCursor() {
     };
   }, [isVisible, springX, springY]);
 
-  if (!isVisible) return null;
+  if (isTouchDevice || !isVisible) return null;
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden hidden md:block">

@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { Send, CheckCircle2, AlertCircle, Loader2, Sparkles } from 'lucide-react';
 import { sendContactMessage } from '@/lib/api/contact';
+import { useRouter } from 'next/navigation';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, 'Please enter your full name (at least 2 characters)'),
@@ -35,6 +36,7 @@ export default function UnifiedContactForm({
   onSuccessCallback,
   isInModal = false,
 }: UnifiedContactFormProps) {
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -79,6 +81,16 @@ export default function UnifiedContactForm({
 
     if (result.success) {
       setIsSuccess(true);
+
+      // GA4 conversion event — tracked as a lead goal
+      if (typeof window !== 'undefined' && 'gtag' in window) {
+        (window as Window & { gtag: (...args: unknown[]) => void }).gtag('event', 'form_submission_success', {
+          event_category: 'Lead Generation',
+          event_label: isInModal ? 'Modal Form' : 'Inline Contact Form',
+          value: 1,
+        });
+      }
+
       try {
         localStorage.setItem('ejnar_form_submitted', 'true');
       } catch {
@@ -107,9 +119,15 @@ export default function UnifiedContactForm({
       }
 
       if (onSuccessCallback) {
+        // Modal: use callback (close modal)
         setTimeout(() => {
           onSuccessCallback();
         }, 2200);
+      } else {
+        // Standalone page form: redirect to /thank-you for conversion tracking
+        setTimeout(() => {
+          router.push('/thank-you');
+        }, 1500);
       }
     } else {
       setErrorMessage(result.message || 'Unable to deliver your message. Please try again.');
@@ -174,6 +192,8 @@ export default function UnifiedContactForm({
             )}
           </div>
         </div>
+
+
 
         {/* Mobile Number */}
         <div>

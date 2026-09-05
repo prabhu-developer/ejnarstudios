@@ -3,8 +3,9 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/seo';
 import { getPageMetadata } from '@/lib/metadata.config';
+import { BRAND } from '@/lib/constants';
 import { Compass, CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'digital-consulting')!;
@@ -18,11 +19,21 @@ export default function DigitalConsultingPage() {
     slug: service.slug,
   });
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: `${BRAND.siteUrl}/` },
+    { name: 'Services', url: `${BRAND.siteUrl}/services/` },
+    { name: service.name, url: `${BRAND.siteUrl}/services/${service.slug}/` },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="bg-dark text-cream">
         <ServiceSubpageHero service={service} />

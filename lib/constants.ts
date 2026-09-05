@@ -12,6 +12,10 @@ export const BRAND = {
     postalCode: '600096',
     country: 'India',
     shortAddress: 'Perungudi, India | Buckinghamshire, UK | Texas, USA',
+    geo: {
+      latitude: 12.978436,
+      longitude: 80.246581,
+    },
   },
   contact: {
     mobile: '+91-73581 00831',
@@ -19,7 +23,8 @@ export const BRAND = {
     hotline: '+91-90032 06449',
     hotlineRaw: '+919003206449',
     email: 'info@ejnarstudios.com',
-    whatsappMessage: 'Hi Ejnar Studios , I would like to discuss a project with your team.',
+    hr: 'hr@ejnarstudios.com',
+    whatsappMessage: 'Hi Ejnar Studios, I would like to discuss a project with your team.',
   },
   socials: {
     instagram: 'https://instagram.com/ejnarstudios',

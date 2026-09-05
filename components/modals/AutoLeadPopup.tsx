@@ -30,6 +30,14 @@ export default function AutoLeadPopup() {
       if (hasTriggeredRef.current || isOpen) return;
       hasTriggeredRef.current = true;
 
+      // Log trigger type to GA4 if available for funnel analysis
+      if (typeof window !== 'undefined' && 'gtag' in window) {
+        (window as Window & { gtag: (...args: unknown[]) => void }).gtag('event', 'lead_popup_triggered', {
+          event_category: 'Lead Generation',
+          event_label: triggerType,
+        });
+      }
+
       try {
         sessionStorage.setItem('ejnar_auto_lead_shown', 'true');
       } catch {
@@ -39,16 +47,16 @@ export default function AutoLeadPopup() {
       openContactModal({
         title: 'Get a Free Project Strategy & Estimate',
         subtitle: 'Tell us about your brand',
-        contextTag: 'Ejnar Studios  Consultation',
+        contextTag: 'Ejnar Studios Consultation',
         submitButtonText: 'Claim Free Strategy Proposal',
-        defaultMessage: 'Hi Ejnar Studios , I would like to receive a custom project roadmap, timeline, and cost estimate.',
+        defaultMessage: 'Hi Ejnar Studios, I would like to receive a custom project roadmap, timeline, and cost estimate.',
       });
     };
 
-    // Trigger A: Timed Auto-Popup (after 8 seconds of engagement)
+    // Trigger A: Timed Auto-Popup (35 seconds — gives users time to read content first)
     const timer = setTimeout(() => {
-      triggerPopup('timer');
-    }, 8000);
+      triggerPopup('timer_35s');
+    }, 35000);
 
     // Trigger B: Exit Intent on desktop (mouse moving towards top address bar/tabs)
     const handleMouseLeave = (e: MouseEvent) => {
@@ -57,14 +65,15 @@ export default function AutoLeadPopup() {
       }
     };
 
-    // Trigger C: Scroll Depth Trigger (after user scrolls 40% of the page)
+    // Trigger C: Scroll Depth Trigger — fires after 65% scroll depth (proven engagement signal)
+    // BUG FIX: was set to 150% which is mathematically impossible and never fired
     const handleScroll = () => {
       if (hasTriggeredRef.current) return;
       const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
       if (scrollTotal > 0) {
         const scrollPercent = (window.scrollY / scrollTotal) * 100;
-        if (scrollPercent >= 150) {
-          triggerPopup('scroll_depth');
+        if (scrollPercent >= 65) {
+          triggerPopup('scroll_depth_65');
         }
       }
     };

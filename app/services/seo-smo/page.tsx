@@ -3,8 +3,9 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/seo';
 import { getPageMetadata } from '@/lib/metadata.config';
+import { BRAND } from '@/lib/constants';
 import { TrendingUp, BarChart2, Search, Share2, Target, CheckCircle2 } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'seo-smo')!;
@@ -18,8 +19,14 @@ export default function SeoSmoPage() {
     slug: service.slug,
   });
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: `${BRAND.siteUrl}/` },
+    { name: 'Services', url: `${BRAND.siteUrl}/services/` },
+    { name: service.name, url: `${BRAND.siteUrl}/services/${service.slug}/` },
+  ]);
+
   const funnelSteps = [
-    { step: '01', title: 'Data Analytics', desc: 'Keyword intent modeling, competitor backlink crawl, and technical crawl analysis (deck p.16).' },
+    { step: '01', title: 'Data Analytics', desc: 'Keyword intent modeling, competitor backlink crawl, and technical crawl analysis.' },
     { step: '02', title: 'SEO Architecture', desc: 'On-page schema tags, Core Web Vitals fixes, semantic keyword hierarchy, and indexing.' },
     { step: '03', title: 'SMO & Content Distribution', desc: 'Publishing optimized articles (4 to 13+ monthly) and syndicating positive social signals.' },
     { step: '04', title: 'Campaigns & Scaling', desc: 'High-authority directory submissions (100 to 250+ submissions) and national PR releases.' },
@@ -31,6 +38,10 @@ export default function SeoSmoPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="bg-dark text-cream">
         <ServiceSubpageHero service={service} />
 
@@ -39,7 +50,7 @@ export default function SeoSmoPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-                Deck p.16 • Growth Methodology
+                Digital Growth Methodology
               </span>
               <h2 className="font-display font-black text-3xl sm:text-5xl text-cream">
                 The 4-Stage <span className="text-gold-gradient">Digital Funnel.</span>

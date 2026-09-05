@@ -111,7 +111,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-              Strategic Foundation • Deck p.5
+              Strategic Foundation • Our Approach
             </span>
             <h2 className="font-display font-black text-3xl sm:text-4xl text-cream">
               Requirements We <span className="text-gold-gradient">Consider.</span>

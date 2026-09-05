@@ -3,8 +3,9 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/seo';
 import { getPageMetadata } from '@/lib/metadata.config';
+import { BRAND } from '@/lib/constants';
 import { Video, Film, Camera, Sparkles, CheckCircle2, Clapperboard } from 'lucide-react';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'video-design')!;
@@ -17,6 +18,12 @@ export default function VideoDesignPage() {
     description: service.description,
     slug: service.slug,
   });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: `${BRAND.siteUrl}/` },
+    { name: 'Services', url: `${BRAND.siteUrl}/services/` },
+    { name: service.name, url: `${BRAND.siteUrl}/services/${service.slug}/` },
+  ]);
 
   const productionPipeline = [
     { step: '01', title: 'Concept & Scripting', desc: 'Creative treatment, script writing, shot lists, and moodboards.' },
@@ -31,6 +38,10 @@ export default function VideoDesignPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="bg-dark text-cream">
         <ServiceSubpageHero service={service} />
 
@@ -39,7 +50,7 @@ export default function VideoDesignPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-                Deck p.3 • Shoot to Screen
+                Shoot to Screen Production Pipeline
               </span>
               <h2 className="font-display font-black text-3xl sm:text-5xl text-cream">
                 From Studio Shoot to <span className="text-gold-gradient">Master DI Screen.</span>

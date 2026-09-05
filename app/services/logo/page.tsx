@@ -4,8 +4,9 @@ import { SERVICES_DATA } from '@/lib/data/services';
 import { LOGO_TYPES } from '@/lib/data/logo-types';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/seo';
 import { getPageMetadata } from '@/lib/metadata.config';
+import { BRAND } from '@/lib/constants';
 import {
   Type,
   Image as ImageIcon,
@@ -37,11 +38,21 @@ export default function LogoDesignPage() {
     slug: service.slug,
   });
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: `${BRAND.siteUrl}/` },
+    { name: 'Services', url: `${BRAND.siteUrl}/services/` },
+    { name: service.name, url: `${BRAND.siteUrl}/services/${service.slug}/` },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="bg-dark text-cream">
         {/* Service Hero */}
@@ -52,7 +63,7 @@ export default function LogoDesignPage() {
           <div className="max-w-7xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-                Deck p.4 • Brand Anatomy
+                Brand Anatomy • Logo Types
               </span>
               <h2 className="font-display font-black text-3xl sm:text-5xl text-cream">
                 6 Architectural <span className="text-gold-gradient">Types of Logos.</span>

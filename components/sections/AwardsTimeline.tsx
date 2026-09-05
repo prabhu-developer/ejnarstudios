@@ -12,7 +12,7 @@ export default function AwardsTimeline() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-4">
             <Trophy className="w-3.5 h-3.5 text-primary" />
-            <span>Deck p.25 • Industry Recognition</span>
+            <span>Industry Recognition</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight mb-4">
             Awards & <span className="text-gold-gradient">Recognition.</span>

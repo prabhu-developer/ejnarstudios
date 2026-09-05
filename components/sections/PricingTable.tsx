@@ -16,7 +16,7 @@ export default function PricingTable() {
         {/* Section Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-dark-secondary border border-primary/25 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-4">
-            <span>Deck p.26 • Full Package Tiers</span>
+            <span>Full Package Tiers</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight mb-4">
             Packages & <span className="text-gold-gradient">Comparison.</span>

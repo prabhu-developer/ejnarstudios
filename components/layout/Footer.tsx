@@ -10,27 +10,13 @@ import { BRAND, NAV_LINKS } from '@/lib/constants';
 import { SERVICES_DATA } from '@/lib/data/services';
 import {
   ArrowRight,
-  Check,
   Mail,
   MapPin,
   Phone
 } from 'lucide-react';
 import Link from 'next/link';
-import React, { useState } from 'react';
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setIsSubscribed(true);
-      setEmail('');
-      setTimeout(() => setIsSubscribed(false), 5000);
-    }
-  };
-
   return (
     <footer className="relative bg-[#141414] text-cream border-t border-primary/15 overflow-hidden pt-20 pb-12">
       {/* Huge Ghost-Text Wordmark Backdrop */}
@@ -181,35 +167,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Newsletter Input */}
-            <div className="pt-2">
-              <span className="block text-[11px] font-semibold text-cream/90 uppercase tracking-wider mb-2">
-                Join Our Agency Dispatch
-              </span>
-              <form onSubmit={handleSubscribe} className="relative">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your corporate email"
-                  className="w-full bg-dark-secondary border border-primary/25 rounded-full px-4 py-2.5 text-xs text-cream placeholder-muted/60 focus:outline-none focus:border-primary transition-colors pr-12 shadow-inner"
-                />
-                <button
-                  type="submit"
-                  className="absolute right-1 top-1/2 -translate-y-1/2 p-2 rounded-full bg-primary text-dark hover:brightness-110 shadow-sm transition-all"
-                  aria-label="Subscribe"
-                >
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </form>
-              {isSubscribed && (
-                <p className="text-[11px] text-primary flex items-center gap-1 mt-1.5">
-                  <Check className="w-3 h-3" />
-                  <span>Thank you for subscribing!</span>
-                </p>
-              )}
-            </div>
+
           </div>
         </div>
 

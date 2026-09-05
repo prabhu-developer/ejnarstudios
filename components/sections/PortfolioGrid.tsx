@@ -2,7 +2,6 @@
 
 import { PORTFOLIO_DATA, ProjectItem } from '@/lib/data/portfolio';
 import {
-  ArrowUpRight,
   ChevronLeft,
   ChevronRight,
   ExternalLink,
@@ -160,22 +159,20 @@ function ProjectCard({ project }: { project: ProjectItem }) {
             ))}
           </div>
 
-          {project.link ? (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 hover:bg-primary text-primary hover:text-dark text-xs font-semibold font-mono uppercase tracking-wider transition-all duration-300 border border-primary/30 hover:border-primary shrink-0"
-              title={`Visit ${project.title}`}
-            >
-              <span>Live Site</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
-          ) : (
-            <div className="w-8 h-8 rounded-full border border-primary/40 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-dark transition-all duration-300 transform group-hover:scale-110 shrink-0">
-              <ArrowUpRight className="w-4 h-4" />
-            </div>
-          )}
+          <div className="flex items-center gap-2 shrink-0">
+            {project.link ? (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary/10 hover:bg-primary text-primary hover:text-dark text-xs font-semibold font-mono uppercase tracking-wider transition-all duration-300 border border-primary/30 hover:border-primary"
+                title={`Visit ${project.title}`}
+              >
+                <span>Live Site</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>

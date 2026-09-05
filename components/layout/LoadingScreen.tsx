@@ -8,14 +8,20 @@ export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check if session already loaded to avoid redundant screen blocking
-    const hasLoaded = sessionStorage.getItem('ejnar_intro_shown');
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      sessionStorage.setItem('ejnar_intro_shown', 'true');
-    }, hasLoaded ? 300 : 900);
+    if (typeof window !== 'undefined') {
+      const hasLoaded = sessionStorage.getItem('ejnar_intro_shown');
+      if (hasLoaded) {
+        setIsLoading(false);
+        return;
+      }
 
-    return () => clearTimeout(timer);
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+        sessionStorage.setItem('ejnar_intro_shown', 'true');
+      }, 900);
+
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   return (
@@ -42,8 +48,8 @@ export default function LoadingScreen() {
               className="relative w-24 h-24 mb-4"
             >
               <Image
-                src="/logo-icon.png"
-                alt="Ejnar Studios  Logo"
+                src="/logo-icon.webp"
+                alt="Ejnar Studios Logo"
                 fill
                 priority
                 className="object-contain filter drop-shadow-[0_0_25px_rgba(214,180,136,0.6)]"
@@ -58,7 +64,7 @@ export default function LoadingScreen() {
               className="text-center"
             >
               <h2 className="font-display font-bold text-2xl tracking-widest text-cream">
-                Ejnar<span className="text-primary font-normal">studios</span>
+                Ejnar {" "}<span className="text-primary font-normal">Studios</span>
               </h2>
               <p className="text-[10px] tracking-[0.4em] uppercase text-muted mt-1 font-mono">
                 Chennai • Creative Agency

@@ -3,7 +3,8 @@ import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import { PORTFOLIO_DATA } from '@/lib/data/portfolio';
 import { SERVICES_DATA } from '@/lib/data/services';
 import { getPageMetadata } from '@/lib/metadata.config';
-import { generateServiceSchema } from '@/lib/seo';
+import { BRAND } from '@/lib/constants';
+import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/seo';
 import { CheckCircle2, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
@@ -21,11 +22,21 @@ export default function EcommercePage() {
     slug: service.slug,
   });
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: `${BRAND.siteUrl}/` },
+    { name: 'Services', url: `${BRAND.siteUrl}/services/` },
+    { name: service.name, url: `${BRAND.siteUrl}/services/${service.slug}/` },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="bg-dark text-cream">
         <ServiceSubpageHero service={service} />

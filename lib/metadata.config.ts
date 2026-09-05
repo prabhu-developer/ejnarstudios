@@ -36,7 +36,8 @@ export type PageKey =
   | 'services.socialMedia'
   | 'services.influencerMarketing'
   | 'services.emailWhatsapp'
-  | 'services.digitalConsulting';
+  | 'services.digitalConsulting'
+  | 'thankYou';
 
 /**
  * Global fallback metadata configuration
@@ -57,7 +58,7 @@ export const DEFAULT_METADATA: PageMetadataConfig = {
     'erp software chennai',
   ],
   path: '',
-  image: '/images/og-cover.jpg',
+  image: '/images/og-cover.webp',
   noIndex: false,
   openGraphType: 'website',
 };
@@ -67,7 +68,7 @@ export const DEFAULT_METADATA: PageMetadataConfig = {
  */
 export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   home: {
-    title: 'Ejnar Studios  — Creative Branding, Web/App Development & Marketing Agency Chennai',
+    title: 'Ejnar Studios — Creative Branding, Web/App Development & Marketing Agency Chennai',
     description:
       'Award-winning creative digital agency in Chennai crafting luxury brand identities, high-performance Next.js websites, mobile apps, and full-funnel digital marketing.',
     keywords: [
@@ -83,9 +84,9 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   about: {
     title: 'About Us — Creative Heritage, Principles & Leadership',
     description:
-      'Founded in 2018 in Chennai by Ranjeth Bhuvaneswaran. Ejnar Studios  bridges architectural design systems, sub-second engineering, and full-funnel digital growth.',
+      'Founded in 2018 in Chennai by Ranjeth Bhuvaneswaran. Ejnar Studios bridges architectural design systems, sub-second engineering, and full-funnel digital growth.',
     keywords: [
-      'about Ejnar Studios ',
+      'about Ejnar Studios',
       'chennai digital agency history',
       'ranjeth bhuvaneswaran',
       'agency leadership',
@@ -111,7 +112,7 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
     description:
       'Explore our portfolio of award-winning websites, mobile apps, e-commerce stores, POS/ERP systems, and brand identities crafted for ambitious enterprises.',
     keywords: [
-      'Ejnar Studios  portfolio',
+      'Ejnar Studios portfolio',
       'web design case studies',
       'mobile app portfolio',
       'e-commerce client work',
@@ -122,7 +123,7 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
   marketplace: {
     title: 'Digital Marketplace & Asset Kits — Templates, Design Systems & Logos',
     description:
-      'Premium production-ready digital assets, Figma design systems, corporate presentation pitch decks, and brand identity kits built by Ejnar Studios .',
+      'Premium production-ready digital assets, Figma design systems, corporate presentation pitch decks, and brand identity kits built by Ejnar Studios.',
     keywords: [
       'digital marketplace',
       'figma templates',
@@ -157,29 +158,37 @@ export const PAGE_METADATA: Record<PageKey, PageMetadataConfig> = {
     ],
     path: '/contact-us',
   },
+  thankYou: {
+    title: 'Thank You — Inquiry Received',
+    description: 'Your inquiry has been received by Ejnar Studios. A senior account director will respond within 24 hours.',
+    path: '/thank-you',
+    noIndex: true,
+  },
   privacyPolicy: {
     title: 'Privacy Policy — Data Protection, Cookies & Security',
     description:
-      'Learn how Ejnar Studios  collects, uses, protects, and handles your personal and business data across our website, contact discovery forms, and services.',
+      'Learn how Ejnar Studios collects, uses, protects, and handles your personal and business data across our website, contact discovery forms, and services.',
     keywords: [
-      'Ejnar Studios  privacy policy',
+      'Ejnar Studios privacy policy',
       'data protection chennai agency',
       'cookie policy',
       'user data security',
     ],
     path: '/privacy-policy',
+    noIndex: true,
   },
   termsAndConditions: {
     title: 'Terms & Conditions — Client Agreements, Licenses & IP Ownership',
     description:
-      'Review the terms of service, project engagements, intellectual property transfer terms, marketplace licenses, and warranties of Ejnar Studios .',
+      'Review the terms of service, project engagements, intellectual property transfer terms, marketplace licenses, and warranties of Ejnar Studios.',
     keywords: [
-      'Ejnar Studios  terms and conditions',
+      'Ejnar Studios terms and conditions',
       'agency client agreement',
       'intellectual property terms',
       'marketplace licensing terms',
     ],
     path: '/terms-and-conditions',
+    noIndex: true,
   },
 
   // 1. Development Services
@@ -417,8 +426,10 @@ export function getPageMetadata(
     ? merged.title
     : `${merged.title} | ${BRAND.name}`;
 
-  const canonicalUrl = `${BRAND.siteUrl}${merged.path}`;
-  const ogImage = merged.image || DEFAULT_METADATA.image || '/images/og-cover.jpg';
+  // Build canonical URL — always include trailing slash to match next.config.ts trailingSlash: true
+  const pathWithSlash = merged.path === '' ? '' : merged.path.endsWith('/') ? merged.path : `${merged.path}/`;
+  const canonicalUrl = merged.path === '' ? `${BRAND.siteUrl}/` : `${BRAND.siteUrl}${pathWithSlash}`;
+  const ogImage = merged.image || DEFAULT_METADATA.image || '/images/og-cover.webp';
 
   return {
     title: fullTitle,
@@ -427,6 +438,11 @@ export function getPageMetadata(
     metadataBase: new URL(BRAND.siteUrl),
     alternates: {
       canonical: canonicalUrl,
+      languages: {
+        'en-IN': canonicalUrl,
+        'en-US': canonicalUrl,
+        'en-GB': canonicalUrl,
+      },
     },
     openGraph: {
       title: fullTitle,
@@ -449,7 +465,7 @@ export function getPageMetadata(
       title: fullTitle,
       description: merged.description,
       images: [ogImage],
-      creator: '@Ejnar Studios ',
+      creator: '@ejnarstudios',
     },
     robots: {
       index: !merged.noIndex,

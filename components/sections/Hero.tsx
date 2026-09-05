@@ -129,7 +129,7 @@ export default function Hero() {
       >
         <div className="relative w-full h-full">
           <Image
-            src="/bg-hero.png"
+            src="/bg-hero.webp"
             alt="Ejnar Studios  Antler Mark"
             fill
             priority
@@ -146,19 +146,14 @@ export default function Hero() {
         animate="visible"
         className="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center"
       >
-        {/* Animated Eyebrow Badge */}
-        <motion.div variants={badgeVariant} className="relative group mb-6">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/30 via-primary/60 to-primary/30 rounded-full blur-[2px] opacity-75 group-hover:opacity-100 transition duration-500 animate-pulse" />
-          <div className="relative inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dark-secondary/90 backdrop-blur-md border border-primary/40 text-primary text-xs font-semibold uppercase tracking-[0.2em] shadow-lg">
-            <span>Award-Winning Creative & Digital Agency • Chennai</span>
-          </div>
-        </motion.div>
-
-        {/* Main Animated Headline */}
+        {/* Main Animated Headline — SEO-optimised H1 with primary keywords */}
         <motion.h1
           variants={itemFadeUp}
-          className="font-banner font-black text-2xl  md:text-6xl lg:text-7xl tracking-tight leading-[1.08] text-cream mb-6 select-none"
+          className="font-banner font-black text-2xl  md:text-6xl lg:text-7xl tracking-tight leading-[1.08] text-cream mb-6"
         >
+          <span className="block text-sm md:text-base font-body font-normal text-muted tracking-[0.25em] uppercase mb-3">
+            Award-Winning Creative Digital Agency in Chennai
+          </span>
           <span className="block mr-2">We help brands make</span>
           <motion.span
             className="text-gold-gradient inline-block relative"
@@ -216,7 +211,7 @@ export default function Hero() {
             className="w-full sm:w-auto"
           >
             <Link
-              href="/#portfolio"
+              href="/portfolio"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wider uppercase bg-dark-secondary/90 backdrop-blur-md border border-primary/30 text-cream hover:text-primary hover:border-primary transition-all duration-300 shadow-md"
             >
               <span>See Our Work</span>

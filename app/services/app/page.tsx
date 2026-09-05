@@ -5,9 +5,10 @@ import { PORTFOLIO_DATA } from '@/lib/data/portfolio';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import AppCaseStudySlider from '@/components/ui/AppCaseStudySlider';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/seo';
 import { getPageMetadata } from '@/lib/metadata.config';
 import { CheckCircle2 } from 'lucide-react';
+import { BRAND } from '@/lib/constants';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'app')!;
 const byaddiProject = PORTFOLIO_DATA.find((p) => p.slug === 'byaddi');
@@ -21,11 +22,21 @@ export default function AppDevelopmentPage() {
     slug: service.slug,
   });
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: `${BRAND.siteUrl}/` },
+    { name: 'Services', url: `${BRAND.siteUrl}/services/` },
+    { name: service.name, url: `${BRAND.siteUrl}/services/${service.slug}/` },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <div className="bg-dark text-cream">
         <ServiceSubpageHero service={service} />

@@ -10,34 +10,49 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { generatePersonSchema } from '@/lib/seo';
+
 export const metadata = getPageMetadata('about');
 
 export default function AboutPage() {
+  const personSchema = generatePersonSchema({
+    name: BRAND.founder,
+    role: 'Founder & Principal Architect',
+    description: 'We set out to build an agency free from bureaucratic bloat — where every single client receives senior-level attention, uncompromised design standards, and turnkey commercial solutions.',
+    sameAs: [
+      BRAND.socials.linkedin
+    ],
+  });
   const cultureImages = [
     {
-      src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+      src: '/images/about/culture-1.jpg',
       alt: 'Creative strategy session at studio',
       caption: 'Collaborative Design Sprints',
     },
     {
-      src: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
+      src: '/images/about/culture-2.jpg',
       alt: 'Front-end development and code reviews',
       caption: 'Engineering & Craft',
     },
     {
-      src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=800&q=80',
+      src: '/images/about/culture-3.jpg',
       alt: 'Client strategy discovery session',
       caption: 'Strategic Advisory',
     },
     {
-      src: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80',
+      src: '/images/about/culture-4.jpg',
       alt: 'Cinematic ad-shoot and editing suite',
       caption: 'Content Production Suite',
     },
   ];
 
   return (
-    <div className="pt-28 pb-20 bg-dark text-cream">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
+      <div className="pt-28 pb-20 bg-dark text-cream">
       {/* Animated Hero Section */}
       <AnimatedHeroBanner
         badgeText="Creative Agency • Chennai, India"
@@ -251,5 +266,6 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

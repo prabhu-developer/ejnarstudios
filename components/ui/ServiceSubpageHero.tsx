@@ -98,10 +98,16 @@ export default function ServiceSubpageHero({ service }: ServiceSubpageHeroProps)
             className="lg:col-span-7 space-y-6"
           >
             {/* Category & Badge */}
-            <motion.div variants={itemVariants} className="flex items-center gap-3">
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3">
               <span className="px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-[0.2em] bg-primary/10 text-primary border border-primary/25 shadow-sm">
                 {service.category}
               </span>
+              {service.startingPrice && (
+                <span className="px-3.5 py-1 rounded-full text-xs font-semibold tracking-wide bg-dark-secondary text-cream border border-white/10 shadow-sm flex items-center gap-1.5">
+                  <span className="text-muted text-[10px] uppercase tracking-wider">Starting from</span>
+                  <span className="text-gold-gradient font-display">{service.startingPrice}</span>
+                </span>
+              )}
               {service.badge && (
                 <span className="px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-gold-gradient text-dark shadow-sm">
                   {service.badge}
@@ -206,7 +212,7 @@ export default function ServiceSubpageHero({ service }: ServiceSubpageHeroProps)
                 alt={service.heroImageAlt}
                 fill
                 priority
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-106"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               {/* Subtle dark luxury gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/40 to-transparent opacity-85 group-hover:opacity-75 transition-opacity" />

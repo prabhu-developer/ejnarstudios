@@ -3,6 +3,7 @@
 import CtaBanner from '@/components/sections/CtaBanner';
 import AnimatedHeroBanner from '@/components/ui/AnimatedHeroBanner';
 import { JOB_OPENINGS, JobOpening } from '@/lib/data/jobs';
+import { BRAND } from '@/lib/constants';
 import {
   ArrowRight,
   CheckCircle2,
@@ -22,9 +23,9 @@ export default function CareersClient() {
   const getJobMailtoUrl = (job: JobOpening) => {
     const subject = encodeURIComponent(`Application for ${job.title} - [Your Name]`);
     const body = encodeURIComponent(
-      `Dear Ejnar Studios  Talent Team,\n\nI am writing to express my strong interest in the ${job.title} position (${job.department} • ${job.location}).\n\nCandidate Details:\n- Full Name: \n- Phone Number: \n- Portfolio / GitHub / Showreel URL: \n- Current Location: \n- Years of Experience: \n\nBrief Introduction & Why Ejnar Studios :\n[Please share a few sentences about your proudest projects and design / engineering background]\n\nBest regards,\n[Your Name]`
+      `Dear ${BRAND.name} Talent Team,\n\nI am writing to express my strong interest in the ${job.title} position (${job.department} • ${job.location}).\n\nCandidate Details:\n- Full Name: \n- Phone Number: \n- Portfolio / GitHub / Showreel URL: \n- Current Location: \n- Years of Experience: \n\nBrief Introduction & Why ${BRAND.name}:\n[Please share a few sentences about your proudest projects and design / engineering background]\n\nBest regards,\n[Your Name]`
     );
-    return `mailto:hr@ejnarstudios.com?subject=${subject}&body=${body}`;
+    return `mailto:${BRAND.contact.hr}?subject=${subject}&body=${body}`;
   };
 
   const perks = [
@@ -54,9 +55,9 @@ export default function CareersClient() {
     <div className="pt-28 bg-dark text-cream min-h-screen">
       {/* Animated Careers Hero */}
       <AnimatedHeroBanner
-        badgeText="Deck p.27 • Talent & Careers"
+        badgeText="Talent & Careers"
         headlinePrefix="Join Our Creative"
-        highlightText="Ejnar Studios  Roster."
+        highlightText="Ejnar Studios Roster."
         description="We are a small, elite squad of digital artisans in Chennai crafting extraordinary branding and software. We hire obsessives who care deeply about craft."
       />
 
@@ -65,10 +66,10 @@ export default function CareersClient() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <span className="text-xs font-mono font-bold uppercase tracking-[0.25em] text-primary mb-2 block">
-              Ejnar Studios  Environment
+              Ejnar Studios Environment
             </span>
             <h2 className="font-display font-black text-2xl sm:text-3xl text-cream">
-              Why Craft Your Career at <span className="text-gold-gradient">Ejnar Studios .</span>
+              Why Craft Your Career at <span className="text-gold-gradient">Ejnar Studios.</span>
             </h2>
           </div>
 
@@ -193,7 +194,7 @@ export default function CareersClient() {
                       <div className="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-white/5">
                         <div className="flex items-center gap-2 text-xs text-muted">
                           <Mail className="w-4 h-4 text-primary" />
-                          <span>Direct inquiries: <strong className="text-cream">hr@ejnarstudios.com</strong></span>
+                          <span>Direct inquiries: <strong className="text-cream">{BRAND.contact.hr}</strong></span>
                         </div>
 
                         <a

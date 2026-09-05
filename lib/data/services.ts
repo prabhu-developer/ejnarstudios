@@ -29,6 +29,7 @@ export interface ServiceItem {
   process: { step: string; title: string; desc: string; days?: string }[];
   caseStudySlugs?: string[];
   badge?: string;
+  startingPrice?: string;
   stats?: { value: string; label: string }[];
   faqs?: { question: string; answer: string }[];
 }
@@ -431,6 +432,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Monochrome & Inverted Variations for High Versatility',
       'Full Copyright Transfer & Source Vector Deliverables (AI, EPS, SVG, PNG, PDF)',
     ],
+    startingPrice: '$2,500',
     deliverables: [
       'Primary & Secondary Logo Lockups',
       'Submark / Favicon / App Icon Sets',
@@ -472,6 +474,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Custom Packaging & Merchandise Graphics',
       'Social Media Cover Banners & Brand Templates',
     ],
+    startingPrice: '$8,000',
     deliverables: [
       'Master Brand Identity Manual (PDF)',
       'Print-ready Stationery Kit (AI, PDF)',
@@ -545,6 +548,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       'Bespoke Mobile-First Responsive Breakpoint Architecture',
       'Complete SEO Scaffolding, Sitemap, & Open Graph Meta',
     ],
+    startingPrice: '$15,000',
     deliverables: [
       'Production-Ready Source Codebase',
       'Figma UI/UX High-Fidelity Design System',

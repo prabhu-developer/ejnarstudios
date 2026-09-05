@@ -36,7 +36,7 @@ export default function HorizontalProcess() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-[0.2em] mb-4">
-              <span>Deck p.10–12 • Strategic Flow</span>
+              <span>Strategic Process Flow</span>
             </div>
             <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-cream tracking-tight">
               Our Process <span className="text-gold-gradient">Timeline.</span>

@@ -17,8 +17,17 @@ export default function WhatsAppButton() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => {
+          if (typeof window !== 'undefined' && 'gtag' in window) {
+            (window as Window & { gtag: (...args: unknown[]) => void }).gtag('event', 'whatsapp_click', {
+              event_category: 'Lead Generation',
+              event_label: 'Floating WhatsApp Button',
+              value: 1,
+            });
+          }
+        }}
         className="relative flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#25D366] text-white font-medium shadow-2xl hover:brightness-110 transition-all duration-300 transform group-hover:scale-105 border border-white/20"
-        aria-label="Chat with Ejnar Studios  on WhatsApp"
+        aria-label="Chat with Ejnar Studios on WhatsApp"
       >
         <MessageCircle className="w-5 h-5 fill-white text-[#25D366]" />
         <span className="hidden sm:inline text-xs font-semibold tracking-wide">

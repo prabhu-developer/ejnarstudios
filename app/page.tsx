@@ -1,13 +1,16 @@
-import AwardsTimeline from '@/components/sections/AwardsTimeline';
-import CtaBanner from '@/components/sections/CtaBanner';
 import Hero from '@/components/sections/Hero';
-import HorizontalProcess from '@/components/sections/HorizontalProcess';
 import Marquee from '@/components/sections/Marquee';
 import ServiceTabs from '@/components/sections/ServiceTabs';
-import StatsCounter from '@/components/sections/StatsCounter';
 import StrengthsGrid from '@/components/sections/StrengthsGrid';
-import TestimonialSection from '@/components/sections/TestimonialSection';
 import { getPageMetadata } from '@/lib/metadata.config';
+import dynamic from 'next/dynamic';
+
+// Lazy-load below-the-fold components
+const HorizontalProcess = dynamic(() => import('@/components/sections/HorizontalProcess'));
+const StatsCounter = dynamic(() => import('@/components/sections/StatsCounter'));
+const AwardsTimeline = dynamic(() => import('@/components/sections/AwardsTimeline'));
+const TestimonialSection = dynamic(() => import('@/components/sections/TestimonialSection'));
+const CtaBanner = dynamic(() => import('@/components/sections/CtaBanner'));
 
 export const metadata = getPageMetadata('home');
 
@@ -36,7 +39,7 @@ export default function HomePage() {
       <AwardsTimeline />
 
       {/* 8. Pull-Quote Testimonial */}
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
 
       {/* 9. High-Conversion CTA Banner */}
       <CtaBanner />

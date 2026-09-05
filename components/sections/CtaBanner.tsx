@@ -38,7 +38,7 @@ export default function CtaBanner() {
   const { openContactModal } = useContactModal();
 
   return (
-    <section className="py-24 px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-dark to-[#161616]">
+    <section className="pb-24 px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-dark to-[#161616]">
       {/* Background glow and gold ambient mesh */}
       <motion.div
         animate={{
@@ -111,11 +111,19 @@ export default function CtaBanner() {
               <button
                 onClick={() => {
                   if (pathname !== '/contact-us') {
+                    // GA4 Tracking
+                    if (typeof window !== 'undefined' && 'gtag' in window) {
+                      (window as Window & { gtag: (...args: unknown[]) => void }).gtag('event', 'cta_button_click', {
+                        event_category: 'Engagement',
+                        event_label: 'Start a Project',
+                      });
+                    }
+
                     openContactModal({
                       title: 'Start Your Project',
-                      subtitle: 'Ejnar Studios  Consultation',
+                      subtitle: 'Ejnar Studios Consultation',
                       contextTag: 'Digital Flagship Roadmap',
-                      defaultMessage: 'We are ready to build our digital flagship with Ejnar Studios . Please schedule an exploratory discovery session.',
+                      defaultMessage: 'We are ready to build our digital flagship with Ejnar Studios. Please schedule an exploratory discovery session.',
                       submitButtonText: 'Send Project Inquiry',
                     });
                   }
@@ -134,6 +142,14 @@ export default function CtaBanner() {
             >
               <a
                 href={`tel:${BRAND.contact.mobileRaw}`}
+                onClick={() => {
+                  if (typeof window !== 'undefined' && 'gtag' in window) {
+                    (window as Window & { gtag: (...args: unknown[]) => void }).gtag('event', 'phone_call_click', {
+                      event_category: 'Lead Generation',
+                      event_label: 'CTA Banner Phone',
+                    });
+                  }
+                }}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-display font-bold text-sm tracking-wider uppercase bg-dark-tertiary border border-primary/30 text-cream hover:text-primary hover:border-primary transition-all duration-300 shadow-md"
               >
                 <PhoneCall className="w-4 h-4 text-primary" />

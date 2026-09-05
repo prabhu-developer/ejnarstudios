@@ -3,9 +3,10 @@ import Image from 'next/image';
 import { SERVICES_DATA } from '@/lib/data/services';
 import ServiceSubpageHero from '@/components/ui/ServiceSubpageHero';
 import CtaBanner from '@/components/sections/CtaBanner';
-import { generateServiceSchema } from '@/lib/seo';
+import { generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo';
 import { getPageMetadata } from '@/lib/metadata.config';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
+import { BRAND } from '@/lib/constants';
 
 const service = SERVICES_DATA.find((s) => s.slug === 'website')!;
 
@@ -18,8 +19,18 @@ export default function WebsiteDevelopmentPage() {
     slug: service.slug,
   });
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: `${BRAND.siteUrl}/` },
+    { name: 'Services', url: `${BRAND.siteUrl}/services/` },
+    { name: service.name, url: `${BRAND.siteUrl}/services/${service.slug}/` },
+  ]);
+
+  const faqSchema = service.faqs && service.faqs.length > 0
+    ? generateFAQSchema(service.faqs)
+    : null;
+
   const devProcess = [
-    { step: '01', title: 'Wireframes & Blueprint', desc: 'Low-fidelity layout architecture, sitemaps, and user journey funnels (deck p.8).' },
+    { step: '01', title: 'Wireframes & Blueprint', desc: 'Low-fidelity layout architecture, sitemaps, and user journey funnels that define the navigation structure and conversion flow.' },
     { step: '02', title: 'UI/UX Visual Design', desc: 'High-fidelity Figma prototypes with custom dark aesthetic, gold typography, and micro-interaction states.' },
     { step: '03', title: 'Front-End Development', desc: 'Next.js 14+ App Router, Tailwind CSS, Lenis inertia scrolling, and GSAP ScrollTrigger.' },
     { step: '04', title: 'Back-End & API Integration', desc: 'Connecting endpoints, form submission webhooks, databases, and third-party services.' },
@@ -32,6 +43,16 @@ export default function WebsiteDevelopmentPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <div className="bg-dark text-cream">
         <ServiceSubpageHero service={service} />
 
@@ -86,7 +107,7 @@ export default function WebsiteDevelopmentPage() {
                 <span className="text-gold-gradient">Sub-Second Velocity.</span>
               </h2>
               <p className="text-sm text-muted leading-relaxed mb-6">
-                We believe websites must be as fast as they are beautiful. Sourced from deck p.9, we engineer static, dynamic, API-driven, and full-stack web applications that never leave users waiting.
+                We believe websites must be as fast as they are beautiful. We engineer static, dynamic, API-driven, and full-stack web applications that never leave users waiting.
               </p>
 
               <div className="space-y-3">
